@@ -64,7 +64,7 @@ public class ManagerMD implements MouseListener {
         JOptionPane.showMessageDialog(null,"FAlta gente men");
         return;
         }
-    this.bl.AgregarSolicitud(md.nid_txt.getText(),md.nnombre_txt.getText(),1,1,md.napellido_txt.getText(),Integer.parseInt(md.nedad_txt.getText()), Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(),md.ndireccion_txt.getText(),md.nmotivo_txt.getText(), md.nreferencia_txt.getText(), md.nhorario_txt.getText(),md.nemail_txt.getText(),md.ndetalle_txt.getText(), md.nsolicitante_txt.getText());
+//    this.bl.AgregarSolicitud(md.nid_txt.getText(),md.nnombre_txt.getText(),1,1,md.napellido_txt.getText(),Integer.parseInt(md.nedad_txt.getText()), Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(),md.ndireccion_txt.getText(),md.nmotivo_txt.getText(), md.nreferencia_txt.getText(), md.nhorario_txt.getText(),md.nemail_txt.getText(),md.ndetalle_txt.getText(), md.nsolicitante_txt.getText());
     }
 
     @Override

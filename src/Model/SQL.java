@@ -97,7 +97,7 @@ public final class SQL extends funciones {
      * @return
      */
     public boolean exec(String preparedQuery, ArrayList<Object> objs) {
-        connect();
+       connect();
         PreparedStatement ps;
         try {
             ps = this.connection.prepareStatement(preparedQuery);
@@ -122,7 +122,7 @@ public final class SQL extends funciones {
             JOptionPane.showMessageDialog(null, ex.getMessage());
             return false;
         } finally {
-            disconnect();
+        
         }
 
     }

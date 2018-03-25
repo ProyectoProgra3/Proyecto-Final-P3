@@ -19,9 +19,18 @@ public class ProyectoClinica {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        InitController ic = new InitController();
-        ic.Starprogram();
-
+//        InitController ic = new InitController();
+//        ic.Starprogram();
+        BusinessLogic bl = new BusinessLogic();
+bl.AgregarSolicitudNiño("6","En Espera","Maro","ro",90,120, "Me","ma","asd","Sabado", "@","Solo","Sha", "sabanilla");
+//        try {
+//        ResultSet rs=bl.DeletePsicologos();
+//            while (rs.next()) {
+//                System.out.println(rs.getObject("Estado"));                
+//                
+//            }
+//        } catch (Exception e) {
+//        }
 
     }
 
