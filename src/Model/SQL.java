@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import javax.swing.JOptionPane;
 import Model.funciones;
+import javax.swing.SwingWorker;
 
 public final class SQL extends funciones {
 
@@ -32,8 +33,8 @@ public final class SQL extends funciones {
     private Properties getProperties() {
         if (properties == null) {
             properties = new Properties();
-            properties.setProperty("Username", USERNAME);
-            properties.setProperty("Password", PASSWORD);
+            properties.setProperty("user", USERNAME);
+            properties.setProperty("password", PASSWORD);
         }
         return properties;
     }
@@ -44,7 +45,7 @@ public final class SQL extends funciones {
      *
      * @return
      */
-    public Connection connect() {
+    protected Connection connect() {
         if (this.connection == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -135,7 +136,7 @@ public final class SQL extends funciones {
      * @return
      */
     public ResultSet SELECT(String preparedQuery, ArrayList<Object> objs) {
-        connect();
+  
         PreparedStatement ps;
         try {
             ps = this.connection.prepareStatement(preparedQuery);

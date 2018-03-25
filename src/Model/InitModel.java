@@ -14,11 +14,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-import javax.xml.transform.Result;
+
 public class InitModel {
-       public static SQL sql;
+       protected final SQL sql;
     public InitModel(){
-        this.sql=new SQL();    
+        this.sql= new SQL();
     }
     
     public boolean Login(String Username, String Password){

@@ -6,6 +6,8 @@
 package proyectoclinica;
 
 import Controller.InitController;
+import Model.BusinessLogic;
+import java.sql.ResultSet;
 
 /**
  *
@@ -19,6 +21,8 @@ public class ProyectoClinica {
     public static void main(String[] args) {
         InitController ic = new InitController();
         ic.Starprogram();
+
+
     }
 
 }
