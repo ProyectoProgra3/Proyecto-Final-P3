@@ -124,7 +124,8 @@ public class MainDashboard {
 
     public void initComponents() {
 
-        //Panel del Menú   
+
+        //Panel del MenÃº   
         JLabel triage_lbl = new JLabel();
         triage_lbl.setBounds(60, -40, 150, 150);
         triage_lbl.setFont(new Font("Broadway", 1, 20));
@@ -133,7 +134,7 @@ public class MainDashboard {
 
         menu_panel.setBackground(new Color(106, 203, 214));
 
-        //*** Aquí agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posición)
+        //*** AquÃ­ agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posiciÃ³n)
         menu_panel.AddSingleObject(triage_lbl, 180, 40, LEFT);
         menu_panel.AddSingleObject(btn_agregar, 180, 40, LEFT);
         menu_panel.AddSingleObject(btn_modif, 180, 40, LEFT);
@@ -148,89 +149,62 @@ public class MainDashboard {
         search_panel.setBackground(new Color(137, 185, 185));
 
 
-        //Panel de información (Aqui se desplegaría toda la información)
+        //Panel de informaciÃ³n (Aqui se desplegarÃ­a toda la informaciÃ³n)
         
  ///////////////////////////////////////////////////////////////////////////////       
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
-        id_lbl.setBounds(10, 10, 50, 20);
-        nid_txt.setBounds(90, 10, 140, 20);
-        
+
         JLabel nombre_lbl = new JLabel();
         nombre_lbl.setText("Nombre: ");
         nombre_lbl.setForeground(new Color(156, 156, 156));
-        nombre_lbl.setBounds(10, 50, 60, 20);
-        nnombre_txt.setBounds(90, 50, 140, 20);
         
         JLabel apellido_lbl = new JLabel();
         apellido_lbl.setText("Apellido: ");
         apellido_lbl.setForeground(new Color(156, 156, 156));
-        apellido_lbl.setBounds(260, 50, 60, 20);
-        napellido_txt.setBounds(320, 50, 140, 20);
-        
+ 
         JLabel edad_lbl = new JLabel();
         edad_lbl.setText("Edad: ");
         edad_lbl.setForeground(new Color(156, 156, 156));
-        edad_lbl.setBounds(10, 90, 50, 20);
-        nedad_txt.setBounds(90, 90, 140, 20);
-        
+
         JLabel referencia_lbl = new JLabel();
         referencia_lbl.setText("Referencia: ");
         referencia_lbl.setForeground(new Color(156, 156, 156));
-        referencia_lbl.setBounds(10, 130, 70, 20);
-        nreferencia_txt.setBounds(90, 130, 140, 20);
-        
+  
         JLabel ocupacion_lbl = new JLabel();
-        ocupacion_lbl.setText("Ocupación: ");
+        ocupacion_lbl.setText("OcupaciÃ³n: ");
         ocupacion_lbl.setForeground(new Color(156, 156, 156));
-        ocupacion_lbl.setBounds(10, 170, 70, 20);
-        nocupacion_txt.setBounds(90, 170, 140, 20);
-        
+
         JLabel direccion_lbl = new JLabel();
-        direccion_lbl.setText("Dirección: ");
+        direccion_lbl.setText("DirecciÃ³n: ");
         direccion_lbl.setForeground(new Color(156, 156, 156));
-        direccion_lbl.setBounds(10, 210, 70, 20);
-        ndireccion_txt.setBounds(90, 210, 440, 20);
-        
+
         JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("Teléfono: ");
+        telefono_lbl.setText("TelÃ©fono: ");
         telefono_lbl.setForeground(new Color(156, 156, 156));
-        telefono_lbl.setBounds(10, 250, 70, 20);
-        ntelefono_txt.setBounds(90, 250, 140, 20);
-        
+
         JLabel email_lbl = new JLabel();
         email_lbl.setText("Correo: ");
         email_lbl.setForeground(new Color(156, 156, 156));
-        email_lbl.setBounds(260, 250, 70, 20);
-        nemail_txt.setBounds(320, 250, 140, 20);
         
         JLabel motivo_lbl = new JLabel();
         motivo_lbl.setText("Motivo: ");
         motivo_lbl.setForeground(new Color(156, 156, 156));
-        motivo_lbl.setBounds(10, 290, 70, 20);
-        nmotivo_txt.setBounds(90, 290, 220, 60);
-        
+    
         JLabel horario_lbl = new JLabel();
         horario_lbl.setText("Horario: ");
         horario_lbl.setForeground(new Color(156, 156, 156));
-        horario_lbl.setBounds(10, 370, 70, 20);
-        nhorario_txt.setBounds(90, 370, 140, 20);
-        
+    
         JLabel detalle_lbl = new JLabel();
         detalle_lbl.setText("Detalle: ");
         detalle_lbl.setForeground(new Color(156, 156, 156));
-        detalle_lbl.setBounds(10, 410, 70, 20);
-        ndetalle_txt.setBounds(90, 410, 140, 20);
-        
+      
         JLabel solicitante_lbl = new JLabel();
         solicitante_lbl.setText("Solicitante: ");
         solicitante_lbl.setForeground(new Color(156, 156, 156));
-        solicitante_lbl.setBounds(10, 450, 70, 20);
-        nsolicitante_txt.setBounds(90, 450, 140, 20);
         
         tipo_cbm.setBounds(90, 500, 70, 20);
-        btn_agr.setBounds(550, 410, 100, 60);
         btn_agr.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
   //////////////////////////////////////////////////////////////////////////////      
 
@@ -246,34 +220,67 @@ public class MainDashboard {
         
         
         
-        info_panel.add(id_lbl);
-        info_panel.add(nid_txt);
-        info_panel.add(nombre_lbl);
-        info_panel.add(nnombre_txt);
-        info_panel.add(apellido_lbl);
-        info_panel.add(napellido_txt);
-        info_panel.add(edad_lbl);
-        info_panel.add(nedad_txt);
-        info_panel.add(referencia_lbl);
-        info_panel.add(nreferencia_txt);
-        info_panel.add(ocupacion_lbl);
-        info_panel.add(nocupacion_txt);
-        info_panel.add(direccion_lbl);
-        info_panel.add(ndireccion_txt);
-        info_panel.add(telefono_lbl);
-        info_panel.add(ntelefono_txt);
-        info_panel.add(email_lbl);
-        info_panel.add(nemail_txt);
-        info_panel.add(motivo_lbl);
-        info_panel.add(nmotivo_txt);
-        info_panel.add(horario_lbl);
-        info_panel.add(nhorario_txt);
-        info_panel.add(detalle_lbl);
-        info_panel.add(ndetalle_txt);
-        info_panel.add(solicitante_lbl);
-        info_panel.add(nsolicitante_txt);
-        info_panel.add(btn_agr);
+        info_panel.AddObject(id_lbl, 70, 20, LEFT);   
+        info_panel.AddObject(nid_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(nombre_lbl, 70, 20, LEFT);
+        info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
+        
+        info_panel.AddObject(apellido_lbl, 70, 20, LEFT);
+        info_panel.AddObject(napellido_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(edad_lbl, 70, 20, LEFT);
+        info_panel.AddObject(nedad_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(referencia_lbl, 70, 20, LEFT);
+        info_panel.AddObject(nreferencia_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(ocupacion_lbl,70, 20, LEFT);
+        info_panel.AddObject(nocupacion_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(direccion_lbl,70, 20, LEFT);
+        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(telefono_lbl,70, 20, LEFT);
+        info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
+        
+        info_panel.AddObject(email_lbl,70, 20, LEFT);
+        info_panel.AddObject(nemail_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(motivo_lbl,70, 20, LEFT);
+        info_panel.AddObject(nmotivo_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(horario_lbl,70, 20, LEFT);
+        info_panel.AddObject(nhorario_txt, 160, 20, LEFT);
+        info_panel.newLine();
+              
+        info_panel.AddObject(solicitante_lbl,70, 20, LEFT);
+        info_panel.AddObject(nsolicitante_txt, 160, 20, LEFT);
+        info_panel.newLine();
+ 
+        info_panel.AddObject(detalle_lbl,70, 20, LEFT);
+        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
+        info_panel.AddObject(btn_agr,100 , 60, LEFT);
+        
+        
+        info_panel.newLine();
       //info_panel.add(tipo_cbm);
+                
+        menu_panel.add(clock);
+        info_panel.add(fondo_label);
+        dash_frm.add(info_panel);
+        dash_frm.add(search_panel);
+        dash_frm.add(menu_panel);
+        dash_frm.finalice();
+    
                 
         menu_panel.add(clock);
         info_panel.add(fondo_label);
