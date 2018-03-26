@@ -17,6 +17,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.SwingConstants.CENTER;
+import static javax.swing.SwingConstants.LEFT;
+import static javax.swing.SwingConstants.RIGHT;
 
 /**
  *
@@ -34,8 +36,10 @@ public class Login {
     public iFrame frm;
 
     public Login() {
-        frm = new iFrame(600, 400, 5, 2, JFrame.EXIT_ON_CLOSE);
-        panel = new iPanel(0, 0, 100.0f, 100.0f, 5, 150, frm);
+        frm = new iFrame(43.0f, 55.0f, 5, 2,"", JFrame.EXIT_ON_CLOSE);
+        panel = new iPanel(0, 0, 600, 600, 2, 150, frm);
+        panel.setResponsiveHeight(100.0f, 0);
+        panel.setResponsiveWidth(100.0f, 0);
         frm.setHeaderBackground(new Color(255, 255, 255));
         initcomponets();
     }
@@ -60,11 +64,8 @@ public class Login {
         usr_lbl.setForeground(new Color(156, 156, 156));
 
         //Campo Password    
-        pass_lbl.setText("ContraseÃ±a");
+        pass_lbl.setText("Contraseña");
         pass_lbl.setForeground(new Color(156, 156, 156));
-
-        //BotÃ³n Ingresar
-        btn_ingresar.setBounds(370, 180, 80, 80);
 
         //clock
         iClock clock = new iClock(80, 100, 100, 100);
@@ -87,8 +88,8 @@ public class Login {
         panel.AddObject(pass_txt, 140, 25, CENTER);
         panel.newLine();
         
-        panel.add(btn_ingresar);
-        
+        panel.AddObject(btn_ingresar, 80, 80, CENTER);
+        panel.newLine();
         
         logo_label.setVisible(true);
         frm.add(panel);

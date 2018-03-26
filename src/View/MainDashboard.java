@@ -108,7 +108,7 @@ public class MainDashboard {
     
     public MainDashboard() {
 
-        dash_frm = new iFrame(80.0f, 80.0f, 5, 2,"", JFrame.EXIT_ON_CLOSE);
+        dash_frm = new iFrame(60.0f, 80.0f, 5, 2,"", JFrame.EXIT_ON_CLOSE);
         menu_panel  = new iPanel(0, 30, 200, 0, 5, 5, dash_frm);
         menu_panel.setResponsiveHeight(100.0f, 30);
         search_panel = new iPanel(200, 30, 0, 60, 2, -5, dash_frm);
@@ -125,7 +125,7 @@ public class MainDashboard {
     public void initComponents() {
 
 
-        //Panel del MenÃº   
+        //Panel del Menu   
         JLabel triage_lbl = new JLabel();
         triage_lbl.setBounds(60, -40, 150, 150);
         triage_lbl.setFont(new Font("Broadway", 1, 20));
@@ -134,7 +134,7 @@ public class MainDashboard {
 
         menu_panel.setBackground(new Color(106, 203, 214));
 
-        //*** AquÃ­ agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posiciÃ³n)
+        //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
         menu_panel.AddSingleObject(triage_lbl, 180, 40, LEFT);
         menu_panel.AddSingleObject(btn_agregar, 180, 40, LEFT);
         menu_panel.AddSingleObject(btn_modif, 180, 40, LEFT);
@@ -149,7 +149,7 @@ public class MainDashboard {
         search_panel.setBackground(new Color(137, 185, 185));
 
 
-        //Panel de informaciÃ³n (Aqui se desplegarÃ­a toda la informaciÃ³n)
+        //Panel de informacion (Aqui se desplegara toda la informacion)
         
  ///////////////////////////////////////////////////////////////////////////////       
         JLabel id_lbl = new JLabel();
