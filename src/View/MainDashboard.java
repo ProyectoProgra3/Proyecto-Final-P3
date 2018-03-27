@@ -58,6 +58,7 @@ public class MainDashboard {
     //Botones PANEL SUPERIOR
     public iButtonFake btn_niño = new iButtonFake("Niño", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.CHILD_CARE);
     public iButtonFake btn_adol = new iButtonFake("Adolescente", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCESSIBILITY);
+    public iButtonFake btn_adulto = new iButtonFake("Adulto", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DIRECTIONS_WALK);
     public iButtonFake btn_pareja = new iButtonFake("Pareja", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.WC);
     public iButtonFake btn_fam = new iButtonFake("Familia", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PEOPLE);
 
@@ -190,10 +191,12 @@ public class MainDashboard {
         //Metodo para cargar botones al clickear "AGREGAR SOLICITUD"    
         search_panel.dispose();
         search_panel.repaint();
-        search_panel.AddObject(btn_fam, 100, 60, 325);
+        search_panel.AddObject(btn_fam, 100, 60, 425);
         btn_fam.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_pareja, 100, 60, 225);
+        search_panel.AddObject(btn_pareja, 100, 60, 325);
         btn_pareja.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        search_panel.AddObject(btn_adulto, 100, 60, 225);
+        btn_adulto.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_adol, 125, 60, 100);
         btn_adol.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_niño, 100, 60, -1);
@@ -279,6 +282,7 @@ public class MainDashboard {
 
     
 ///METODOS PARA BOTONES DEL PANEL DE BUSQUEDAS////  
+//////////////////////////////////////////////////    
     public void Agregar_solicitud_niño(){
         info_panel.dispose();
         info_panel.repaint();
