@@ -93,19 +93,19 @@ public class MainDashboard {
     //// CONTENIDO DEL PANEL DE INFORMACIÓN////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     ///NIÑO///
-    public iTextField nid_txt = new iTextField("Digite ID", 6);
-    public iTextField nnombre_txt = new iTextField("Digite Nombre", 6);
-    public iTextField napellido_txt = new iTextField("Digite Apellido", 6);
-    public iTextField nedad_txt = new iTextField("Digite Edad", 6);
-    public iTextField nreferencia_txt = new iTextField("Digite Referencia", 6);
-    public iTextField nocupacion_txt = new iTextField("Digite Ocupación", 6);
-    public iTextField ndireccion_txt = new iTextField("Digite Dirección", 6);
-    public iTextField ntelefono_txt = new iTextField("Digite Teléfono", 6);
-    public iTextField nemail_txt = new iTextField("Digite Correo", 6);
-    public iTextField nmotivo_txt = new iTextField("Digite Motivo", 6);
-    public iTextField nhorario_txt = new iTextField("Digite Horario", 6);
-    public iTextField ndetalle_txt = new iTextField("Digite Detalle de Horario", 6);
-    public iTextField nsolicitante_txt = new iTextField("Digite Nombre de Solicitante", 6);
+    public iTextField nid_txt = new iTextField("", 6);
+    public iTextField nnombre_txt = new iTextField("", 6);
+    public iTextField napellido_txt = new iTextField("", 6);
+    public iTextField nedad_txt = new iTextField("", 6);
+    public iTextField nreferencia_txt = new iTextField("", 6);
+    public iTextField nocupacion_txt = new iTextField("", 6);
+    public iTextField ndireccion_txt = new iTextField("", 6);
+    public iTextField ntelefono_txt = new iTextField("", 6);
+    public iTextField nemail_txt = new iTextField("", 6);
+    public iTextField nmotivo_txt = new iTextField("", 6);
+    public iTextField nhorario_txt = new iTextField("", 6);
+    public iTextField ndetalle_txt = new iTextField("", 6);
+    public iTextField nsolicitante_txt = new iTextField("", 6);
     public iButtonFake btn_agregar_niño = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox tipo_cbm;
     
@@ -277,8 +277,8 @@ public class MainDashboard {
         info_panel.AddObject(nemail_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(motivo_lbl,400, 20, LEFT);
-        info_panel.AddObject(nmotivo_txt, 160, 20, LEFT);
+        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
+        info_panel.AddObject(nmotivo_txt, 400, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(horario_lbl,80, 20, LEFT);
