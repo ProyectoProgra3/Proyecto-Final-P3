@@ -173,15 +173,15 @@ public class MainDashboard {
         referencia_lbl.setForeground(new Color(156, 156, 156));
   
         JLabel ocupacion_lbl = new JLabel();
-        ocupacion_lbl.setText("OcupaciÃ³n: ");
+        ocupacion_lbl.setText("Ocupación: ");
         ocupacion_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel direccion_lbl = new JLabel();
-        direccion_lbl.setText("DirecciÃ³n: ");
+        direccion_lbl.setText("Dirección: ");
         direccion_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("TelÃ©fono: ");
+        telefono_lbl.setText("Teléono: ");
         telefono_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel email_lbl = new JLabel();
@@ -220,54 +220,54 @@ public class MainDashboard {
         
         
         
-        info_panel.AddObject(id_lbl, 70, 20, LEFT);   
+        info_panel.AddObject(id_lbl, 80, 20, LEFT);   
         info_panel.AddObject(nid_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(nombre_lbl, 70, 20, LEFT);
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
         info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
         
-        info_panel.AddObject(apellido_lbl, 70, 20, LEFT);
+        info_panel.AddObject(apellido_lbl, 80, 20, LEFT);
         info_panel.AddObject(napellido_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(edad_lbl, 70, 20, LEFT);
+        info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(nedad_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(referencia_lbl, 70, 20, LEFT);
+        info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(nreferencia_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(ocupacion_lbl,70, 20, LEFT);
+        info_panel.AddObject(ocupacion_lbl,80, 20, LEFT);
         info_panel.AddObject(nocupacion_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(direccion_lbl,70, 20, LEFT);
-        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
+        info_panel.AddObject(direccion_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndireccion_txt, 410, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(telefono_lbl,70, 20, LEFT);
+        info_panel.AddObject(telefono_lbl,80, 20, LEFT);
         info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
         
-        info_panel.AddObject(email_lbl,70, 20, LEFT);
+        info_panel.AddObject(email_lbl,80, 20, LEFT);
         info_panel.AddObject(nemail_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(motivo_lbl,70, 20, LEFT);
+        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
         info_panel.AddObject(nmotivo_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(horario_lbl,70, 20, LEFT);
+        info_panel.AddObject(horario_lbl,80, 20, LEFT);
         info_panel.AddObject(nhorario_txt, 160, 20, LEFT);
         info_panel.newLine();
               
-        info_panel.AddObject(solicitante_lbl,70, 20, LEFT);
+        info_panel.AddObject(solicitante_lbl,80, 20, LEFT);
         info_panel.AddObject(nsolicitante_txt, 160, 20, LEFT);
         info_panel.newLine();
  
-        info_panel.AddObject(detalle_lbl,70, 20, LEFT);
-        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
+        info_panel.AddObject(detalle_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndetalle_txt, 410, 20, LEFT);
         info_panel.AddObject(btn_agr,100 , 60, LEFT);
         
         
