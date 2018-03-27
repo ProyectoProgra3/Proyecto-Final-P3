@@ -161,6 +161,22 @@ public class MainDashboard {
     public iTextField pareja_solicitante_txt = new iTextField("", 6);
     public iButtonFake btn_agregar_pareja = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox pareja_tipo_cbm;
+    ///FAMILIA///
+    public iTextField familia_id_txt = new iTextField("", 6);
+    public iTextField familia_apellido_txt = new iTextField("", 6);
+    public iTextField familia_integrantes_txt = new iTextField("", 6);
+    public iTextField familia_edad_txt = new iTextField("", 6);
+    public iTextField familia_referencia_txt = new iTextField("", 6);
+    public iTextField familia_ocupacion_txt = new iTextField("", 6);
+    public iTextField familia_direccion_txt = new iTextField("", 6);
+    public iTextField familia_telefono_txt = new iTextField("", 6);
+    public iTextField familia_email_txt = new iTextField("", 6);
+    public iTextField familia_motivo_txt = new iTextField("", 6);
+    public iTextField familia_horario_txt = new iTextField("", 6);
+    public iTextField familia_detalle_txt = new iTextField("", 6);
+    public iTextField familia_solicitante_txt = new iTextField("", 6);
+    public iButtonFake btn_agregar_familia = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+    public iComboCheckBox familia_tipo_cbm;
     
     public MainDashboard() {
         //ARRAY DEL COMBOBOX
@@ -188,7 +204,7 @@ public class MainDashboard {
         adolescente_tipo_cbm = new iComboCheckBox(items);
         adulto_tipo_cbm = new iComboCheckBox(items);
         pareja_tipo_cbm = new iComboCheckBox(items);
-      
+        familia_tipo_cbm = new iComboCheckBox(items);
         
         initComponents();
     }
@@ -229,158 +245,10 @@ public class MainDashboard {
         search_panel.setBackground(new Color(137, 185, 185));
 
 
-        //Panel de informacion (Aqui se desplegara toda la informacion)
-        JLabel id_lbl = new JLabel();
-        id_lbl.setText("ID: ");
-        id_lbl.setForeground(new Color(156, 156, 156));
-        
-        JLabel id_lbl2 = new JLabel();
-        id_lbl2.setText("ID: ");
-        id_lbl2.setForeground(new Color(156, 156, 156));
-     
-        JLabel apellido_lbl = new JLabel();
-        apellido_lbl.setText("Apellidos: ");
-        apellido_lbl.setForeground(new Color(156, 156, 156));
- 
-        JLabel edad_lbl = new JLabel();
-        edad_lbl.setText("Edad: ");
-        edad_lbl.setForeground(new Color(156, 156, 156));
-        
-        JLabel edad_lbl2 = new JLabel();
-        edad_lbl2.setText("Edad: ");
-        edad_lbl2.setForeground(new Color(156, 156, 156));
+        //Panel de informacion (Aqui se desplegara toda la informacion de prueba)
 
-        JLabel referencia_lbl = new JLabel();
-        referencia_lbl.setText("Referencia: ");
-        referencia_lbl.setForeground(new Color(156, 156, 156));
-  
-        JLabel ocupacion_lbl = new JLabel();
-        ocupacion_lbl.setText("Ocupación: ");
-        ocupacion_lbl.setForeground(new Color(156, 156, 156));
-        
-        JLabel ocupacion_lbl2 = new JLabel();
-        ocupacion_lbl2.setText("Ocupación: ");
-        ocupacion_lbl2.setForeground(new Color(156, 156, 156));
-
-        JLabel direccion_lbl = new JLabel();
-        direccion_lbl.setText("Dirección: ");
-        direccion_lbl.setForeground(new Color(156, 156, 156));
-
-        JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("Teléonos: ");
-        telefono_lbl.setForeground(new Color(156, 156, 156));
-
-        JLabel telefono_lbl2 = new JLabel();
-        telefono_lbl2.setText("Teléonos: ");
-        telefono_lbl2.setForeground(new Color(156, 156, 156));
-        
-        JLabel email_lbl = new JLabel();
-        email_lbl.setText("Correo: ");
-        email_lbl.setForeground(new Color(156, 156, 156));
-        
-        JLabel motivo_lbl = new JLabel();
-        motivo_lbl.setText("Motivo: ");
-        motivo_lbl.setForeground(new Color(156, 156, 156));
-    
-        JLabel horario_lbl = new JLabel();
-        horario_lbl.setText("Horario: ");
-        horario_lbl.setForeground(new Color(156, 156, 156));
-    
-        JLabel detalle_lbl = new JLabel();
-        detalle_lbl.setText("Detalle: ");
-        detalle_lbl.setForeground(new Color(156, 156, 156));
-      
-        JLabel solicitante_lbl = new JLabel();
-        solicitante_lbl.setText("Solicitante: ");
-        solicitante_lbl.setForeground(new Color(156, 156, 156));
-        
-        JLabel combo_lbl = new JLabel();
-        combo_lbl.setText("Clase: ");
-        combo_lbl.setForeground(new Color(156, 156, 156));
-        
-        JLabel clock2_lbl = new JLabel();
-        clock2_lbl.setText("Registro: ");
-        clock2_lbl.setForeground(new Color(156, 156, 156));
-        String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date()); 
-        JLabel clock2 = new JLabel(date);
-     
-        btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
-  //////////////////////////////////////////////////////////////////////////////      
-   
-        
-        info_panel.AddObject(id_lbl, 80, 20, LEFT);   
-        info_panel.AddObject(pareja_id_txt, 150, 20, LEFT);
-        
-        info_panel.AddObject(id_lbl2, 80, 20, LEFT);
-        info_panel.AddObject(pareja2_id_txt, 150, 20, LEFT);
-        info_panel.newLine();
-            
-        
-        info_panel.AddObject(apellido_lbl, 80, 20, LEFT);
-        info_panel.AddObject(pareja_apellido_txt, 400, 20, LEFT); 
-        info_panel.newLine();
-             
-        
-        info_panel.AddObject(edad_lbl, 80, 20, LEFT);
-        info_panel.AddObject(pareja_edad_txt, 150, 20, LEFT);
-        
-        info_panel.AddObject(edad_lbl2, 80, 20, LEFT);
-        info_panel.AddObject(pareja2_edad_txt, 150, 20, LEFT);
-        info_panel.newLine();
-        
-        
-        info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
-        info_panel.AddObject(pareja_referencia_txt, 150, 20, LEFT);
-        info_panel.newLine();
-        
-        info_panel.AddObject(ocupacion_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_ocupacion_txt, 150, 20, LEFT);
-        
-        info_panel.AddObject(ocupacion_lbl2,80, 20, LEFT);
-        info_panel.AddObject(pareja2_ocupacion_txt, 150, 20, LEFT);
-        info_panel.newLine();
-        
-        info_panel.AddObject(direccion_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_direccion_txt, 400, 20, LEFT);
-        info_panel.newLine();
-        
-        info_panel.AddObject(telefono_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_telefono_txt, 150, 20, LEFT); 
-        
-        info_panel.AddObject(telefono_lbl2,80, 20, LEFT);
-        info_panel.AddObject(pareja2_telefono_txt, 150, 20, LEFT);
-        info_panel.newLine();
-        
-        info_panel.AddObject(email_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_email_txt, 150, 20, LEFT);
-        info_panel.newLine();
-        
-        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_motivo_txt, 400, 20, LEFT);
-        info_panel.newLine();
-        
-        info_panel.AddObject(horario_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_horario_txt, 150, 20, LEFT);
-        info_panel.newLine();
-              
-        info_panel.AddObject(solicitante_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_solicitante_txt, 150, 20, LEFT);
-        info_panel.newLine();
- 
-        info_panel.AddObject(detalle_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_detalle_txt, 400, 20, LEFT);
-        info_panel.AddObject(btn_agregar_pareja,100 , 60, LEFT);
-        info_panel.newLine();
-        
-        info_panel.AddObject(combo_lbl,80, 20, LEFT);
-        info_panel.AddObject(pareja_tipo_cbm, 150, 20, LEFT);
-        info_panel.newLine();
-
-        info_panel.AddObject(clock2_lbl,80, 20, LEFT);
-        info_panel.AddObject(clock2, 80, 20, LEFT);
-        info_panel.newLine();
-        
- ///////////////////////////////////////////////////////////////////////////////       
+       
+        ///////////////////////////////////////////////////////////////       
  
         
         menu_panel.add(clock);
@@ -1043,18 +911,18 @@ public class MainDashboard {
         info_panel.dispose();
         info_panel.repaint();
         
-        JLabel id_lbl = new JLabel();
+                JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
-
-        JLabel nombre_lbl = new JLabel();
-        nombre_lbl.setText("Nombre: ");
-        nombre_lbl.setForeground(new Color(156, 156, 156));
-        
+     
         JLabel apellido_lbl = new JLabel();
-        apellido_lbl.setText("Apellido: ");
+        apellido_lbl.setText("Apellidos: ");
         apellido_lbl.setForeground(new Color(156, 156, 156));
- 
+        
+        JLabel integrantes_lbl = new JLabel();
+        integrantes_lbl.setText("Integrantes: ");
+        integrantes_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel edad_lbl = new JLabel();
         edad_lbl.setText("Edad: ");
         edad_lbl.setForeground(new Color(156, 156, 156));
@@ -1072,9 +940,9 @@ public class MainDashboard {
         direccion_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setText("Teléonos: ");
         telefono_lbl.setForeground(new Color(156, 156, 156));
-
+        
         JLabel email_lbl = new JLabel();
         email_lbl.setText("Correo: ");
         email_lbl.setForeground(new Color(156, 156, 156));
@@ -1105,69 +973,69 @@ public class MainDashboard {
         String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date()); 
         JLabel clock2 = new JLabel(date);
      
-        btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+        btn_agregar_familia.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
   //////////////////////////////////////////////////////////////////////////////      
    
         
         info_panel.AddObject(id_lbl, 80, 20, LEFT);   
-        info_panel.AddObject(nid_txt, 160, 20, LEFT);
+        info_panel.AddObject(familia_id_txt, 150, 20, LEFT);
+        info_panel.newLine();            
+        
+        info_panel.AddObject(apellido_lbl, 80, 20, LEFT);
+        info_panel.AddObject(familia_apellido_txt, 400, 20, LEFT); 
         info_panel.newLine();
-        
-        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
-        info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
-        
-        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
-        info_panel.AddObject(napellido_txt, 160, 20, LEFT);
+             
+        info_panel.AddObject(integrantes_lbl, 80, 20, LEFT);
+        info_panel.AddObject(familia_integrantes_txt, 150, 20, LEFT); 
         info_panel.newLine();
         
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
-        info_panel.AddObject(nedad_txt, 160, 20, LEFT);
+        info_panel.AddObject(familia_edad_txt, 150, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
-        info_panel.AddObject(nreferencia_txt, 160, 20, LEFT);
+        info_panel.AddObject(familia_referencia_txt, 150, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(ocupacion_lbl,80, 20, LEFT);
-        info_panel.AddObject(nocupacion_txt, 160, 20, LEFT);
+        info_panel.AddObject(familia_ocupacion_txt, 150, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(direccion_lbl,80, 20, LEFT);
-        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
+        info_panel.AddObject(familia_direccion_txt, 400, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(telefono_lbl,80, 20, LEFT);
-        info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
+        info_panel.AddObject(familia_telefono_txt, 150, 20, LEFT); 
         
-        info_panel.AddObject(email_lbl,60, 20, LEFT);
-        info_panel.AddObject(nemail_txt, 160, 20, LEFT);
+        info_panel.AddObject(email_lbl,80, 20, LEFT);
+        info_panel.AddObject(familia_email_txt, 150, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(motivo_lbl,80, 20, LEFT);
-        info_panel.AddObject(nmotivo_txt, 400, 20, LEFT);
+        info_panel.AddObject(familia_motivo_txt, 400, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(horario_lbl,80, 20, LEFT);
-        info_panel.AddObject(nhorario_txt, 160, 20, LEFT);
+        info_panel.AddObject(familia_horario_txt, 150, 20, LEFT);
         info_panel.newLine();
               
         info_panel.AddObject(solicitante_lbl,80, 20, LEFT);
-        info_panel.AddObject(nsolicitante_txt, 160, 20, LEFT);
+        info_panel.AddObject(familia_solicitante_txt, 150, 20, LEFT);
         info_panel.newLine();
- 
+        
         info_panel.AddObject(detalle_lbl,80, 20, LEFT);
-        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
-        info_panel.AddObject(btn_agregar_niño,100 , 60, LEFT);
+        info_panel.AddObject(familia_detalle_txt, 400, 20, LEFT);
+        info_panel.AddObject(btn_agregar_familia,100 , 60, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(combo_lbl,80, 20, LEFT);
-        info_panel.AddObject(ntipo_cbm, 160, 20, LEFT);
+        info_panel.AddObject(familia_tipo_cbm, 150, 20, LEFT);
         info_panel.newLine();
-
+        
         info_panel.AddObject(clock2_lbl,80, 20, LEFT);
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
-        
     }
   
 ////////////////////MODIFICAR PERSONA///////////////////////////////    
