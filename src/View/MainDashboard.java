@@ -282,7 +282,9 @@ public class MainDashboard {
 
     
 ///METODOS PARA BOTONES DEL PANEL DE BUSQUEDAS////  
-//////////////////////////////////////////////////    
+//////////////////////////////////////////////////
+    
+/////////////////////AGREGAR SOLICITUD//////////////////////////////    
     public void Agregar_solicitud_niño(){
         info_panel.dispose();
         info_panel.repaint();
@@ -413,4 +415,530 @@ public class MainDashboard {
         info_panel.newLine();
         
     }
+   
+    public void Agregar_solicitud_adolescente(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+               JLabel id_lbl = new JLabel();
+        id_lbl.setText("ID: ");
+        id_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel nombre_lbl = new JLabel();
+        nombre_lbl.setText("Nombre: ");
+        nombre_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel apellido_lbl = new JLabel();
+        apellido_lbl.setText("Apellido: ");
+        apellido_lbl.setForeground(new Color(156, 156, 156));
+ 
+        JLabel edad_lbl = new JLabel();
+        edad_lbl.setText("Edad: ");
+        edad_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel referencia_lbl = new JLabel();
+        referencia_lbl.setText("Referencia: ");
+        referencia_lbl.setForeground(new Color(156, 156, 156));
+  
+        JLabel ocupacion_lbl = new JLabel();
+        ocupacion_lbl.setText("Ocupación: ");
+        ocupacion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel direccion_lbl = new JLabel();
+        direccion_lbl.setText("Dirección: ");
+        direccion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel telefono_lbl = new JLabel();
+        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel email_lbl = new JLabel();
+        email_lbl.setText("Correo: ");
+        email_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel motivo_lbl = new JLabel();
+        motivo_lbl.setText("Motivo: ");
+        motivo_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel horario_lbl = new JLabel();
+        horario_lbl.setText("Horario: ");
+        horario_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel detalle_lbl = new JLabel();
+        detalle_lbl.setText("Detalle: ");
+        detalle_lbl.setForeground(new Color(156, 156, 156));
+      
+        JLabel solicitante_lbl = new JLabel();
+        solicitante_lbl.setText("Solicitante: ");
+        solicitante_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel combo_lbl = new JLabel();
+        combo_lbl.setText("Clase: ");
+        combo_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel clock2_lbl = new JLabel();
+        clock2_lbl.setText("Registro: ");
+        clock2_lbl.setForeground(new Color(156, 156, 156));
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date()); 
+        JLabel clock2 = new JLabel(date);
+     
+        btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+  //////////////////////////////////////////////////////////////////////////////      
+   
+        
+        info_panel.AddObject(id_lbl, 80, 20, LEFT);   
+        info_panel.AddObject(nid_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
+        
+        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
+        info_panel.AddObject(napellido_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(edad_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nedad_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nreferencia_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(ocupacion_lbl,80, 20, LEFT);
+        info_panel.AddObject(nocupacion_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(direccion_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(telefono_lbl,80, 20, LEFT);
+        info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
+        
+        info_panel.AddObject(email_lbl,60, 20, LEFT);
+        info_panel.AddObject(nemail_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
+        info_panel.AddObject(nmotivo_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(horario_lbl,80, 20, LEFT);
+        info_panel.AddObject(nhorario_txt, 160, 20, LEFT);
+        info_panel.newLine();
+              
+        info_panel.AddObject(solicitante_lbl,80, 20, LEFT);
+        info_panel.AddObject(nsolicitante_txt, 160, 20, LEFT);
+        info_panel.newLine();
+ 
+        info_panel.AddObject(detalle_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
+        info_panel.AddObject(btn_agregar_niño,100 , 60, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(combo_lbl,80, 20, LEFT);
+        info_panel.AddObject(tipo_cbm, 160, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(clock2_lbl,80, 20, LEFT);
+        info_panel.AddObject(clock2, 80, 20, LEFT);
+        info_panel.newLine();
+        
+    }
+    
+    public void Agregar_solicitud_adulto(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+               JLabel id_lbl = new JLabel();
+        id_lbl.setText("ID: ");
+        id_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel nombre_lbl = new JLabel();
+        nombre_lbl.setText("Nombre: ");
+        nombre_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel apellido_lbl = new JLabel();
+        apellido_lbl.setText("Apellido: ");
+        apellido_lbl.setForeground(new Color(156, 156, 156));
+ 
+        JLabel edad_lbl = new JLabel();
+        edad_lbl.setText("Edad: ");
+        edad_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel referencia_lbl = new JLabel();
+        referencia_lbl.setText("Referencia: ");
+        referencia_lbl.setForeground(new Color(156, 156, 156));
+  
+        JLabel ocupacion_lbl = new JLabel();
+        ocupacion_lbl.setText("Ocupación: ");
+        ocupacion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel direccion_lbl = new JLabel();
+        direccion_lbl.setText("Dirección: ");
+        direccion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel telefono_lbl = new JLabel();
+        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel email_lbl = new JLabel();
+        email_lbl.setText("Correo: ");
+        email_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel motivo_lbl = new JLabel();
+        motivo_lbl.setText("Motivo: ");
+        motivo_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel horario_lbl = new JLabel();
+        horario_lbl.setText("Horario: ");
+        horario_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel detalle_lbl = new JLabel();
+        detalle_lbl.setText("Detalle: ");
+        detalle_lbl.setForeground(new Color(156, 156, 156));
+      
+        JLabel solicitante_lbl = new JLabel();
+        solicitante_lbl.setText("Solicitante: ");
+        solicitante_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel combo_lbl = new JLabel();
+        combo_lbl.setText("Clase: ");
+        combo_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel clock2_lbl = new JLabel();
+        clock2_lbl.setText("Registro: ");
+        clock2_lbl.setForeground(new Color(156, 156, 156));
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date()); 
+        JLabel clock2 = new JLabel(date);
+     
+        btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+  //////////////////////////////////////////////////////////////////////////////      
+   
+        
+        info_panel.AddObject(id_lbl, 80, 20, LEFT);   
+        info_panel.AddObject(nid_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
+        
+        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
+        info_panel.AddObject(napellido_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(edad_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nedad_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nreferencia_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(ocupacion_lbl,80, 20, LEFT);
+        info_panel.AddObject(nocupacion_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(direccion_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(telefono_lbl,80, 20, LEFT);
+        info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
+        
+        info_panel.AddObject(email_lbl,60, 20, LEFT);
+        info_panel.AddObject(nemail_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
+        info_panel.AddObject(nmotivo_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(horario_lbl,80, 20, LEFT);
+        info_panel.AddObject(nhorario_txt, 160, 20, LEFT);
+        info_panel.newLine();
+              
+        info_panel.AddObject(solicitante_lbl,80, 20, LEFT);
+        info_panel.AddObject(nsolicitante_txt, 160, 20, LEFT);
+        info_panel.newLine();
+ 
+        info_panel.AddObject(detalle_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
+        info_panel.AddObject(btn_agregar_niño,100 , 60, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(combo_lbl,80, 20, LEFT);
+        info_panel.AddObject(tipo_cbm, 160, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(clock2_lbl,80, 20, LEFT);
+        info_panel.AddObject(clock2, 80, 20, LEFT);
+        info_panel.newLine();
+        
+    }
+    
+    public void Agregar_solicitud_pareja(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+               JLabel id_lbl = new JLabel();
+        id_lbl.setText("ID: ");
+        id_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel nombre_lbl = new JLabel();
+        nombre_lbl.setText("Nombre: ");
+        nombre_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel apellido_lbl = new JLabel();
+        apellido_lbl.setText("Apellido: ");
+        apellido_lbl.setForeground(new Color(156, 156, 156));
+ 
+        JLabel edad_lbl = new JLabel();
+        edad_lbl.setText("Edad: ");
+        edad_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel referencia_lbl = new JLabel();
+        referencia_lbl.setText("Referencia: ");
+        referencia_lbl.setForeground(new Color(156, 156, 156));
+  
+        JLabel ocupacion_lbl = new JLabel();
+        ocupacion_lbl.setText("Ocupación: ");
+        ocupacion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel direccion_lbl = new JLabel();
+        direccion_lbl.setText("Dirección: ");
+        direccion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel telefono_lbl = new JLabel();
+        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel email_lbl = new JLabel();
+        email_lbl.setText("Correo: ");
+        email_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel motivo_lbl = new JLabel();
+        motivo_lbl.setText("Motivo: ");
+        motivo_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel horario_lbl = new JLabel();
+        horario_lbl.setText("Horario: ");
+        horario_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel detalle_lbl = new JLabel();
+        detalle_lbl.setText("Detalle: ");
+        detalle_lbl.setForeground(new Color(156, 156, 156));
+      
+        JLabel solicitante_lbl = new JLabel();
+        solicitante_lbl.setText("Solicitante: ");
+        solicitante_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel combo_lbl = new JLabel();
+        combo_lbl.setText("Clase: ");
+        combo_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel clock2_lbl = new JLabel();
+        clock2_lbl.setText("Registro: ");
+        clock2_lbl.setForeground(new Color(156, 156, 156));
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date()); 
+        JLabel clock2 = new JLabel(date);
+     
+        btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+  //////////////////////////////////////////////////////////////////////////////      
+   
+        
+        info_panel.AddObject(id_lbl, 80, 20, LEFT);   
+        info_panel.AddObject(nid_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
+        
+        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
+        info_panel.AddObject(napellido_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(edad_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nedad_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nreferencia_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(ocupacion_lbl,80, 20, LEFT);
+        info_panel.AddObject(nocupacion_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(direccion_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(telefono_lbl,80, 20, LEFT);
+        info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
+        
+        info_panel.AddObject(email_lbl,60, 20, LEFT);
+        info_panel.AddObject(nemail_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
+        info_panel.AddObject(nmotivo_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(horario_lbl,80, 20, LEFT);
+        info_panel.AddObject(nhorario_txt, 160, 20, LEFT);
+        info_panel.newLine();
+              
+        info_panel.AddObject(solicitante_lbl,80, 20, LEFT);
+        info_panel.AddObject(nsolicitante_txt, 160, 20, LEFT);
+        info_panel.newLine();
+ 
+        info_panel.AddObject(detalle_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
+        info_panel.AddObject(btn_agregar_niño,100 , 60, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(combo_lbl,80, 20, LEFT);
+        info_panel.AddObject(tipo_cbm, 160, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(clock2_lbl,80, 20, LEFT);
+        info_panel.AddObject(clock2, 80, 20, LEFT);
+        info_panel.newLine();
+        
+    }
+    
+    public void Agregar_solicitud_familia(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+               JLabel id_lbl = new JLabel();
+        id_lbl.setText("ID: ");
+        id_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel nombre_lbl = new JLabel();
+        nombre_lbl.setText("Nombre: ");
+        nombre_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel apellido_lbl = new JLabel();
+        apellido_lbl.setText("Apellido: ");
+        apellido_lbl.setForeground(new Color(156, 156, 156));
+ 
+        JLabel edad_lbl = new JLabel();
+        edad_lbl.setText("Edad: ");
+        edad_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel referencia_lbl = new JLabel();
+        referencia_lbl.setText("Referencia: ");
+        referencia_lbl.setForeground(new Color(156, 156, 156));
+  
+        JLabel ocupacion_lbl = new JLabel();
+        ocupacion_lbl.setText("Ocupación: ");
+        ocupacion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel direccion_lbl = new JLabel();
+        direccion_lbl.setText("Dirección: ");
+        direccion_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel telefono_lbl = new JLabel();
+        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel email_lbl = new JLabel();
+        email_lbl.setText("Correo: ");
+        email_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel motivo_lbl = new JLabel();
+        motivo_lbl.setText("Motivo: ");
+        motivo_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel horario_lbl = new JLabel();
+        horario_lbl.setText("Horario: ");
+        horario_lbl.setForeground(new Color(156, 156, 156));
+    
+        JLabel detalle_lbl = new JLabel();
+        detalle_lbl.setText("Detalle: ");
+        detalle_lbl.setForeground(new Color(156, 156, 156));
+      
+        JLabel solicitante_lbl = new JLabel();
+        solicitante_lbl.setText("Solicitante: ");
+        solicitante_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel combo_lbl = new JLabel();
+        combo_lbl.setText("Clase: ");
+        combo_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel clock2_lbl = new JLabel();
+        clock2_lbl.setText("Registro: ");
+        clock2_lbl.setForeground(new Color(156, 156, 156));
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date()); 
+        JLabel clock2 = new JLabel(date);
+     
+        btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+  //////////////////////////////////////////////////////////////////////////////      
+   
+        
+        info_panel.AddObject(id_lbl, 80, 20, LEFT);   
+        info_panel.AddObject(nid_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
+        
+        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
+        info_panel.AddObject(napellido_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(edad_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nedad_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nreferencia_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(ocupacion_lbl,80, 20, LEFT);
+        info_panel.AddObject(nocupacion_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(direccion_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(telefono_lbl,80, 20, LEFT);
+        info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
+        
+        info_panel.AddObject(email_lbl,60, 20, LEFT);
+        info_panel.AddObject(nemail_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
+        info_panel.AddObject(nmotivo_txt, 400, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(horario_lbl,80, 20, LEFT);
+        info_panel.AddObject(nhorario_txt, 160, 20, LEFT);
+        info_panel.newLine();
+              
+        info_panel.AddObject(solicitante_lbl,80, 20, LEFT);
+        info_panel.AddObject(nsolicitante_txt, 160, 20, LEFT);
+        info_panel.newLine();
+ 
+        info_panel.AddObject(detalle_lbl,80, 20, LEFT);
+        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
+        info_panel.AddObject(btn_agregar_niño,100 , 60, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(combo_lbl,80, 20, LEFT);
+        info_panel.AddObject(tipo_cbm, 160, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(clock2_lbl,80, 20, LEFT);
+        info_panel.AddObject(clock2, 80, 20, LEFT);
+        info_panel.newLine();
+        
+    }
+  
+////////////////////MODIFICAR PERSONA///////////////////////////////    
 }
