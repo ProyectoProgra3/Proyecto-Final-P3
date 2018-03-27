@@ -17,6 +17,7 @@ import iComponents.iTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
+import java.util.ArrayList;
 import javafx.geometry.Pos;
 import static javafx.geometry.Pos.BOTTOM_CENTER;
 import javax.swing.BorderFactory;
@@ -104,10 +105,20 @@ public class MainDashboard {
     public iTextField ndetalle_txt = new iTextField("Digite Detalle de Horario", 6);
     public iTextField nsolicitante_txt = new iTextField("Digite Nombre de Solicitante", 6);
     public iButtonFake btn_agr = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
-    public iComboCheckBox tipo_cbm = new iComboCheckBox();
+    public iComboCheckBox tipo_cbm;
     
     public MainDashboard() {
-
+        //ARRAY DEL COMBOBOX
+        ArrayList<String> items = new ArrayList<String>();
+        
+        items.add("En Espera");
+        items.add("Atención inmediata");
+        items.add("Atención prioritaria");
+        items.add("Caído ");
+        items.add("En Proceso");
+        items.add("Cierre");
+        items.add("Lista Negra");
+        
         dash_frm = new iFrame(60.0f, 80.0f, 5, 2,"", JFrame.EXIT_ON_CLOSE);
         menu_panel  = new iPanel(0, 30, 200, 0, 5, 5, dash_frm);
         menu_panel.setResponsiveHeight(100.0f, 30);
@@ -118,13 +129,14 @@ public class MainDashboard {
         info_panel.setResponsiveHeight(100.0f, 90);
         info_panel.setBackground(new Color(255, 255, 255));
         dash_frm.setHeaderBackground(new Color(106, 203, 214));
+        tipo_cbm = new iComboCheckBox(items);
         
         initComponents();
     }
 
     public void initComponents() {
 
-
+        
         //Panel del Menu   
         JLabel triage_lbl = new JLabel();
         triage_lbl.setBounds(60, -40, 150, 150);
@@ -204,7 +216,11 @@ public class MainDashboard {
         solicitante_lbl.setText("Solicitante: ");
         solicitante_lbl.setForeground(new Color(156, 156, 156));
         
-        tipo_cbm.setBounds(90, 500, 70, 20);
+        JLabel combo_lbl = new JLabel();
+        combo_lbl.setText("Clase: ");
+        combo_lbl.setForeground(new Color(156, 156, 156));
+        
+        
         btn_agr.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
   //////////////////////////////////////////////////////////////////////////////      
 
@@ -213,6 +229,8 @@ public class MainDashboard {
         clock.setForeground(new Color(247, 247, 247));
         clock.setFont(new Font("Rockwell", 1, 12));
         clock.setBounds(65, 450, 80, 100);
+        
+
 
         ImageIcon fondo = new ImageIcon("C:/Users/crodas/Pictures/fondo.png");
         JLabel fondo_label = new JLabel(fondo);
@@ -269,18 +287,12 @@ public class MainDashboard {
         info_panel.AddObject(detalle_lbl,80, 20, LEFT);
         info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
         info_panel.AddObject(btn_agr,100 , 60, LEFT);
-        
-        
         info_panel.newLine();
-      //info_panel.add(tipo_cbm);
-                
-        menu_panel.add(clock);
-        info_panel.add(fondo_label);
-        dash_frm.add(info_panel);
-        dash_frm.add(search_panel);
-        dash_frm.add(menu_panel);
-        dash_frm.finalice();
-    
+        
+        info_panel.AddObject(combo_lbl,80, 20, LEFT);
+        info_panel.AddObject(tipo_cbm, 160, 20, LEFT);
+        info_panel.newLine();
+
                 
         menu_panel.add(clock);
         info_panel.add(fondo_label);
