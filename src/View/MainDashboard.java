@@ -317,15 +317,15 @@ public class MainDashboard {
         search_panel.dispose();
         search_panel.repaint();
         
-        JLabel id_lbl = new JLabel();
-        id_lbl.setText("Cédula: ");
-        id_lbl.setForeground(new Color(255, 255, 255));
+        JLabel id2_lbl = new JLabel();
+        id2_lbl.setText("Cédula: ");
+        id2_lbl.setForeground(new Color(255, 255, 255));
 
         JLabel tipo_lbl = new JLabel();
         tipo_lbl.setText("Tipo: ");
         tipo_lbl.setForeground(new Color(255, 255, 255));
         
-        search_panel.AddObject(id_lbl, 50, 60, 5);
+        search_panel.AddObject(id2_lbl, 50, 60, 5);
         search_panel.AddObject(modificar_persona_txt, 120, 30, 60);
         search_panel.AddObject(tipo_lbl, 50, 60, 200);
         search_panel.AddObject(modificar_persona_cbm, 120, 30, 260);
