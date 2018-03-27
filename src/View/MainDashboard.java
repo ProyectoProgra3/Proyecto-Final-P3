@@ -113,7 +113,7 @@ public class MainDashboard {
         menu_panel.setResponsiveHeight(100.0f, 30);
         search_panel = new iPanel(200, 30, 0, 60, 2, -5, dash_frm);
         search_panel.setResponsiveWidth(100.0f, 200);
-        info_panel = new iPanel(200, 90, 0, 0, 5, 5, dash_frm);
+        info_panel = new iPanel(200, 90, 0, 0, 10, 5, dash_frm);
         info_panel.setResponsiveWidth(100.0f, 200);
         info_panel.setResponsiveHeight(100.0f, 90);
         info_panel.setBackground(new Color(255, 255, 255));
@@ -227,7 +227,7 @@ public class MainDashboard {
         info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
         info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
         
-        info_panel.AddObject(apellido_lbl, 80, 20, LEFT);
+        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
         info_panel.AddObject(napellido_txt, 160, 20, LEFT);
         info_panel.newLine();
         
@@ -244,13 +244,13 @@ public class MainDashboard {
         info_panel.newLine();
         
         info_panel.AddObject(direccion_lbl,80, 20, LEFT);
-        info_panel.AddObject(ndireccion_txt, 410, 20, LEFT);
+        info_panel.AddObject(ndireccion_txt, 400, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(telefono_lbl,80, 20, LEFT);
         info_panel.AddObject(ntelefono_txt, 160, 20, LEFT); 
         
-        info_panel.AddObject(email_lbl,80, 20, LEFT);
+        info_panel.AddObject(email_lbl,60, 20, LEFT);
         info_panel.AddObject(nemail_txt, 160, 20, LEFT);
         info_panel.newLine();
         
@@ -267,7 +267,7 @@ public class MainDashboard {
         info_panel.newLine();
  
         info_panel.AddObject(detalle_lbl,80, 20, LEFT);
-        info_panel.AddObject(ndetalle_txt, 410, 20, LEFT);
+        info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
         info_panel.AddObject(btn_agr,100 , 60, LEFT);
         
         
