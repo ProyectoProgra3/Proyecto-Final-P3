@@ -56,6 +56,7 @@ public class MainDashboard {
     
     
     //Botones PANEL SUPERIOR
+    //Botones asociados a Agregar solicitud
     public iButtonFake btn_niño = new iButtonFake("Niño", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.CHILD_CARE);
     public iButtonFake btn_adol = new iButtonFake("Adolescente", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCESSIBILITY);
     public iButtonFake btn_adulto = new iButtonFake("Adulto", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DIRECTIONS_WALK);
@@ -65,10 +66,12 @@ public class MainDashboard {
     //Botónes asociados a CITA
     public iButtonFake btn_ced = new iButtonFake("Cédula", "Tipo Búsqueda", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCOUNT_BALANCE_WALLET);
     public iButtonFake btn_type = new iButtonFake("Tipo Paciente", " Tipo Búsqueda", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCOUNT_BALANCE_WALLET);
+    
     // Botones  modificar 
-    public iButtonFake btn_solicitudes = new iButtonFake("Solicitud", "Expediente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCOUNT_BALANCE_WALLET);
-    public iButtonFake btn_clinica = new iButtonFake("Clínica", " Expediente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCOUNT_BALANCE_WALLET);
-    public iButtonFake btn_Lnegra = new iButtonFake("Lista Negra", " Expedientes", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCOUNT_BALANCE_WALLET);
+    public iTextField  modificar_persona_txt = new iTextField("", 6);
+    public iComboCheckBox modificar_persona_cbm;
+    public iButtonFake btn_modificar_persona = new iButtonFake("Buscar", " Persona", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+    
     // BOTONES Psicologis 
     public iButtonFake btn_mosPsico = new iButtonFake("Mostar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.VISIBILITY);
     public iButtonFake btn_agrePsico = new iButtonFake("Agregar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.GROUP_ADD);
@@ -205,6 +208,7 @@ public class MainDashboard {
         adulto_tipo_cbm = new iComboCheckBox(items);
         pareja_tipo_cbm = new iComboCheckBox(items);
         familia_tipo_cbm = new iComboCheckBox(items);
+        modificar_persona_cbm = new iComboCheckBox(items);
         
         initComponents();
     }
@@ -296,13 +300,25 @@ public class MainDashboard {
         //Panel de busquedas      
         search_panel.dispose();
         search_panel.repaint();
-        search_panel.AddObject(btn_solicitudes, 120, 60, 243);
-        btn_solicitudes.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_clinica, 120, 60, 123);
-        btn_clinica.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_Lnegra, 120, 60, -1);
-        btn_Lnegra.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        
+        JLabel id_lbl = new JLabel();
+        id_lbl.setText("Cédula: ");
+        id_lbl.setForeground(new Color(255, 255, 255));
+
+        JLabel tipo_lbl = new JLabel();
+        tipo_lbl.setText("Tipo: ");
+        tipo_lbl.setForeground(new Color(255, 255, 255));
+        
+        search_panel.AddObject(id_lbl, 50, 60, 5);
+        search_panel.AddObject(modificar_persona_txt, 120, 30, 60);
+        search_panel.AddObject(tipo_lbl, 50, 60, 200);
+        search_panel.AddObject(modificar_persona_cbm, 120, 30, 260);
+        
+        search_panel.AddObject(btn_modificar_persona, 120, 60, 1);
+        btn_modificar_persona.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
+        
+        /////////////////////////////////////////////////////////////////////
     }
 
     public void BtnPsicologos() {
@@ -362,7 +378,7 @@ public class MainDashboard {
         info_panel.dispose();
         info_panel.repaint();
         
-               JLabel id_lbl = new JLabel();
+        JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
 
@@ -431,7 +447,8 @@ public class MainDashboard {
         info_panel.AddObject(id_lbl, 80, 20, LEFT);   
         info_panel.AddObject(nid_txt, 160, 20, LEFT);
         info_panel.newLine();
-        
+       
+   
         info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
         info_panel.AddObject(nnombre_txt, 160, 20, LEFT);
         
@@ -1038,5 +1055,6 @@ public class MainDashboard {
         info_panel.newLine();
     }
   
-////////////////////MODIFICAR PERSONA///////////////////////////////    
+////////////////////MODIFICAR PERSONA/////////////////////////////// 
+    
 }
