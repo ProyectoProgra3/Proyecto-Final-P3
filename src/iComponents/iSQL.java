@@ -19,9 +19,9 @@ import javax.swing.SwingWorker;
 
 public final class iSQL {
 
-    private String DATABASE_URL = "";
-    private String USERNAME = "";
-    private String PASSWORD = "";
+    private String DATABASE_URL = "jdbc:mysql://icomponents.net:3306/icompone_mario";
+    private String USERNAME = "icompone_mario";
+    private String PASSWORD = "Mario2018";
 
     private Connection connection;
     private Properties properties;
@@ -34,6 +34,10 @@ public final class iSQL {
      * @param user db user
      * @param pass db password
      */
+      public iSQL() {
+       
+        this.connect();
+    }
     public iSQL(String ip, String db, String user, String pass) {
         super();
         this.DATABASE_URL += "jdbc:mysql://" + ip + ":3306/" + db;
@@ -42,6 +46,7 @@ public final class iSQL {
 
         this.connect();
     }
+   
 
     public boolean isNumeric(Object element) {
         try {

@@ -25,7 +25,7 @@ public final class SQL extends funciones {
     /**
      * Constructor de la clase SQL Crea una instancia a la base de datos.
      */
-    protected SQL() {
+    public SQL() {
         super();
         this.connect();
     }
