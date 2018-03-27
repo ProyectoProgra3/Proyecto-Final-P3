@@ -17,7 +17,9 @@ import iComponents.iTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javafx.geometry.Pos;
 import static javafx.geometry.Pos.BOTTOM_CENTER;
 import javax.swing.BorderFactory;
@@ -104,7 +106,7 @@ public class MainDashboard {
     public iTextField nhorario_txt = new iTextField("Digite Horario", 6);
     public iTextField ndetalle_txt = new iTextField("Digite Detalle de Horario", 6);
     public iTextField nsolicitante_txt = new iTextField("Digite Nombre de Solicitante", 6);
-    public iButtonFake btn_agr = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+    public iButtonFake btn_agregar_niño = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox tipo_cbm;
     
     public MainDashboard() {
@@ -143,6 +145,12 @@ public class MainDashboard {
         triage_lbl.setFont(new Font("Broadway", 1, 20));
         triage_lbl.setForeground(new Color(247, 247, 247));
         triage_lbl.setText("INICIO");
+        
+        //clock
+        iClock clock = new iClock(80, 100, 100, 100);
+        clock.setForeground(new Color(247, 247, 247));
+        clock.setFont(new Font("Rockwell", 1, 12));
+        clock.setBounds(65, 450, 80, 100);
 
         menu_panel.setBackground(new Color(106, 203, 214));
 
@@ -220,17 +228,14 @@ public class MainDashboard {
         combo_lbl.setText("Clase: ");
         combo_lbl.setForeground(new Color(156, 156, 156));
         
-        
-        btn_agr.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+        JLabel clock2_lbl = new JLabel();
+        clock2_lbl.setText("Registro: ");
+        clock2_lbl.setForeground(new Color(156, 156, 156));
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date()); 
+        JLabel clock2 = new JLabel(date);
+     
+        btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
   //////////////////////////////////////////////////////////////////////////////      
-
-        //clock
-        iClock clock = new iClock(80, 100, 100, 100);
-        clock.setForeground(new Color(247, 247, 247));
-        clock.setFont(new Font("Rockwell", 1, 12));
-        clock.setBounds(65, 450, 80, 100);
-        
-
 
         ImageIcon fondo = new ImageIcon("C:/Users/crodas/Pictures/fondo.png");
         JLabel fondo_label = new JLabel(fondo);
@@ -272,7 +277,7 @@ public class MainDashboard {
         info_panel.AddObject(nemail_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        info_panel.AddObject(motivo_lbl,80, 20, LEFT);
+        info_panel.AddObject(motivo_lbl,400, 20, LEFT);
         info_panel.AddObject(nmotivo_txt, 160, 20, LEFT);
         info_panel.newLine();
         
@@ -286,14 +291,17 @@ public class MainDashboard {
  
         info_panel.AddObject(detalle_lbl,80, 20, LEFT);
         info_panel.AddObject(ndetalle_txt, 400, 20, LEFT);
-        info_panel.AddObject(btn_agr,100 , 60, LEFT);
+        info_panel.AddObject(btn_agregar_niño,100 , 60, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(combo_lbl,80, 20, LEFT);
         info_panel.AddObject(tipo_cbm, 160, 20, LEFT);
         info_panel.newLine();
 
-                
+        info_panel.AddObject(clock2_lbl,80, 20, LEFT);
+        info_panel.AddObject(clock2, 80, 20, LEFT);
+        info_panel.newLine();
+        
         menu_panel.add(clock);
         info_panel.add(fondo_label);
         dash_frm.add(info_panel);

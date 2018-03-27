@@ -32,7 +32,7 @@ public class ManagerMD implements MouseListener {
         this.md.btn_psico.addMouseListener(this);
         this.md.btn_just.addMouseListener(this);
         this.md.btn_report.addMouseListener(this);
-        this.md.btn_agr.addMouseListener(this);
+        this.md.btn_agregar_niño.addMouseListener(this);
     }
 
     public void mousePressed(MouseEvent me) {
@@ -54,14 +54,14 @@ public class ManagerMD implements MouseListener {
         if (md.btn_report == me.getSource()) {
             md.BtnReportes();
         }
-        if(md.btn_agr==me.getSource()){
+        if(md.btn_agregar_niño==me.getSource()){
             agregarSolicitanteNiño();
     }
 
     }
     public void agregarSolicitanteNiño(){
         if(md.nid_txt.getText().compareTo("")==0|| md.nnombre_txt.getText().compareTo("")==0|| md.napellido_txt.getText().compareTo("")==0|| md.nedad_txt.getText().compareTo("")==0||  md.ntelefono_txt.getText().compareTo("")==0||  md.nocupacion_txt.getText().compareTo("")==0|| md.ndireccion_txt.getText().compareTo("")==0|| md.nmotivo_txt.getText().compareTo("")==0||md.nhorario_txt.getText().compareTo("")==0|| md.nsolicitante_txt.getText().compareTo("")==0){
-        JOptionPane.showMessageDialog(null,"FAlta gente men");
+        JOptionPane.showMessageDialog(null,"Falta gente tupido");
         return;
         }
 //    this.bl.AgregarSolicitud(md.nid_txt.getText(),md.nnombre_txt.getText(),1,1,md.napellido_txt.getText(),Integer.parseInt(md.nedad_txt.getText()), Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(),md.ndireccion_txt.getText(),md.nmotivo_txt.getText(), md.nreferencia_txt.getText(), md.nhorario_txt.getText(),md.nemail_txt.getText(),md.ndetalle_txt.getText(), md.nsolicitante_txt.getText());
