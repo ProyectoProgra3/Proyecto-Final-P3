@@ -30,14 +30,14 @@ public class Login {
     public JLabel tri_lbl = new JLabel();
     public JLabel usr_lbl = new JLabel();
     public JLabel pass_lbl = new JLabel();
-    public iTextField usr_txt = new iTextField("Digite su usuario", 6);
-    public iPasswordField pass_txt = new iPasswordField("Digite su contraseña", 6);
+    public iTextField usr_txt = new iTextField("Digite usuario", 6);
+    public iPasswordField pass_txt = new iPasswordField("Digite contraseña", 6);
     public iButton btn_ingresar = new iButton("ACCESAR", 6, new Color(106, 203, 214), Color.WHITE);
     public iFrame frm;
 
     public Login() {
         frm = new iFrame(43.0f, 55.0f, 5, 2,"", JFrame.EXIT_ON_CLOSE);
-        panel = new iPanel(0, 0, 600, 600, 2, 150, frm);
+        panel = new iPanel(0, 0, 600, 600, 5, 5, frm);
         panel.setResponsiveHeight(100.0f, 0);
         panel.setResponsiveWidth(100.0f, 0);
         frm.setHeaderBackground(new Color(255, 255, 255));
@@ -49,11 +49,11 @@ public class Login {
 
         ImageIcon logo = new ImageIcon("C:/Users/crodas/Pictures/ul.png");
         JLabel logo_label = new JLabel(logo);
-        logo_label.setBounds(-40, -30, 400, 200);
+        //logo_label.setBounds(-40, -30, 400, 200);
 
         ImageIcon logo2 = new ImageIcon("C:/Users/crodas/Pictures/psi.jpeg");
         JLabel logo_label2 = new JLabel(logo2);
-        logo_label2.setBounds(230, -30, 400, 200);
+        //logo_label2.setBounds(230, -30, 400, 200);
 
         //Panel       
         panel.setBounds(0, 0, 600, 400);
@@ -70,28 +70,30 @@ public class Login {
         //clock
         iClock clock = new iClock(80, 100, 100, 100);
         clock.setForeground(new Color(156, 156, 156));
-        clock.setBounds(30, 290, 80, 100);
+        //clock.setBounds(30, 290, 80, 100);
 
-        panel.add(clock);
-        panel.add(logo_label2);
-        panel.add(logo_label);
+        panel.AddObject(logo_label, 275, 125, LEFT);
+        panel.AddObject(logo_label2, 275, 125, LEFT);
         panel.newLine();
         
 
-        panel.AddObject(usr_lbl, 100, 30, CENTER);
+        panel.AddObject(usr_lbl, 140, 30, CENTER);
         panel.newLine();
         panel.AddObject(usr_txt, 140, 25, CENTER);
         panel.newLine();
         
-        panel.AddObject(pass_lbl, 100, 30, CENTER);
+        panel.AddObject(pass_lbl, 140, 30, CENTER);
         panel.newLine();
         panel.AddObject(pass_txt, 140, 25, CENTER);
         panel.newLine();
-        
-        panel.AddObject(btn_ingresar, 80, 80, CENTER);
+         
+        panel.AddObject(btn_ingresar, 140, 30, CENTER);
         panel.newLine();
         
-        logo_label.setVisible(true);
+        
+        panel.AddObject(clock, 80, 100, LEFT);
+        panel.newLine();
+        
         frm.add(panel);
         frm.finalice();
     }
