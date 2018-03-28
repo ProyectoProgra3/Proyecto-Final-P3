@@ -79,6 +79,7 @@ public class MainDashboard {
     public iButtonFake btn_eliTodos = new iButtonFake("Eliminar Todos ", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DELETE_FOREVER);
 
     //Botones Cursos
+    public iButtonFake btn_mosCurso = new iButtonFake("Mostar Cursos", "Cursos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.VISIBILITY);
     public iButtonFake btn_eliminar = new iButtonFake("Eliminar", "Curso", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DELETE_SWEEP);
     public iButtonFake btn_agrcurso = new iButtonFake("Agregar", "Curso", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.LIBRARY_ADD);
  
@@ -196,6 +197,25 @@ public class MainDashboard {
     public iTextField modificar_persona_solicitante_txt = new iTextField("", 6);
     public iButtonFake btn_guardar_modificar_persona = new iButtonFake("Guardar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox modificar_persona_clase_cbm;
+    
+    
+    ///////////////////////AGREGAR PSICOLOGO
+    public iTextField txt_nombre_psicologo = new iTextField("",6);
+    public iTextField txt_apellidos_psicologo = new iTextField("",6);
+    public iTextField txt_carnet_psicologo = new iTextField("",6);
+    public iButtonFake btn_agregar_psicologo = new iButtonFake("Agregar","", new Color(255,255,255),new Color(137,185,185), new Color(247,247,247),new Color(106,203,214).darker(),GoogleMaterialDesignIcons.INPUT);
+    //////////////////////ELIMINAR PSICOLOGO
+    public iTextField txt_psicologo_eliminar = new iTextField("",6);
+    public iButtonFake btn_psicologo_eliminar = new iButtonFake("Eliminar","", new Color(255,255,255),new Color(137,185,185), new Color(247,247,247),new Color(106,203,214).darker(),GoogleMaterialDesignIcons.INPUT);
+    /////////////////////AGREGAR CURSO
+    public iTextField txt_nombre_curso = new iTextField("",6);
+    public iTextField txt_siglas_curso = new iTextField("",6);
+    public iButtonFake btn_agregar_curso = new iButtonFake("Agregar","", new Color(255,255,255),new Color(137,185,185), new Color(247,247,247),new Color(106,203,214).darker(),GoogleMaterialDesignIcons.INPUT);
+    ////////////////////ELIMINAR CURSO
+    public iTextField txt_curso_eliminar = new iTextField("",6);
+    public iButtonFake btn_curso_eliminar = new iButtonFake("Eliminar","", new Color(255,255,255),new Color(137,185,185), new Color(247,247,247),new Color(106,203,214).darker(),GoogleMaterialDesignIcons.INPUT);
+    
+    
     
     public MainDashboard() {
         //ARRAY DEL COMBOBOX
@@ -480,7 +500,9 @@ public class MainDashboard {
     public void BtnCurso(){
         //Metodo para cargar botones al clickear "CURSOS"
         search_panel.dispose();
-        search_panel.repaint();                
+        search_panel.repaint(); 
+        search_panel.AddObject(btn_mosCurso, 135, 60, -1);
+        btn_mosCurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_eliminar, 120, 60, 123);
         btn_eliminar.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_agrcurso, 120, 60, -1);
@@ -1198,4 +1220,89 @@ public class MainDashboard {
   
 ////////////////////MODIFICAR PERSONA/////////////////////////////// 
     
+     public void Agregar_Psicologo(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+        JLabel lbl_NombrePsicologo = new JLabel();
+        lbl_NombrePsicologo.setText("Nombre: ");
+        lbl_NombrePsicologo.setForeground(new Color(156, 156, 156));
+        
+        JLabel lbl_ApellidosPsicologo = new JLabel();
+        lbl_ApellidosPsicologo.setText("Apellidos: ");
+        lbl_ApellidosPsicologo.setForeground(new Color(156, 156, 156));
+        
+        JLabel lbl_carnet = new JLabel();
+        lbl_carnet.setText("Carné: ");
+        lbl_carnet.setForeground(new Color(156, 156, 156));
+        
+        //////////////////////////////////////
+        btn_agregar_psicologo.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+        
+        info_panel.AddObject(lbl_NombrePsicologo, 80, 20, LEFT);
+        info_panel.AddObject(txt_nombre_psicologo, 160, 20, LEFT);
+        
+        info_panel.AddObject(lbl_ApellidosPsicologo, 60, 20, LEFT);
+        info_panel.AddObject(txt_apellidos_psicologo, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(lbl_carnet,60, 20, LEFT);
+        info_panel.AddObject(txt_carnet_psicologo, 160, 20, LEFT);
+        info_panel.newLine();
+    }
+     
+     public void Eliminar_Psicologo(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+        JLabel lbl_nombreEliminar = new JLabel();
+        lbl_nombreEliminar.setText("Digite el nombre del psicologo a eliminar: ");
+        lbl_nombreEliminar.setForeground(new Color(156, 156, 156));
+        
+        
+        btn_psicologo_eliminar.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+        
+        info_panel.AddObject(lbl_nombreEliminar, 80,20, LEFT);
+        info_panel.AddObject(txt_psicologo_eliminar, 80,20, LEFT);
+        info_panel.newLine();
+     }
+     
+     public void Agregar_Curso(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+        JLabel lbl_nombreCurso = new JLabel();
+        lbl_nombreCurso.setText("Nombre Curso: ");
+        lbl_nombreCurso.setForeground(new Color(156, 156, 156));
+        
+        JLabel lbl_siglasCurso = new JLabel();
+        lbl_siglasCurso.setText("Siglas: ");
+        lbl_siglasCurso.setForeground(new Color(156, 156, 156));
+        
+        ///////////////////////////////
+        btn_agregar_curso.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+        
+        info_panel.AddObject(lbl_nombreCurso,80,20,LEFT);
+        info_panel.AddObject(txt_nombre_curso, 160,20,LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(lbl_siglasCurso, 80,20, LEFT);
+        info_panel.AddObject(txt_siglas_curso, 160,20, LEFT);
+        info_panel.newLine();
+     }
+     
+     public void Eliminar_Curso(){
+        info_panel.dispose();
+        info_panel.repaint();
+        
+        JLabel lbl_cursoEliminar = new JLabel();
+        lbl_cursoEliminar.setText("Digite el curso a eliminar: ");
+        lbl_cursoEliminar.setForeground(new Color(156, 156, 156));
+        
+        btn_curso_eliminar.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+        
+        info_panel.AddObject(lbl_cursoEliminar, 80,20, LEFT);
+        info_panel.AddObject(txt_curso_eliminar, 80,20, LEFT);
+        info_panel.newLine();
+     }
 }
