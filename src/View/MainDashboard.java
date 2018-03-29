@@ -30,6 +30,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.SwingConstants.BOTTOM;
 import static javax.swing.SwingConstants.CENTER;
+import static javax.swing.SwingConstants.RIGHT;
 import static javax.swing.SwingConstants.TOP;
 import javax.swing.SwingUtilities;
 import jiconfont.icons.GoogleMaterialDesignIcons;
@@ -181,6 +182,7 @@ public class MainDashboard {
     public iTextField familia_solicitante_txt = new iTextField("", 6);
     public iButtonFake btn_agregar_familia = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox familia_tipo_cbm;
+    
     ///MODIFICAR PERSONA///
     public iTextField modificar_persona_id_txt = new iTextField("", 6);
     public iTextField modificar_persona_nombre_txt = new iTextField("", 6);
@@ -345,17 +347,17 @@ public class MainDashboard {
         tipo_lbl.setText("Tipo: ");
         tipo_lbl.setForeground(new Color(255, 255, 255));
         
-        search_panel.AddObject(id2_lbl, 50, 60, 5);
-        search_panel.AddObject(modificar_persona_txt, 120, 30, 60);
-        search_panel.AddObject(tipo_lbl, 50, 60, 200);
-        search_panel.AddObject(modificar_persona_cbm, 120, 30, 260);
+        search_panel.AddObject(id2_lbl, 50, 42, LEFT);
+        search_panel.AddObject(modificar_persona_txt, 120, 32, LEFT);
+        search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
+        search_panel.AddObject(modificar_persona_cbm, 120, 32, LEFT);
         
-        search_panel.AddObject(btn_modificar_persona, 120, 60, 1);
-        btn_modificar_persona.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        search_panel.AddObject(btn_modificar_persona, 120, 30, 1);
+        btn_modificar_persona.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
         
         /////////////////////////////////////////////////////////////////////
-        
+        /*
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -480,6 +482,7 @@ public class MainDashboard {
         info_panel.AddObject(clock2_lbl,80, 20, LEFT);
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
+*/
     }
 
     public void BtnPsicologos() {
@@ -1217,8 +1220,13 @@ public class MainDashboard {
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
     }
+
+////////////////////MODIFICAR PERSONA////////////////////////
+    public void Modificar_persona_buscar(){
+        
+    }
   
-////////////////////MODIFICAR PERSONA/////////////////////////////// 
+////////////////////PSICOLOGOS/////////////////////////////// 
     
      public void Agregar_Psicologo(){
         info_panel.dispose();
