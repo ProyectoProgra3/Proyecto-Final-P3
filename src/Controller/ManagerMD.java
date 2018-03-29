@@ -43,7 +43,7 @@ public class ManagerMD implements MouseListener {
             md.Btn_Cita();
         }
         if (md.btn_modif == me.getSource()) {
-            md.BtnExpedientes();
+            md.BtnModificarPersona();
         }
         if (md.btn_psico == me.getSource()) {
             md.BtnPsicologos();
