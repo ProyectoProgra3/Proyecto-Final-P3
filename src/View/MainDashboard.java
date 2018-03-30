@@ -253,7 +253,7 @@ public class MainDashboard {
 
     public void initComponents() {
         
-        ImageIcon fondo = new ImageIcon("C:/Users/crodas/Pictures/fondo.png");
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir")+("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(150, 60, 400, 400);
         

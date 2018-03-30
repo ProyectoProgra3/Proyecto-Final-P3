@@ -47,13 +47,13 @@ public class Login {
     public void initcomponets() {
         // TODO code application logic here
 
-        ImageIcon logo = new ImageIcon("C:/Users/crodas/Pictures/ul.png");
+        ImageIcon logo = new ImageIcon(System.getProperty("user.dir")+("//src//Img//ul.png"));
         JLabel logo_label = new JLabel(logo);
-        //logo_label.setBounds(-40, -30, 400, 200);
+        
 
-        ImageIcon logo2 = new ImageIcon("C:/Users/crodas/Pictures/psi.jpeg");
+        ImageIcon logo2 = new ImageIcon(System.getProperty("user.dir")+("//src//Img//psi.jpeg"));
         JLabel logo_label2 = new JLabel(logo2);
-        //logo_label2.setBounds(230, -30, 400, 200);
+        
 
         //Panel       
         panel.setBounds(0, 0, 600, 400);
