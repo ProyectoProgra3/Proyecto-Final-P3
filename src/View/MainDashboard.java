@@ -234,7 +234,7 @@ public class MainDashboard {
         dash_frm = new iFrame(60.0f, 80.0f, 5, 2,"", JFrame.EXIT_ON_CLOSE);
         menu_panel  = new iPanel(0, 30, 200, 0, 5, 5, dash_frm);
         menu_panel.setResponsiveHeight(100.0f, 30);
-        search_panel = new iPanel(200, 30, 0, 60, 2, -5, dash_frm);
+        search_panel = new iPanel(200, 30, 0, 60, 0, -5, dash_frm);
         search_panel.setResponsiveWidth(100.0f, 200);
         info_panel = new iPanel(200, 90, 0, 0, 10, 5, dash_frm);
         info_panel.setResponsiveWidth(100.0f, 200);
@@ -274,8 +274,8 @@ public class MainDashboard {
 
         //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
         menu_panel.AddSingleObject(triage_lbl, 180, 40, LEFT);
-        menu_panel.AddSingleObject(btn_agregar, 180, 40, LEFT);
-        menu_panel.AddSingleObject(btn_modif, 180, 40, LEFT);
+        menu_panel.AddSingleObject(btn_agregar, 171, 40, LEFT);
+        menu_panel.AddSingleObject(btn_modif, 172, 40, LEFT);
         menu_panel.AddSingleObject(btn_citas, 95, 40, LEFT);
         menu_panel.AddSingleObject(btn_psico, 135, 40, LEFT);
         menu_panel.AddSingleObject(btn_curso, 105, 40, LEFT);

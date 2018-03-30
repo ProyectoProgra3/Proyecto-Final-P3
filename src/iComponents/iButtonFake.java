@@ -73,7 +73,7 @@ public class iButtonFake extends JLabel implements MouseListener {
             setText(""
                     + "<html>"
                     + "<span style='color:" + cu.getColorNameFromColor(this.ButtonColor) + ";'>" + Title + "</span><br/>"
-                    + "<span style='font-size:6px; color: #C8C9CB;'>" + Subtitle + "</span>"
+                    + "<span style='font-size:6px; color: #EEF0F2;'>" + Subtitle + "</span>"
                     + "</html>"
             );
         } 
@@ -89,7 +89,7 @@ public class iButtonFake extends JLabel implements MouseListener {
         IconFontSwing.register(GoogleMaterialDesignIcons.getIconFont());
         if (ico != null)
         {
-            Icon icon = IconFontSwing.buildIcon(ico, 16, new Color(240, 240, 240));
+            Icon icon = IconFontSwing.buildIcon(ico, 18, new Color(255, 255, 255));
             
             setIcon(icon);
             setIconTextGap(10);
@@ -129,7 +129,7 @@ public class iButtonFake extends JLabel implements MouseListener {
             setText(""
                     + "<html>"
                     + "<span style='color:" + this.getHTMLColor(this.HoverColor) + ";'>" + Title + "</span><br/>"
-                    + "<span style='font-size:6px; color: #C8C9CB;'>" + Subtitle + "</span>"
+                    + "<span style='font-size:6px; color: #EEF0F2;'>" + Subtitle + "</span>"
                     + "</html>"
             );
         } else {
@@ -156,7 +156,7 @@ public class iButtonFake extends JLabel implements MouseListener {
             setText(""
                     + "<html>"
                     + "<span style='color:" + this.getHTMLColor(this.HoverColor) + ";'>" + Title + "</span><br/>"
-                    + "<span style='font-size:6px; color: #C8C9CB;'>" + Subtitle + "</span>"
+                    + "<span style='font-size:6px; color: #EEF0F2;'>" + Subtitle + "</span>"
                     + "</html>"
             );
         } else {
@@ -178,7 +178,7 @@ public class iButtonFake extends JLabel implements MouseListener {
             setText(""
                     + "<html>"
                     + "<span style='color:" + this.getHTMLColor(this.ButtonColor) + ";'>" + Title + "</span><br/>"
-                    + "<span style='font-size:6px; color: #C8C9CB;'>" + Subtitle + "</span>"
+                    + "<span style='font-size:6px; color: #EEF0F2;'>" + Subtitle + "</span>"
                     + "</html>"
             );
         } 
