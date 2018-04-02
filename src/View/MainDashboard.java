@@ -262,17 +262,14 @@ public class MainDashboard {
 
     public void initComponents() {
 
-        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+                
+        ImageIcon logo_menu = new ImageIcon(System.getProperty("user.dir")+("//src//Img//logo_menu.png"));
+        JLabel menu_label = new JLabel(logo_menu);  
+        
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir")+("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(150, 60, 400, 400);
-
-        //Panel del Menu   
-        JLabel triage_lbl = new JLabel();
-        triage_lbl.setBounds(60, -40, 150, 150);
-        triage_lbl.setFont(new Font("Broadway", 1, 20));
-        triage_lbl.setForeground(new Color(247, 247, 247));
-        triage_lbl.setText("INICIO");
-
+        
         //clock
         iClock clock = new iClock(80, 100, 100, 100);
         clock.setForeground(new Color(247, 247, 247));
@@ -282,7 +279,7 @@ public class MainDashboard {
         menu_panel.setBackground(new Color(106, 203, 214));
 
         //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
-        menu_panel.AddSingleObject(triage_lbl, 180, 40, LEFT);
+        menu_panel.AddSingleObject(menu_label, 180, 40, CENTER);
         menu_panel.AddSingleObject(btn_agregar, 171, 40, LEFT);
         menu_panel.AddSingleObject(btn_modif, 172, 40, LEFT);
         menu_panel.AddSingleObject(btn_citas, 95, 40, LEFT);
