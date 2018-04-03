@@ -26,46 +26,158 @@ public class ManagerMD implements MouseListener {
     public ManagerMD(MainDashboard md, BusinessLogic bl) {
         this.md = md;
         this.bl = bl;
+        //agregar solicitud
         this.md.btn_agregar.addMouseListener(this);
-        this.md.btn_citas.addMouseListener(this);
-        this.md.btn_modif.addMouseListener(this);
-        this.md.btn_psico.addMouseListener(this);
-        this.md.btn_just.addMouseListener(this);
-        this.md.btn_report.addMouseListener(this);
+        //nino
+        this.md.btn_niño.addMouseListener(this);
         this.md.btn_agregar_niño.addMouseListener(this);
+        //adolescentes
+        this.md.btn_adol.addMouseListener(this);
+        this.md.btn_agregar_adolescente.addMouseListener(this);
+        //adulto
+        this.md.btn_adulto.addMouseListener(this);
+        this.md.btn_agregar_adulto.addMouseListener(this);
+        //pareja
+        this.md.btn_pareja.addMouseListener(this);
+        this.md.btn_agregar_pareja.addMouseListener(this);
+        //familia
+        this.md.btn_fam.addMouseListener(this);
+        this.md.btn_agregar_familia.addMouseListener(this);
+        //modificar paciente
+        this.md.btn_modif.addMouseListener(this);
+        this.md.btn_modificar_persona.addMouseListener(this);
+
+        //agregar citas
+        this.md.btn_citas.addMouseListener(this);
+        this.md.btn_type.addMouseListener(this);
+        this.md.btn_ced.addMouseListener(this);
+
+        //agregar psciologo
+        this.md.btn_psico.addMouseListener(this);
+        this.md.btn_eliTodos.addMouseListener(this);
+        this.md.btn_eliPsico.addMouseListener(this);
+        this.md.btn_agrePsico.addMouseListener(this);
+        this.md.btn_mosPsico.addMouseListener(this);
+        //cursos
+        this.md.btn_curso.addMouseListener(this);
+        this.md.btn_mosCurso.addMouseListener(this);
+        this.md.btn_agrcurso.addMouseListener(this);
+        this.md.btn_eliminar.addMouseListener(this);
+        //justificacion
+        this.md.btn_just.addMouseListener(this);
+
+        //reportes
+        this.md.btn_report.addMouseListener(this);
+
     }
 
     public void mousePressed(MouseEvent me) {
+        //agregar
         if (md.btn_agregar == me.getSource()) {
             md.BtnAregarSolic();
         }
-        if (md.btn_citas == me.getSource()) {
-            md.Btn_Cita();
+        //nino
+        if (md.btn_niño == me.getSource()) {
+            md.Agregar_solicitud_niño();
         }
+        if (md.btn_agregar_niño == me.getSource()) {
+            agregarSolicitanteNiño();
+        }
+        //adolescente
+        if (md.btn_adol == me.getSource()) {
+            md.Agregar_solicitud_adolescente();
+        }
+         if (md.btn_agregar_adolescente == me.getSource()) {
+           agregarSolicitudAdolescente(); 
+        }
+        //adulto
+        if (md.btn_adulto == me.getSource()) {
+            md.Agregar_solicitud_adulto();
+        }
+        //pareja
+        if (md.btn_pareja == me.getSource()) {
+            md.Agregar_solicitud_pareja();
+        }
+        //familia
+        if (md.btn_fam == me.getSource()) {
+            md.Agregar_solicitud_familia();
+        }
+        //modificar
         if (md.btn_modif == me.getSource()) {
             md.BtnModificarPersona();
         }
+        if (md.btn_modificar_persona == me.getSource()) {
+            md.Modificar_persona_buscar();
+        }
+        //citas
+        if (md.btn_citas == me.getSource()) {
+            md.Btn_Cita();
+        }
+        if (md.btn_type == me.getSource()) {
+
+        }
+        if (md.btn_ced == me.getSource()) {
+
+        }
+        //piscologo
         if (md.btn_psico == me.getSource()) {
             md.BtnPsicologos();
         }
+        if (md.btn_eliTodos == me.getSource()) {
+
+        }
+        if (md.btn_eliPsico == me.getSource()) {
+            md.Eliminar_Psicologo();
+        }
+        if (md.btn_agrePsico == me.getSource()) {
+            md.Agregar_Psicologo();
+        }
+        if (md.btn_eliTodos == me.getSource()) {
+
+        }
+        //curso
+        if (md.btn_curso == me.getSource()) {
+            md.BtnCurso();
+        }
+        if (md.btn_mosCurso == me.getSource()) {
+          
+        }
+         if (md.btn_agrcurso == me.getSource()) {
+            md.Agregar_Curso();
+        }
+        if (md.btn_eliminar == me.getSource()) {
+            md.Eliminar_Curso();
+        }
+       
+        //justificacion        
         if (md.btn_just == me.getSource()) {
             md.BtnJustificacion();
         }
+        //reporte
         if (md.btn_report == me.getSource()) {
             md.BtnReportes();
         }
-        if(md.btn_agregar_niño==me.getSource()){
-            agregarSolicitanteNiño();
-    }
 
     }
-    public void agregarSolicitanteNiño(){
-        if(md.nid_txt.getText().compareTo("")==0|| md.nnombre_txt.getText().compareTo("")==0|| md.napellido_txt.getText().compareTo("")==0|| md.nedad_txt.getText().compareTo("")==0||  md.ntelefono_txt.getText().compareTo("")==0||  md.nocupacion_txt.getText().compareTo("")==0|| md.ndireccion_txt.getText().compareTo("")==0|| md.nmotivo_txt.getText().compareTo("")==0||md.nhorario_txt.getText().compareTo("")==0|| md.nsolicitante_txt.getText().compareTo("")==0){
-        JOptionPane.showMessageDialog(null,"Falta gente tupido");
-        return;
+
+    public void agregarSolicitanteNiño() {
+        if (md.nid_txt.getText().compareTo("") == 0 || md.nnombre_txt.getText().compareTo("") == 0 || md.napellido_txt.getText().compareTo("") == 0 || md.nedad_txt.getText().compareTo("") == 0 || md.ntelefono_txt.getText().compareTo("") == 0 || md.nocupacion_txt.getText().compareTo("") == 0 || md.ndireccion_txt.getText().compareTo("") == 0 || md.nmotivo_txt.getText().compareTo("") == 0 || md.nhorario_txt.getText().compareTo("") == 0 || md.nsolicitante_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Falta gente ");
+            return;
         }
-//    this.bl.AgregarSolicitud(md.nid_txt.getText(),md.nnombre_txt.getText(),1,1,md.napellido_txt.getText(),Integer.parseInt(md.nedad_txt.getText()), Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(),md.ndireccion_txt.getText(),md.nmotivo_txt.getText(), md.nreferencia_txt.getText(), md.nhorario_txt.getText(),md.nemail_txt.getText(),md.ndetalle_txt.getText(), md.nsolicitante_txt.getText());
+        this.bl.AgregarSolicitudNiño(md.nid_txt.getText(),md.ntipo_cbm.getSelectedItem().toString(),md.nnombre_txt.getText(),md.napellido_txt.getText(), Integer.parseInt(md.nedad_txt.getText()),Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(), md.nmotivo_txt.getText(),md.nreferencia_txt.getText(),md.nhorario_txt.getText(), md.nemail_txt.getText(),md.ndetalle_txt.getText(),md.nsolicitante_txt.getText(),md.ndireccion_txt.getText());
     }
+    public void agregarSolicitudAdolescente(){
+    if(md.adolescente_id_txt.getText().compareTo("") == 0 || md.adolescente_apellido_txt.getText().compareTo("") == 0 || md.adolescente_edad_txt.getText().compareTo("") == 0 || md.adolescente_nombre_txt.getText().compareTo("") == 0 || md.adolescente_horario_txt.getText().compareTo("") == 0 || md.adolescente_motivo_txt.getText().compareTo("") == 0 || md.adolescente_telefono_txt.getText().compareTo("") == 0 || md.adolescente_ocupacion_txt.getText().compareTo("") == 0 ){
+         JOptionPane.showMessageDialog(null, "Falta gente ");
+    return;
+    }
+    this.bl.AgregarSolicitudAdoslecente(md.adolescente_id_txt.getText(), md.adolescente_tipo_cbm.getSelectedItem().toString(),md.adolescente_nombre_txt.getText(), md.adolescente_apellido_txt.getText(), Integer.parseInt(md.adolescente_telefono_txt.getText())
+            , Integer.parseInt(md.adolescente_edad_txt.getText()),md.adolescente_ocupacion_txt.getText(),md.adolescente_motivo_txt.getText()
+            , md.adolescente_referencia_txt.getText(), md.adolescente_horario_txt.getText(), md.adolescente_email_txt.getText(),md.adolescente_detalle_txt.getText(), 
+            md.adolescente_solicitante_txt.getText(),md.adolescente_direccion_txt.getText());
+    }
+    
 
     @Override
     public void mouseClicked(MouseEvent me) {

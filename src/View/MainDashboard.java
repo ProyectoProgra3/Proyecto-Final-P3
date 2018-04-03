@@ -306,6 +306,8 @@ public class MainDashboard {
         //Metodo para cargar botones al clickear "AGREGAR SOLICITUD"    
         search_panel.dispose();
         search_panel.repaint();
+         info_panel.dispose();
+        info_panel.repaint();
         search_panel.AddObject(btn_fam, 100, 60, 425);
         btn_fam.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_pareja, 100, 60, 325);
@@ -325,6 +327,8 @@ public class MainDashboard {
         //Metodo para cargar botones al clickear "CITAS"
         search_panel.dispose();
         search_panel.repaint();
+         info_panel.dispose();
+        info_panel.repaint();
         search_panel.AddObject(btn_type, 150, 60, 99);
         btn_type.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_ced, 100, 60, -1);
@@ -338,6 +342,8 @@ public class MainDashboard {
         //Panel de busquedas      
         search_panel.dispose();
         search_panel.repaint();
+         info_panel.dispose();
+        info_panel.repaint();
         
         JLabel id2_lbl = new JLabel();
         id2_lbl.setText("Cédula: ");
@@ -363,6 +369,8 @@ public class MainDashboard {
         //Panel de busquedas        
         search_panel.dispose();
         search_panel.repaint();  
+         info_panel.dispose();
+        info_panel.repaint();
         search_panel.AddObject(btn_eliTodos, 135, 60, 407);
         btn_eliTodos.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_eliPsico, 135, 60, 272);
@@ -378,6 +386,8 @@ public class MainDashboard {
         //Metodo para cargar botones al clickear "CURSOS"
         search_panel.dispose();
         search_panel.repaint(); 
+         info_panel.dispose();
+        info_panel.repaint();
         search_panel.AddObject(btn_mosCurso, 135, 60, -1);
         btn_mosCurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_eliminar, 120, 60, 123);
@@ -390,6 +400,8 @@ public class MainDashboard {
     public void BtnJustificacion() {
         search_panel.dispose();
         search_panel.repaint();
+         info_panel.dispose();
+        info_panel.repaint();
         search_panel.AddObject(btn_justi, 140, 60, 129);
         btn_justi.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_justi_print, 130, 60, -1);
@@ -400,6 +412,8 @@ public class MainDashboard {
     public void BtnReportes() {
         search_panel.dispose();
         search_panel.repaint();
+        info_panel.dispose();
+        info_panel.repaint();
         search_panel.AddObject(btn_report_diario, 120, 60, 240);
         btn_report_diario.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_report_semanal, 120, 60, 120);

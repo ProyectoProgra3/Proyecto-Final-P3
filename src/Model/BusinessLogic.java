@@ -443,19 +443,19 @@ public class BusinessLogic {
      * celular , String email
      * @return True si se inserta correctamente false si existe algun problema
      */
-//    public boolean modifyEnProceso(String id,String Tipo, String estado) {
-//
-//        ArrayList<Object> objs1 = new ArrayList<>();
-//        objs1.addAll(Arrays.asList(id, Nombre, Apellido, Carnet, celular, email, id));
-//        boolean result = sql.exec("UPDATE `icompone_mario`.`Psicologo` SET `idPsicologo`= ?, `Nombre`= ? , `Apellido`=? , `Carnet`= ?, `Celular`= ?, `Email`= ? WHERE  `idPsicologo`= ?;", objs1);
-//        if (result) {
-//            JOptionPane.showMessageDialog(null, "Se modifico correctamente");
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
-//        }
-//        return result;
-//
-//    }
+    public boolean modifyEnProceso(String id,String Tipo, String estado) {
+
+        ArrayList<Object> objs1 = new ArrayList<>();
+        objs1.addAll(Arrays.asList(id,Tipo, estado));
+        boolean result = sql.exec("UPDATE `icompone_mario`.`Persona` SET `Estado`= ?, `Nombre`= ? , `Apellido`=? , `Carnet`= ?, `Celular`= ?, `Email`= ? WHERE  `idPsicologo`= ?;", objs1);
+        if (result) {
+            JOptionPane.showMessageDialog(null, "Se modifico correctamente");
+        } else {
+            JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
+        }
+        return result;
+
+    }
 
 
     /**
