@@ -163,6 +163,7 @@ public class MainDashboard {
     public iComboCheckBox pareja_tipo_cbm;
     ///FAMILIA///
     public iTextField familia_id_txt = new iTextField("", 6);
+    public iTextField familia_nombre_txt = new iTextField("", 6);
     public iTextField familia_apellido_txt = new iTextField("", 6);
     public iTextField familia_integrantes_txt = new iTextField("", 6);
     public iTextField familia_edad_txt = new iTextField("", 6);
@@ -984,6 +985,10 @@ public class MainDashboard {
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel nombre_lbl = new JLabel();
+        nombre_lbl.setText("Nombre: ");
+        nombre_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel apellido_lbl = new JLabel();
         apellido_lbl.setText("Apellidos: ");
@@ -1050,6 +1055,10 @@ public class MainDashboard {
         
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(familia_id_txt, 150, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
+        info_panel.AddObject(familia_nombre_txt, 150, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(apellido_lbl, 80, 20, LEFT);
