@@ -145,7 +145,7 @@ public class MainDashboard {
     public iTextField pareja_id_txt = new iTextField("", 6);
     public iTextField pareja2_id_txt = new iTextField("", 6);
     public iTextField pareja_apellido_txt = new iTextField("", 6);
-    public iTextField pareja2_apellido_txt = new iTextField("", 6);
+    public iTextField pareja_nombre_txt = new iTextField("", 6);
     public iTextField pareja_edad_txt = new iTextField("", 6);
     public iTextField pareja2_edad_txt = new iTextField("", 6);
     public iTextField pareja_referencia_txt = new iTextField("", 6);
@@ -839,17 +839,13 @@ public class MainDashboard {
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
 
-        JLabel id_lbl2 = new JLabel();
-        id_lbl2.setText("ID: ");
-        id_lbl2.setForeground(new Color(156, 156, 156));
-
         JLabel apellido_lbl = new JLabel();
         apellido_lbl.setText("Apellidos: ");
         apellido_lbl.setForeground(new Color(156, 156, 156));
 
-        JLabel edad_lbl = new JLabel();
-        edad_lbl.setText("Edad: ");
-        edad_lbl.setForeground(new Color(156, 156, 156));
+        JLabel nombre_lbl = new JLabel();
+        nombre_lbl.setText("Nombre: ");
+        nombre_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel edad_lbl2 = new JLabel();
         edad_lbl2.setText("Edad: ");
@@ -922,7 +918,11 @@ public class MainDashboard {
         info_panel.AddObject(pareja_apellido_txt, 400, 20, LEFT);
         info_panel.newLine();
 
-        info_panel.AddObject(edad_lbl, 80, 20, LEFT);
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
+        info_panel.AddObject(pareja_nombre_txt, 150, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(edad_lbl2, 80, 20, LEFT);
         info_panel.AddObject(pareja_edad_txt, 150, 20, LEFT);
         info_panel.newLine();
 
