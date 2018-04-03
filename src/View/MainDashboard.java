@@ -197,12 +197,13 @@ public class MainDashboard {
     public iComboCheckBox modificar_persona_clase_cbm;
 
     ///////////////////////AGREGAR PSICOLOGO
-    public iTextField txt_nombre_psicologo = new iTextField("", 6);
-    public iTextField txt_apellidos_psicologo = new iTextField("", 6);
-    public iTextField txt_carnet_psicologo = new iTextField("", 6);
+    public iTextField nombre_psicologo_txt = new iTextField("", 6);
+    public iTextField apellidos_psicologo_txt = new iTextField("", 6);
+    public iTextField carnet_psicologo_txt= new iTextField("", 6);
     public iButtonFake btn_agregar_psicologo = new iButtonFake("Agregar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     //////////////////////ELIMINAR PSICOLOGO
-    public iTextField txt_psicologo_eliminar = new iTextField("", 6);
+    public iTextField eliminar_nombre_psicologo_txt = new iTextField("", 6);
+    public iTextField eliminar_apellidos_psicologo_txt = new iTextField("", 6);
     public iButtonFake btn_psicologo_eliminar = new iButtonFake("Eliminar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     /////////////////////AGREGAR CURSO
     public iTextField nombre_curso_txt = new iTextField("", 6);
@@ -383,9 +384,9 @@ public class MainDashboard {
         info_panel.repaint();
         search_panel.AddObject(btn_mosCurso, 135, 60, -1);
         btn_mosCurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_eliminar, 120, 60, 123);
+        search_panel.AddObject(btn_eliminar, 135, 60, 271);
         btn_eliminar.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_agrcurso, 120, 60, -1);
+        search_panel.AddObject(btn_agrcurso, 135, 60, 135);
         btn_agrcurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
     }
@@ -1267,31 +1268,52 @@ public class MainDashboard {
         btn_agregar_psicologo.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
 
         info_panel.AddObject(lbl_NombrePsicologo, 80, 20, LEFT);
-        info_panel.AddObject(txt_nombre_psicologo, 160, 20, LEFT);
+        info_panel.AddObject(nombre_psicologo_txt, 160, 20, LEFT);
 
-        info_panel.AddObject(lbl_ApellidosPsicologo, 60, 20, LEFT);
-        info_panel.AddObject(txt_apellidos_psicologo, 160, 20, LEFT);
+        info_panel.AddObject(lbl_ApellidosPsicologo, 80, 20, LEFT);
+        info_panel.AddObject(apellidos_psicologo_txt, 160, 20, LEFT);
         info_panel.newLine();
 
-        info_panel.AddObject(lbl_carnet, 60, 20, LEFT);
-        info_panel.AddObject(txt_carnet_psicologo, 160, 20, LEFT);
+        info_panel.AddObject(lbl_carnet, 80, 20, LEFT);
+        info_panel.AddObject(carnet_psicologo_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+         info_panel.AddObject(btn_agregar_psicologo, 130, 40, CENTER);
         info_panel.newLine();
     }
-
+    
     public void Eliminar_Psicologo() {
         info_panel.dispose();
         info_panel.repaint();
 
+        JLabel lbl_titulo = new JLabel();
+        lbl_titulo.setText("Digite el psicologo a eliminar: ");
+        lbl_titulo.setForeground(new Color(156, 156, 156));
+        
         JLabel lbl_nombreEliminar = new JLabel();
-        lbl_nombreEliminar.setText("Digite el nombre del psicologo a eliminar: ");
+        lbl_nombreEliminar.setText("Nombre: ");
         lbl_nombreEliminar.setForeground(new Color(156, 156, 156));
+        
+        JLabel lbl_apellidoEliminar = new JLabel();
+        lbl_apellidoEliminar.setText("Apellido: ");
+        lbl_apellidoEliminar.setForeground(new Color(156, 156, 156));
 
         btn_psicologo_eliminar.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
 
-        info_panel.AddObject(lbl_nombreEliminar, 80, 20, LEFT);
-        info_panel.AddObject(txt_psicologo_eliminar, 80, 20, LEFT);
+        info_panel.AddObject(lbl_titulo,250,20,LEFT);
         info_panel.newLine();
-    }
+        
+        info_panel.AddObject(lbl_nombreEliminar, 60, 20, LEFT);
+        info_panel.AddObject(eliminar_nombre_psicologo_txt, 200, 20, LEFT);
+        
+        info_panel.AddObject(lbl_apellidoEliminar, 60, 20, LEFT);
+        info_panel.AddObject(eliminar_apellidos_psicologo_txt, 200, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(btn_psicologo_eliminar, 130, 40, CENTER);
+        info_panel.newLine();
+    } 
+   
 
     public void Agregar_Curso() {
         info_panel.dispose();
@@ -1308,27 +1330,37 @@ public class MainDashboard {
         ///////////////////////////////
         btn_agregar_curso.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
 
-        info_panel.AddObject(lbl_nombreCurso, 80, 20, LEFT);
+        info_panel.AddObject(lbl_nombreCurso, 100, 20, LEFT);
         info_panel.AddObject(nombre_curso_txt, 160, 20, LEFT);
         info_panel.newLine();
 
-        info_panel.AddObject(lbl_siglasCurso, 80, 20, LEFT);
+        info_panel.AddObject(lbl_siglasCurso, 100, 20, LEFT);
         info_panel.AddObject(siglas_curso_txt, 160, 20, LEFT);
         info_panel.newLine();
-    }
-
-    public void Eliminar_Curso() {
-        info_panel.dispose();
-        info_panel.repaint();
-        JLabel lbl_cursoEliminar = new JLabel();
-        lbl_cursoEliminar.setText("Digite el curso a eliminar: ");
-        lbl_cursoEliminar.setForeground(new Color(156, 156, 156));
-        btn_curso_eliminar.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
-        info_panel.AddObject(lbl_cursoEliminar, 80, 20, LEFT);
-        info_panel.AddObject(curso_eliminar_txt, 80, 20, LEFT);
+        
+        info_panel.AddObject(btn_agregar_curso, 130, 40, CENTER);
         info_panel.newLine();
     }
 
+     public void Eliminar_Curso() {
+        info_panel.dispose();
+        info_panel.repaint();
+        
+        JLabel lbl_titulo = new JLabel();
+        lbl_titulo.setText("Digite el curso a eliminar: ");
+        lbl_titulo.setForeground(new Color(156, 156, 156));
+        
+        
+        btn_curso_eliminar.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
+        
+        info_panel.AddObject(lbl_titulo, 150, 20, LEFT);
+        info_panel.AddObject(curso_eliminar_txt, 150, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(btn_curso_eliminar, 130, 40, CENTER);
+        info_panel.newLine();
+    }
+     
     public void Generar_Justificaccion() {
       // Hay que revisarlo para solo agregar el word 
         
