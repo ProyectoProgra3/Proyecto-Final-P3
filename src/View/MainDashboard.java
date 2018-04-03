@@ -68,7 +68,7 @@ public class MainDashboard {
     // Botones  modificar 
     public iTextField modificar_persona_txt = new iTextField("", 6);
     public iComboCheckBox modificar_persona_cbm;
-    public iButtonFake btn_modificar_persona = new iButtonFake("Buscar", " Persona", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+    public iButtonFake btn_buscar_modificar_persona = new iButtonFake("Buscar", " Persona", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
     // BOTONES Psicologis 
     public iButtonFake btn_mosPsico = new iButtonFake("Mostar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.VISIBILITY);
@@ -352,8 +352,8 @@ public class MainDashboard {
         search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
         search_panel.AddObject(modificar_persona_cbm, 120, 32, LEFT);
 
-        search_panel.AddObject(btn_modificar_persona, 120, 30, 1);
-        btn_modificar_persona.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        search_panel.AddObject(btn_buscar_modificar_persona, 120, 30, 1);
+        btn_buscar_modificar_persona.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
 
     }
@@ -1120,7 +1120,9 @@ public class MainDashboard {
 
 ////////////////////MODIFICAR PERSONA////////////////////////
     public void Modificar_persona_buscar() {
-
+        info_panel.dispose();
+        info_panel.repaint();
+        
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -1231,7 +1233,7 @@ public class MainDashboard {
 
         info_panel.AddObject(detalle_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_detalle_txt, 400, 20, LEFT);
-        info_panel.AddObject(btn_modificar_persona, 100, 60, LEFT);
+        info_panel.AddObject(btn_guardar_modificar_persona, 100, 60, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(combo_lbl, 80, 20, LEFT);
