@@ -1330,6 +1330,8 @@ public class MainDashboard {
     }
 
     public void Generar_Justificaccion() {
+      // Hay que revisarlo para solo agregar el word 
+        
         info_panel.dispose();
         info_panel.repaint();
 
@@ -1375,9 +1377,4 @@ public class MainDashboard {
         info_panel.AddObject(hotario_justi_txt, 80, 20, LEFT);
         info_panel.newLine();
     }
-
-    public void Imprimi_justificacion() {
-
-    }
-
 }
