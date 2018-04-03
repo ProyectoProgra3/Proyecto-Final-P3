@@ -456,6 +456,12 @@ public class BusinessLogic {
         return result;
 
     }
+    public boolean modifyPersona(String ID, String Estado, String Nombre, String Apellido, int edad,
+            int telefono, String Ocupacion, String Motivo, String Referencia,
+            String Detalle_Horario, String email, String detalle, String NombreSolicitante, String Direccion){
+        
+    return true;
+    }
 
 
     /**
