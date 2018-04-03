@@ -204,30 +204,27 @@ public class MainDashboard {
     public iTextField txt_psicologo_eliminar = new iTextField("", 6);
     public iButtonFake btn_psicologo_eliminar = new iButtonFake("Eliminar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     /////////////////////AGREGAR CURSO
-    public iTextField txt_nombre_curso = new iTextField("", 6);
-    public iTextField txt_siglas_curso = new iTextField("", 6);
+    public iTextField nombre_curso_txt = new iTextField("", 6);
+    public iTextField siglas_curso_txt = new iTextField("", 6);
     public iButtonFake btn_agregar_curso = new iButtonFake("Agregar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     ////////////////////ELIMINAR CURSO
-    public iTextField txt_curso_eliminar = new iTextField("", 6);
+    public iTextField curso_eliminar_txt = new iTextField("", 6);
     public iButtonFake btn_curso_eliminar = new iButtonFake("Eliminar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 ////////////   generar Justificacion 
-    public iTextField txt_generar_justi = new iTextField("", 6);
-    public iTextField txt_nombre_justi = new iTextField("", 6);
-    public iTextField txt_apellidos_justi = new iTextField("", 6);
-    public iTextField txt_cedula_justi = new iTextField("", 6);
-    public iTextField txt_telefono_justi = new iTextField("", 6);
-    public iTextField txt_hotario_justi = new iTextField("", 6);
-   ;
-
+    public iTextField generar_justi_txt = new iTextField("", 6);
+    public iTextField nombre_justi_txt = new iTextField("", 6);
+    public iTextField apellidos_justi_txt = new iTextField("", 6);
+    public iTextField cedula_justi_txt = new iTextField("", 6);
+    public iTextField telefono_justi_txt = new iTextField("", 6);
+    public iTextField hotario_justi_txt = new iTextField("", 6);
+    ;
     
-    
-    public iButtonFake btn_generar_justi = new iButtonFake("Eliminar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+    public iButtonFake btn_generar_justi = new iButtonFake("Generar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
 /// imprimir justificion 
- public iTextField txt_imprimir_justi = new iTextField("", 6);
+    public iTextField imprimir_justi_txt = new iTextField("", 6);
     public iButtonFake btn_imprimir_justi = new iButtonFake("Eliminar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
-    
-    
+
     public MainDashboard() {
         //ARRAY DEL COMBOBOX
         ArrayList<String> items = new ArrayList<String>();
@@ -262,14 +259,13 @@ public class MainDashboard {
 
     public void initComponents() {
 
-                
-        ImageIcon logo_menu = new ImageIcon(System.getProperty("user.dir")+("//src//Img//logo_menu.png"));
-        JLabel menu_label = new JLabel(logo_menu);  
-        
-        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir")+("//src//Img//fondo.png"));
+        ImageIcon logo_menu = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//logo_menu.png"));
+        JLabel menu_label = new JLabel(logo_menu);
+
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(150, 60, 400, 400);
-        
+
         //clock
         iClock clock = new iClock(80, 100, 100, 100);
         clock.setForeground(new Color(247, 247, 247));
@@ -306,7 +302,7 @@ public class MainDashboard {
         //Metodo para cargar botones al clickear "AGREGAR SOLICITUD"    
         search_panel.dispose();
         search_panel.repaint();
-         info_panel.dispose();
+        info_panel.dispose();
         info_panel.repaint();
         search_panel.AddObject(btn_fam, 100, 60, 425);
         btn_fam.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
@@ -327,7 +323,7 @@ public class MainDashboard {
         //Metodo para cargar botones al clickear "CITAS"
         search_panel.dispose();
         search_panel.repaint();
-         info_panel.dispose();
+        info_panel.dispose();
         info_panel.repaint();
         search_panel.AddObject(btn_type, 150, 60, 99);
         btn_type.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
@@ -342,9 +338,8 @@ public class MainDashboard {
         //Panel de busquedas      
         search_panel.dispose();
         search_panel.repaint();
-         info_panel.dispose();
+        info_panel.dispose();
         info_panel.repaint();
-        
 
         JLabel id2_lbl = new JLabel();
         id2_lbl.setText("Cédula: ");
@@ -368,8 +363,8 @@ public class MainDashboard {
     public void BtnPsicologos() {
         //Panel de busquedas        
         search_panel.dispose();
-        search_panel.repaint();  
-         info_panel.dispose();
+        search_panel.repaint();
+        info_panel.dispose();
         info_panel.repaint();
         search_panel.AddObject(btn_eliTodos, 135, 60, 407);
         btn_eliTodos.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
@@ -385,8 +380,8 @@ public class MainDashboard {
     public void BtnCurso() {
         //Metodo para cargar botones al clickear "CURSOS"
         search_panel.dispose();
-        search_panel.repaint(); 
-         info_panel.dispose();
+        search_panel.repaint();
+        info_panel.dispose();
         info_panel.repaint();
         search_panel.AddObject(btn_mosCurso, 135, 60, -1);
         btn_mosCurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
@@ -400,7 +395,7 @@ public class MainDashboard {
     public void BtnJustificacion() {
         search_panel.dispose();
         search_panel.repaint();
-         info_panel.dispose();
+        info_panel.dispose();
         info_panel.repaint();
         search_panel.AddObject(btn_justi, 140, 60, 129);
         btn_justi.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
@@ -1287,11 +1282,11 @@ public class MainDashboard {
         btn_agregar_curso.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
 
         info_panel.AddObject(lbl_nombreCurso, 80, 20, LEFT);
-        info_panel.AddObject(txt_nombre_curso, 160, 20, LEFT);
+        info_panel.AddObject(nombre_curso_txt, 160, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(lbl_siglasCurso, 80, 20, LEFT);
-        info_panel.AddObject(txt_siglas_curso, 160, 20, LEFT);
+        info_panel.AddObject(siglas_curso_txt, 160, 20, LEFT);
         info_panel.newLine();
     }
 
@@ -1303,7 +1298,7 @@ public class MainDashboard {
         lbl_cursoEliminar.setForeground(new Color(156, 156, 156));
         btn_curso_eliminar.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         info_panel.AddObject(lbl_cursoEliminar, 80, 20, LEFT);
-        info_panel.AddObject(txt_curso_eliminar, 80, 20, LEFT);
+        info_panel.AddObject(curso_eliminar_txt, 80, 20, LEFT);
         info_panel.newLine();
     }
 
@@ -1315,7 +1310,7 @@ public class MainDashboard {
         lbl_tituloJust.setText("Justificacion");
 
         JLabel lbl_Justificacion = new JLabel();
-        
+
         JLabel lbl_nombre = new JLabel();
         lbl_nombre.setText("Digite el  Nombre Pacinete ");
         lbl_nombre.setForeground(new Color(156, 156, 156));
@@ -1331,37 +1326,31 @@ public class MainDashboard {
         JLabel lbl_telefono = new JLabel();
         lbl_telefono.setText("Digite el Telefono del Paciente");
         lbl_telefono.setForeground(new Color(156, 156, 156));
-        
+
         JLabel lbl_horario = new JLabel();
         lbl_horario.setText("Digite el Horario de cita");
         lbl_horario.setForeground(new Color(156, 156, 156));
-        
-         
+
         btn_generar_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
-       
+
         info_panel.AddObject(lbl_Justificacion, 80, 20, LEFT);
-        info_panel.AddObject(txt_generar_justi, 80, 20, LEFT);
-        
-         info_panel.AddObject(lbl_nombre, 80, 20, LEFT);
-        info_panel.AddObject(txt_nombre_justi, 80, 20, LEFT);
-         info_panel.AddObject(lbl_Apellidos, 80, 20, LEFT);
-        info_panel.AddObject(txt_apellidos_justi, 80, 20, LEFT);
-         info_panel.AddObject(lbl_cedula, 80, 20, LEFT);
-        info_panel.AddObject(txt_cedula_justi, 80, 20, LEFT);
-         info_panel.AddObject(lbl_telefono, 80, 20, LEFT);
-        info_panel.AddObject(txt_telefono_justi, 80, 20, LEFT);
-         info_panel.AddObject(lbl_horario, 80, 20, LEFT);
-        info_panel.AddObject(txt_hotario_justi, 80, 20, LEFT);       
+        info_panel.AddObject(generar_justi_txt, 80, 20, LEFT);
+
+        info_panel.AddObject(lbl_nombre, 80, 20, LEFT);
+        info_panel.AddObject(nombre_justi_txt, 80, 20, LEFT);
+        info_panel.AddObject(lbl_Apellidos, 80, 20, LEFT);
+        info_panel.AddObject(apellidos_justi_txt, 80, 20, LEFT);
+        info_panel.AddObject(lbl_cedula, 80, 20, LEFT);
+        info_panel.AddObject(cedula_justi_txt, 80, 20, LEFT);
+        info_panel.AddObject(lbl_telefono, 80, 20, LEFT);
+        info_panel.AddObject(telefono_justi_txt, 80, 20, LEFT);
+        info_panel.AddObject(lbl_horario, 80, 20, LEFT);
+        info_panel.AddObject(hotario_justi_txt, 80, 20, LEFT);
         info_panel.newLine();
     }
-public void Imprimi_justificacion(){
-    
-}
-    
-    
-    
-    
-    
-    
-    
+
+    public void Imprimi_justificacion() {
+
+    }
+
 }
