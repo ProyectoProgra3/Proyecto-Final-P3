@@ -421,10 +421,14 @@ public class MainDashboard {
 ///METODOS PARA BOTONES DEL PANEL DE BUSQUEDAS////  
 //////////////////////////////////////////////////
 /////////////////////AGREGAR SOLICITUD//////////////////////////////    
-    public void Agregar_solicitud_niño() {
+   public void Agregar_solicitud_niño() {
         info_panel.dispose();
         info_panel.repaint();
 
+        JLabel titulo_lbl = new JLabel();
+        titulo_lbl.setText("- Modulo Agregar Niño -");
+        titulo_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -489,7 +493,10 @@ public class MainDashboard {
 
         btn_agregar_niño.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         //////////////////////////////////////////////////////////////////////////////      
+        info_panel.AddObject(titulo_lbl, 200, 20, CENTER);
+        info_panel.newLine();
 
+        
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(nid_txt, 160, 20, LEFT);
         info_panel.newLine();
@@ -555,6 +562,10 @@ public class MainDashboard {
         info_panel.dispose();
         info_panel.repaint();
 
+        JLabel titulo_lbl = new JLabel();
+        titulo_lbl.setText("- Modulo Agregar Adolescente -");
+        titulo_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -619,7 +630,9 @@ public class MainDashboard {
 
         btn_agregar_adolescente.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         //////////////////////////////////////////////////////////////////////////////      
-
+        info_panel.AddObject(titulo_lbl, 200, 20, CENTER);
+        info_panel.newLine();
+        
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(adolescente_id_txt, 160, 20, LEFT);
         info_panel.newLine();
@@ -685,6 +698,10 @@ public class MainDashboard {
         info_panel.dispose();
         info_panel.repaint();
 
+        JLabel titulo_lbl = new JLabel();
+        titulo_lbl.setText("- Modulo Agregar Adulto -");
+        titulo_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -749,7 +766,9 @@ public class MainDashboard {
 
         btn_agregar_adulto.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         //////////////////////////////////////////////////////////////////////////////      
-
+        info_panel.AddObject(titulo_lbl, 200, 20, CENTER);
+        info_panel.newLine();
+        
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(adulto_id_txt, 160, 20, LEFT);
         info_panel.newLine();
@@ -815,6 +834,10 @@ public class MainDashboard {
         info_panel.dispose();
         info_panel.repaint();
 
+        JLabel titulo_lbl = new JLabel();
+        titulo_lbl.setText("- Modulo Agregar Pareja -");
+        titulo_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -891,12 +914,11 @@ public class MainDashboard {
 
         btn_agregar_pareja.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         //////////////////////////////////////////////////////////////////////////////      
-
+        info_panel.AddObject(titulo_lbl, 200, 20, CENTER);
+        info_panel.newLine();
+        
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(pareja_id_txt, 150, 20, LEFT);
-
-        info_panel.AddObject(id_lbl2, 80, 20, LEFT);
-        info_panel.AddObject(pareja2_id_txt, 150, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(apellido_lbl, 80, 20, LEFT);
@@ -905,9 +927,6 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(pareja_edad_txt, 150, 20, LEFT);
-
-        info_panel.AddObject(edad_lbl2, 80, 20, LEFT);
-        info_panel.AddObject(pareja2_edad_txt, 150, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
@@ -916,9 +935,6 @@ public class MainDashboard {
 
         info_panel.AddObject(ocupacion_lbl, 80, 20, LEFT);
         info_panel.AddObject(pareja_ocupacion_txt, 150, 20, LEFT);
-
-        info_panel.AddObject(ocupacion_lbl2, 80, 20, LEFT);
-        info_panel.AddObject(pareja2_ocupacion_txt, 150, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(direccion_lbl, 80, 20, LEFT);
@@ -927,9 +943,6 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(pareja_telefono_txt, 150, 20, LEFT);
-
-        info_panel.AddObject(telefono_lbl2, 80, 20, LEFT);
-        info_panel.AddObject(pareja2_telefono_txt, 150, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(email_lbl, 80, 20, LEFT);
@@ -966,7 +979,11 @@ public class MainDashboard {
     public void Agregar_solicitud_familia() {
         info_panel.dispose();
         info_panel.repaint();
-
+        
+        JLabel titulo_lbl = new JLabel();
+        titulo_lbl.setText("- Modulo Agregar Familia -");
+        titulo_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -1031,7 +1048,9 @@ public class MainDashboard {
 
         btn_agregar_familia.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         //////////////////////////////////////////////////////////////////////////////      
-
+        info_panel.AddObject(titulo_lbl, 200, 20, CENTER);
+        info_panel.newLine();
+        
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(familia_id_txt, 150, 20, LEFT);
         info_panel.newLine();
