@@ -83,7 +83,7 @@ public class MainDashboard {
 
     //Botones justificacion
     public iButtonFake btn_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INSERT_CHART);
-    public iButtonFake btn_justi_print = new iButtonFake("Imprimir", "Imprimir justificación", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRINT);
+    /* public iButtonFake btn_justi_print = new iButtonFake("Imprimir", "Imprimir justificación", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRINT);*/
 
     //Boton Reportes
     public iButtonFake btn_report_diario = new iButtonFake("Diario", "Reporte Diario", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.TODAY);
@@ -218,12 +218,9 @@ public class MainDashboard {
     public iTextField telefono_justi_txt = new iTextField("", 6);
     public iTextField hotario_justi_txt = new iTextField("", 6);
     ;
-    
-    public iButtonFake btn_generar_justi = new iButtonFake("Generar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+     public iButtonFake btn_Imprimir_justi = new iButtonFake("Imprimir Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
-/// imprimir justificion 
-    public iTextField imprimir_justi_txt = new iTextField("", 6);
-    public iButtonFake btn_imprimir_justi = new iButtonFake("Eliminar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+    public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
     public MainDashboard() {
         //ARRAY DEL COMBOBOX
@@ -399,8 +396,8 @@ public class MainDashboard {
         info_panel.repaint();
         search_panel.AddObject(btn_justi, 140, 60, 129);
         btn_justi.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_justi_print, 130, 60, -1);
-        btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
+        btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
         search_panel.newLine();
     }
 
@@ -1351,7 +1348,7 @@ public class MainDashboard {
         lbl_horario.setForeground(new Color(156, 156, 156));
 
         btn_generar_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
-
+        btn_Imprimir_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         info_panel.AddObject(lbl_Justificacion, 80, 20, LEFT);
         info_panel.AddObject(generar_justi_txt, 80, 20, LEFT);
 
