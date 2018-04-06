@@ -224,8 +224,8 @@ public class MainDashboard {
     public iTextField cedula_justi_txt = new iTextField("", 6);
     public iTextField telefono_justi_txt = new iTextField("", 6);
     public iTextField hotario_justi_txt = new iTextField("", 6);
-    ;
-     public iButtonFake btn_Imprimir_justi = new iButtonFake("Imprimir Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+    
+    public iButtonFake btn_Imprimir_justi = new iButtonFake("Imprimir Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
@@ -272,7 +272,7 @@ public class MainDashboard {
 
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
-        fondo_label.setBounds(150, 60, 400, 400);
+        fondo_label.setBounds(110, 30, 400, 400);
 
         //clock
         iClock clock = new iClock(80, 100, 100, 100);
