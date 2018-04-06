@@ -449,8 +449,8 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        search_panel.AddObject(btn_justi, 140, 60, 2);
-        btn_justi.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        search_panel.AddObject(btn_justi, 140, 60, CENTER);
+    
         /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
         btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
         search_panel.newLine();
