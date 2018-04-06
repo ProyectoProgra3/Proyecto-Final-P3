@@ -197,6 +197,9 @@ public class MainDashboard {
     public iTextField modificar_persona_expediente_txt = new iTextField("", 6);
     public iButtonFake btn_guardar_modificar_persona = new iButtonFake("Guardar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox modificar_persona_clase_cbm;
+    public iComboCheckBox modificar_persona_tipo_cbm;
+    public iComboCheckBox modificar_persona_curso_cbm;
+    public iComboCheckBox modificar_persona_psicologo_cbm;
 
     ///////////////////////AGREGAR PSICOLOGO
     public iTextField nombre_psicologo_txt = new iTextField("", 6);
@@ -255,6 +258,9 @@ public class MainDashboard {
         familia_tipo_cbm = new iComboCheckBox(items);
         modificar_persona_cbm = new iComboCheckBox(items);
         modificar_persona_clase_cbm  = new iComboCheckBox(items);
+        modificar_persona_tipo_cbm = new iComboCheckBox(items);
+        modificar_persona_curso_cbm = new iComboCheckBox(items);
+        modificar_persona_psicologo_cbm = new iComboCheckBox(items);
 
         initComponents();
     }
@@ -1191,6 +1197,18 @@ public class MainDashboard {
         combo_lbl.setText("Clase: ");
         combo_lbl.setForeground(new Color(156, 156, 156));
 
+        JLabel combo2_lbl = new JLabel();
+        combo2_lbl.setText("Tipo: ");
+        combo2_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel combo3_lbl = new JLabel();
+        combo3_lbl.setText("Curso: ");
+        combo3_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel combo4_lbl = new JLabel();
+        combo4_lbl.setText("Psicólogo: ");
+        combo4_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel clock2_lbl = new JLabel();
         clock2_lbl.setText("Registro: ");
         clock2_lbl.setForeground(new Color(156, 156, 156));
@@ -1200,14 +1218,14 @@ public class MainDashboard {
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_id_txt, 160, 20, LEFT);
 
-        info_panel.AddObject(expediente_lbl, 80, 20, LEFT);
+        info_panel.AddObject(expediente_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_persona_expediente_txt, 160, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_nombre_txt, 160, 20, LEFT);
 
-        info_panel.AddObject(apellido_lbl, 80, 20, LEFT);
+        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_persona_apellido_txt, 160, 20, LEFT);
         info_panel.newLine();
 
@@ -1252,13 +1270,23 @@ public class MainDashboard {
 
         info_panel.AddObject(detalle_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_detalle_txt, 400, 20, LEFT);
-        info_panel.AddObject(btn_guardar_modificar_persona, 100, 60, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(combo_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_clase_cbm, 160, 20, LEFT);
+ 
+        info_panel.AddObject(combo2_lbl, 60, 20, LEFT);
+        info_panel.AddObject(modificar_persona_tipo_cbm, 160, 20, LEFT);
         info_panel.newLine();
-
+        
+        info_panel.AddObject(combo3_lbl, 80, 20, LEFT);
+        info_panel.AddObject(modificar_persona_curso_cbm, 160, 20, LEFT);
+        
+        info_panel.AddObject(combo4_lbl, 60, 20, LEFT);
+        info_panel.AddObject(modificar_persona_psicologo_cbm, 160, 20, LEFT);
+        info_panel.AddObject(btn_guardar_modificar_persona, 100, 60, LEFT);
+        info_panel.newLine();
+        
         info_panel.AddObject(clock2_lbl, 80, 20, LEFT);
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
