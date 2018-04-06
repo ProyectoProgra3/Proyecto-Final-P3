@@ -252,6 +252,7 @@ public class MainDashboard {
         pareja_tipo_cbm = new iComboCheckBox(items);
         familia_tipo_cbm = new iComboCheckBox(items);
         modificar_persona_cbm = new iComboCheckBox(items);
+        modificar_persona_clase_cbm  = new iComboCheckBox(items);
 
         initComponents();
     }
@@ -1238,7 +1239,7 @@ public class MainDashboard {
         info_panel.newLine();
 
         info_panel.AddObject(combo_lbl, 80, 20, LEFT);
-        info_panel.AddObject(modificar_persona_cbm, 160, 20, LEFT);
+        info_panel.AddObject(modificar_persona_clase_cbm, 160, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(clock2_lbl, 80, 20, LEFT);

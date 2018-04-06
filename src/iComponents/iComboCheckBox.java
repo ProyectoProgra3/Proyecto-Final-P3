@@ -36,7 +36,8 @@ public class iComboCheckBox extends JComboBox {
         @Override
         protected ComboPopup createPopup() {
             BasicComboPopup bcp = (BasicComboPopup) super.createPopup();
-            bcp.setBorder(BorderFactory.createLineBorder(new Color(206, 212, 218), 1));
+            bcp.setBorder(BorderFactory.createLineBorder(new Color(106, 203, 214), 2));
+            bcp.setBackground(new Color(106, 203, 214));
             return bcp;
         }
     }
@@ -122,8 +123,8 @@ public class iComboCheckBox extends JComboBox {
                 } else {
                     label.setText(value.toString());
                     label.setPreferredSize(new Dimension(label.getPreferredSize().width, 34));
-                    label.setBackground(Color.white);
-                    //label.setBorder(BorderFactory.createLineBorder(Color.yellow));
+                    //label.setBackground(Color.white);
+                    //label.setBorder(BorderFactory.createLineBorder(new Color(162, 202, 202)));
 
                 }
                 return label;
