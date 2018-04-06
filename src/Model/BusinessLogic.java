@@ -12,12 +12,9 @@ import java.util.Arrays;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-public class BusinessLogic {
-
-    public SQL sql;
+public class BusinessLogic extends InitModel {
 
     public BusinessLogic() {
-        this.sql = new SQL();
 
     }
 
@@ -40,11 +37,19 @@ public class BusinessLogic {
      * @param
      * @return ResultSet con los cursos de la base de datos
      */
-    public ResultSet SearchCursos() {
+    public ArrayList SearchCursos() {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             ResultSet rs = sql.SELECT("SELECT `Nombre` FROM Curso ", objs);
-            return rs;
+            objs.clear();
+            try {
+                while (rs.next()) {
+                    objs.add(rs.getObject("Nombre"));
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
             return null;
@@ -57,11 +62,66 @@ public class BusinessLogic {
      * @param
      * @return Resultset con los estados de la base de datos
      */
-    public ResultSet SearchEstados() {
+    public ArrayList SearchEstados() {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             ResultSet rs = sql.SELECT("SELECT `Estado` FROM Estado ", objs);
-            return rs;
+            try {
+                while (rs.next()) {
+                    objs.add(rs.getObject("Estado"));
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+            return null;
+        }
+    }
+
+    /**
+     * Busca los psicologos
+     *
+     * @param
+     * @return ArrayList con los psicologos de la base de datos
+     */
+    public ArrayList SearchPsicologos() {
+        try {
+            ArrayList<Object> objs = new ArrayList<>();
+            ResultSet rs = sql.SELECT("SELECT `Nombre` FROM Psicologo ", objs);
+            try {
+                while (rs.next()) {
+                    objs.add(rs.getObject("Nombre"));
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+            return null;
+        }
+    }
+
+    /**
+     * Busca los tipo de solicitud
+     *
+     * @param
+     * @return ArrayList con los tipos de la base de datos
+     */
+    public ArrayList SearchTipo() {
+        try {
+            ArrayList<Object> objs = new ArrayList<>();
+            ResultSet rs = sql.SELECT("SELECT `Tipo de solicitud` FROM Tipo_de_solicitud ", objs);
+            try {
+                while (rs.next()) {
+                    objs.add(rs.getObject("Tipo de solicitud"));
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
             return null;
@@ -149,7 +209,13 @@ public class BusinessLogic {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             objs.addAll(Arrays.asList(Id, Tipo));
-            ResultSet rs = sql.SELECT("SELECT  `ID`,  `Estado_idEstado`,  `Tipo_de_solicitud_idSolicitud`,  `Nombre`,  `Apellido`,  `Edad`,  `Telefono`,  `Ocupacion`,`Motivo`,  `Referencia`,  `Detalle_Horario`,  `Email`,  `Detalle`,  `Fecha_Solicitud`,  `NombreSolicitante`,   `Curso_idCurso`,  `Psicologo_idPsicologo`,  `Cita` ,  `Expediente` FROM `Persona` Where  ID = ? and `Tipo_de_Solicitud_idSolicitud`=(Select `idSolicitud` from `Tipo_de_solicitud` where `Tipo de solicitud` = ? ) ; ", objs);
+            ResultSet rs = sql.SELECT("SELECT  `ID`,  `Estado_idEstado`,  `Tipo_de_solicitud_idSolicitud`, "
+                    + " `Nombre`,  `Apellido`,  `Edad`,  `Telefono`,  `Ocupacion`,`Motivo`,  `Referencia`, "
+                    + " `Detalle_Horario`,  `Email`,  `Detalle`,  `Fecha_Solicitud`,  `NombreSolicitante`,"
+                    + "   `Curso_idCurso`,  `Psicologo_idPsicologo`,  `Cita` ,`Dir`,  "
+                    + "`Expediente` FROM `Persona`"
+                    + " Where  ID = ? and `Tipo_de_Solicitud_idSolicitud`=(Select `idSolicitud` "
+                    + "from `Tipo_de_solicitud` where `Tipo de solicitud` = ? ) ; ", objs);
             return rs;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
@@ -209,20 +275,24 @@ public class BusinessLogic {
     public boolean addPsicologo(String id, String Nombre, String Apellido, String Carnet, int celular, String email) {
         ArrayList<Object> objs = new ArrayList<>();
         objs.addAll(Arrays.asList(id, Nombre));
-        ResultSet rs = sql.SELECT("SELECT `idPsicologo` FROM `Psicologo` Where `idPsicologo`=? and `Nombre`=? ", objs);
-        if (sql.Exists(rs)) {
-            JOptionPane.showMessageDialog(null, "Este psicologo ya existe");
+        try {
+            ResultSet rs = sql.SELECT("SELECT `idPsicologo` FROM `Psicologo` Where `idPsicologo`=? and `Nombre`=? ", objs);
+            if (sql.Exists(rs)) {
+                JOptionPane.showMessageDialog(null, "Este psicologo ya existe");
+                return false;
+            }
+            ArrayList<Object> objs1 = new ArrayList<>();
+            objs1.addAll(Arrays.asList(id, Nombre, Apellido, Carnet, celular, email));
+            boolean result = sql.exec("INSERT INTO `icompone_mario`.`Psicologo` (`idPsicologo`, `Nombre`, `Apellido`, `Carnet`, `Celular`, `Email`) VALUES (?, ?, ?, ?, ?, ?);", objs1);
+            if (result) {
+                JOptionPane.showMessageDialog(null, "Se inserto correctamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
+            }
+            return result;
+        } catch (Exception e) {
             return false;
         }
-        ArrayList<Object> objs1 = new ArrayList<>();
-        objs1.addAll(Arrays.asList(id, Nombre, Apellido, Carnet, celular, email));
-        boolean result = sql.exec("INSERT INTO `icompone_mario`.`Psicologo` (`idPsicologo`, `Nombre`, `Apellido`, `Carnet`, `Celular`, `Email`) VALUES (?, ?, ?, ?, ?, ?);", objs1);
-        if (result) {
-            JOptionPane.showMessageDialog(null, "Se inserto correctamente");
-        } else {
-            JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
-        }
-        return result;
 
     }
 
@@ -435,18 +505,18 @@ public class BusinessLogic {
         }
 
     }
-    
-       /**
+
+    /**
      * Modifica un psicologo en la tabla
      *
      * @param String ID , String Nombre,String Apellido , String Carnet , int
      * celular , String email
      * @return True si se inserta correctamente false si existe algun problema
      */
-    public boolean modifyEnProceso(String id,String Tipo, String estado) {
+    public boolean modifyEnProceso(String id, String Tipo, String estado) {
 
         ArrayList<Object> objs1 = new ArrayList<>();
-        objs1.addAll(Arrays.asList(id,Tipo, estado));
+        objs1.addAll(Arrays.asList(id, Tipo, estado));
         boolean result = sql.exec("UPDATE `icompone_mario`.`Persona` SET `Estado`= ?, `Nombre`= ? , `Apellido`=? , `Carnet`= ?, `Celular`= ?, `Email`= ? WHERE  `idPsicologo`= ?;", objs1);
         if (result) {
             JOptionPane.showMessageDialog(null, "Se modifico correctamente");
@@ -456,13 +526,33 @@ public class BusinessLogic {
         return result;
 
     }
-    public boolean modifyPersona(String ID, String Estado, String Nombre, String Apellido, int edad,
-            int telefono, String Ocupacion, String Motivo, String Referencia,
-            String Detalle_Horario, String email, String detalle, String NombreSolicitante, String Direccion){
-        
-    return true;
-    }
 
+    public boolean modifyPersona(String ID, String Estado, String TipodeSolicitud, String Nombre,
+            String Apellido, int edad, int telefono, String Ocupacion, String Motivo,
+            String Referencia, String Detalle_Horario, String email, String detalle,
+            String NombreSolicitante, String Curso, String Psicologo, String Cita, String Expediente,
+            String Direccion) {
+
+        ArrayList<Object> objs1 = new ArrayList<>();
+        ArrayList<Object> objs = new ArrayList<>();
+        objs.addAll(Arrays.asList(ID, Estado, TipodeSolicitud, Nombre,
+                Apellido, edad, telefono, Ocupacion, Motivo,
+                Referencia, Detalle_Horario, email, detalle,
+                NombreSolicitante, Curso, Psicologo, Cita, Expediente,
+                Direccion));
+        boolean result = sql.exec("UPDATE `icompone_mario`.`Persona` SET `ID`= ?, `Estado_idEstado`=?, "
+                + "`Tipo_de_solicitud_idSolicitud`=?, `Nombre`=?, `Apellido`=?, `Edad`=?, `Telefono`=?, "
+                + "`Ocupacion`=?, `Motivo`=?, `Referencia`=?, `Detalle_Horario`=?, `Email`=?, `Detalle`=?,"
+                + " `NombreSolicitante`=?, `Curso_idCurso`=?, `Psicologo_idPsicologo`=?, `Cita`=?, "
+                + "`Expediente`=?, `Direccion`=? "
+                + "WHERE  `ID`=? AND `Estado_idEstado`=? AND `Tipo_de_solicitud_idSolicitud`=?;", objs1);
+        if (result) {
+            JOptionPane.showMessageDialog(null, "Se modifico correctamente");
+        } else {
+            JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
+        }
+        return result;
+    }
 
     /**
      * Elimina a una persona de la base de datos

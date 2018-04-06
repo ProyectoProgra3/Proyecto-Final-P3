@@ -7,12 +7,12 @@ package Controller;
 
 import View.MainDashboard;
 import Model.BusinessLogic;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -58,17 +58,21 @@ public class ManagerMD implements MouseListener {
         this.md.btn_eliTodos.addMouseListener(this);
         this.md.btn_eliPsico.addMouseListener(this);
         this.md.btn_agrePsico.addMouseListener(this);
+        this.md.btn_agregar_psicologo.addMouseListener(this);
         this.md.btn_mosPsico.addMouseListener(this);
         //cursos
         this.md.btn_curso.addMouseListener(this);
         this.md.btn_mosCurso.addMouseListener(this);
         this.md.btn_agrcurso.addMouseListener(this);
+        this.md.btn_agregar_curso.addMouseListener(this);
+
         this.md.btn_eliminar.addMouseListener(this);
         //justificacion
         this.md.btn_just.addMouseListener(this);
 
         //reportes
         this.md.btn_report.addMouseListener(this);
+        this.md.btn_justi.addMouseListener(this);
 
     }
 
@@ -79,6 +83,7 @@ public class ManagerMD implements MouseListener {
         }
         //nino
         if (md.btn_niño == me.getSource()) {
+
             md.Agregar_solicitud_niño();
         }
         if (md.btn_agregar_niño == me.getSource()) {
@@ -114,15 +119,19 @@ public class ManagerMD implements MouseListener {
         }
         //modificar
         if (md.btn_modif == me.getSource()) {
+            llenar1Modificar();
+            llenarCbModificar();
             md.BtnModificarPersona();
         }
         if (md.btn_buscar_modificar_persona == me.getSource()) {
+
             md.Modificar_persona_buscar();
+            llenarModificar();
         }
-          if (md.btn_guardar_modificar_persona == me.getSource()) {
-  
+        if (md.btn_guardar_modificar_persona == me.getSource()) {
+
         }
-        
+
         //citas
         if (md.btn_citas == me.getSource()) {
             md.Btn_Cita();
@@ -138,13 +147,16 @@ public class ManagerMD implements MouseListener {
             md.BtnPsicologos();
         }
         if (md.btn_eliTodos == me.getSource()) {
-
+//eliminartodos();ya esta no tocar !!!!
         }
         if (md.btn_eliPsico == me.getSource()) {
             md.Eliminar_Psicologo();
         }
         if (md.btn_agrePsico == me.getSource()) {
             md.Agregar_Psicologo();
+        }
+        if (md.btn_agregar_psicologo == me.getSource()) {
+            agregarPsicologo();
         }
         if (md.btn_eliTodos == me.getSource()) {
 
@@ -159,6 +171,9 @@ public class ManagerMD implements MouseListener {
         if (md.btn_agrcurso == me.getSource()) {
             md.Agregar_Curso();
         }
+        if (md.btn_agregar_curso == me.getSource()) {
+            agregarCurso();
+        }
         if (md.btn_eliminar == me.getSource()) {
             md.Eliminar_Curso();
         }
@@ -166,6 +181,9 @@ public class ManagerMD implements MouseListener {
         //justificacion        
         if (md.btn_just == me.getSource()) {
             md.BtnJustificacion();
+        }
+        if (md.btn_justi == me.getSource()) {
+            md.Generar_Justificaccion();
         }
         //reporte
         if (md.btn_report == me.getSource()) {
@@ -179,7 +197,7 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Falta gente ");
             return;
         }
-        this.bl.AgregarSolicitudNiño(md.nid_txt.getText(), md.ntipo_cbm.getSelectedItem().toString(), md.nnombre_txt.getText(), md.napellido_txt.getText(), Integer.parseInt(md.nedad_txt.getText()), Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(), md.nmotivo_txt.getText(), md.nreferencia_txt.getText(), md.nhorario_txt.getText(), md.nemail_txt.getText(), md.ndetalle_txt.getText(), md.nsolicitante_txt.getText(), md.ndireccion_txt.getText());
+        this.bl.AgregarSolicitudNiño(md.nid_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.nnombre_txt.getText(), md.napellido_txt.getText(), Integer.parseInt(md.nedad_txt.getText()), Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(), md.nmotivo_txt.getText(), md.nreferencia_txt.getText(), md.nhorario_txt.getText(), md.nemail_txt.getText(), md.ndetalle_txt.getText(), md.nsolicitante_txt.getText(), md.ndireccion_txt.getText());
     }
 
     public void agregarSolicitudAdolescente() {
@@ -187,7 +205,7 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Falta gente ");
             return;
         }
-        this.bl.AgregarSolicitudAdoslecente(md.adolescente_id_txt.getText(), md.adolescente_tipo_cbm.getSelectedItem().toString(), md.adolescente_nombre_txt.getText(), md.adolescente_apellido_txt.getText(), Integer.parseInt(md.adolescente_telefono_txt.getText()), Integer.parseInt(md.adolescente_edad_txt.getText()), md.adolescente_ocupacion_txt.getText(), md.adolescente_motivo_txt.getText(), md.adolescente_referencia_txt.getText(), md.adolescente_horario_txt.getText(), md.adolescente_email_txt.getText(), md.adolescente_detalle_txt.getText(),
+        this.bl.AgregarSolicitudAdoslecente(md.adolescente_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.adolescente_nombre_txt.getText(), md.adolescente_apellido_txt.getText(), Integer.parseInt(md.adolescente_telefono_txt.getText()), Integer.parseInt(md.adolescente_edad_txt.getText()), md.adolescente_ocupacion_txt.getText(), md.adolescente_motivo_txt.getText(), md.adolescente_referencia_txt.getText(), md.adolescente_horario_txt.getText(), md.adolescente_email_txt.getText(), md.adolescente_detalle_txt.getText(),
                 md.adolescente_solicitante_txt.getText(), md.adolescente_direccion_txt.getText());
     }
 
@@ -196,7 +214,7 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Falta gente ");
             return;
         }
-        this.bl.AgregarSolicitudAdoslecente(md.adulto_id_txt.getText(), md.adulto_tipo_cbm.getSelectedItem().toString(), md.adulto_nombre_txt.getText(), md.adulto_apellido_txt.getText(), Integer.parseInt(md.adulto_telefono_txt.getText()), Integer.parseInt(md.adulto_edad_txt.getText()), md.adulto_ocupacion_txt.getText(), md.adulto_motivo_txt.getText(), md.adulto_referencia_txt.getText(), md.adulto_horario_txt.getText(), md.adulto_email_txt.getText(), md.adulto_detalle_txt.getText(),
+        this.bl.AgregarSolicitudAdoslecente(md.adulto_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.adulto_nombre_txt.getText(), md.adulto_apellido_txt.getText(), Integer.parseInt(md.adulto_telefono_txt.getText()), Integer.parseInt(md.adulto_edad_txt.getText()), md.adulto_ocupacion_txt.getText(), md.adulto_motivo_txt.getText(), md.adulto_referencia_txt.getText(), md.adulto_horario_txt.getText(), md.adulto_email_txt.getText(), md.adulto_detalle_txt.getText(),
                 md.adulto_solicitante_txt.getText(), md.adulto_direccion_txt.getText());
     }
 
@@ -205,7 +223,7 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Falta gente ");
             return;
         }
-        this.bl.AgregarSolicitudAdoslecente(md.adulto_id_txt.getText(), md.adulto_tipo_cbm.getSelectedItem().toString(), md.pareja_nombre_txt.getText(), md.pareja_apellido_txt.getText(), Integer.parseInt(md.pareja_telefono_txt.getText()), Integer.parseInt(md.pareja_edad_txt.getText()), md.pareja_ocupacion_txt.getText(), md.pareja_motivo_txt.getText(), md.pareja_referencia_txt.getText(), md.pareja_horario_txt.getText(), md.pareja_email_txt.getText(), md.pareja_detalle_txt.getText(),
+        this.bl.AgregarSolicitudAdoslecente(md.adulto_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.pareja_nombre_txt.getText(), md.pareja_apellido_txt.getText(), Integer.parseInt(md.pareja_telefono_txt.getText()), Integer.parseInt(md.pareja_edad_txt.getText()), md.pareja_ocupacion_txt.getText(), md.pareja_motivo_txt.getText(), md.pareja_referencia_txt.getText(), md.pareja_horario_txt.getText(), md.pareja_email_txt.getText(), md.pareja_detalle_txt.getText(),
                 md.pareja_solicitante_txt.getText(), md.pareja_direccion_txt.getText());
     }
 
@@ -214,8 +232,88 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Falta gente ");
             return;
         }
-        this.bl.AgregarSolicitudAdoslecente(md.familia_id_txt.getText(), md.familia_tipo_cbm.getSelectedItem().toString(), md.familia_nombre_txt.getText(), md.familia_apellido_txt.getText(), Integer.parseInt(md.familia_telefono_txt.getText()), Integer.parseInt(md.familia_edad_txt.getText()), md.familia_ocupacion_txt.getText(), md.familia_motivo_txt.getText(), md.familia_referencia_txt.getText(), md.familia_horario_txt.getText(), md.familia_email_txt.getText(), md.familia_detalle_txt.getText(),
+        this.bl.AgregarSolicitudAdoslecente(md.familia_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.familia_nombre_txt.getText(), md.familia_apellido_txt.getText(), Integer.parseInt(md.familia_telefono_txt.getText()), Integer.parseInt(md.familia_edad_txt.getText()), md.familia_ocupacion_txt.getText(), md.familia_motivo_txt.getText(), md.familia_referencia_txt.getText(), md.familia_horario_txt.getText(), md.familia_email_txt.getText(), md.familia_detalle_txt.getText(),
                 md.familia_solicitante_txt.getText(), md.familia_direccion_txt.getText());
+    }
+
+    public void llenarModificar() {
+        if (this.md.modificar_persona_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "La cedula esta vacia");
+            return;
+        }
+//        ResultSet rs = this.bl.SearchbyIdandEstado(this.md.modificar_persona_txt.getText(),
+//                md.modificar_persona_cbm.getSelectedItem().toString());
+        ResultSet rs = this.bl.SearchbyIdandTipo(this.md.modificar_persona_txt.getText(),
+                md.modificar_persona_cbm.getSelectedItem().toString());
+        try {
+
+            while (rs.next()) {
+
+                this.md.modificar_persona_id_txt.setText(rs.getObject("ID").toString());
+                this.md.modificar_persona_nombre_txt.setText(rs.getObject("Nombre").toString());
+                this.md.modificar_persona_apellido_txt.setText(rs.getObject("Apellido").toString());
+                this.md.modificar_persona_edad_txt.setText(rs.getObject("Edad").toString());
+                this.md.modificar_persona_telefono_txt.setText(rs.getObject("Telefono").toString());
+                this.md.modificar_persona_ocupacion_txt.setText(rs.getObject("Ocupacion").toString());
+                this.md.modificar_persona_motivo_txt.setText(rs.getObject("Motivo").toString());
+                this.md.modificar_persona_referencia_txt.setText(rs.getObject("Referencia").toString());
+                this.md.modificar_persona_horario_txt.setText(rs.getObject("Detalle_Horario").toString());
+                this.md.modificar_persona_email_txt.setText(rs.getObject("Email").toString());
+                this.md.modificar_persona_detalle_txt.setText(rs.getObject("Detalle").toString());
+                this.md.modificar_persona_solicitante_txt.setText(rs.getObject("NombreSolicitante").toString());
+                this.md.modificar_persona_direccion_txt.setText(rs.getObject("Dir").toString());
+                this.md.modificar_persona_expediente_txt.setText(rs.getObject("Expediente").toString());
+                this.md.modificar_persona_cita_txt.setText(rs.getObject("Cita").toString());
+                this.md.Solicitud.setText(rs.getObject("Fecha_Solicitud").toString());
+            }
+        } catch (Exception e) {
+            System.out.println("error" + e);
+        }
+
+    }
+
+    public void agregarPsicologo() {
+        if (bl.addPsicologo("hola", this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), 0, "@")) {
+
+        } else {
+            System.out.println("upps hubo un problema");
+        };
+
+    }
+
+    public void eliminartodos() {
+        bl.DeletePsicologos();
+    }
+
+    public void agregarCurso() {
+        bl.addCurso(this.md.siglas_curso_txt.getText(), this.md.nombre_curso_txt.getText());
+    }
+
+    public void llenarCbModificar() {
+        ArrayList a = this.bl.SearchTipo();
+        for (int i = 0; i < a.size(); i++) {
+            this.md.modificar_persona_tipo_cbm.addItem(a.get(i));
+        }
+        ArrayList b = this.bl.SearchCursos();
+        for (int i = 0; i < b.size(); i++) {
+            this.md.modificar_persona_curso_cbm.addItem(b.get(i));
+        }
+       ArrayList c= this.bl.SearchPsicologos();
+        for (int i = 0; i < c.size(); i++) {
+            this.md.modificar_persona_psicologo_cbm.addItem(c.get(i));
+        }
+          ArrayList d= this.bl.SearchEstados();
+        for (int i = 0; i < d.size(); i++) {
+            this.md.modificar_persona_clase_cbm.addItem(d.get(i));
+        }
+    }
+
+    public void llenar1Modificar() {
+        ArrayList n = this.bl.SearchTipo();
+        for (int i = 0; i < n.size(); i++) {
+            this.md.modificar_persona_cbm.addItem(n.get(i));
+        }
+
     }
 
     @Override
