@@ -28,6 +28,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import static javax.swing.SwingConstants.BOTTOM;
 import static javax.swing.SwingConstants.CENTER;
 import static javax.swing.SwingConstants.RIGHT;
@@ -53,6 +54,9 @@ public class MainDashboard {
     public iButtonFake btn_report = new iButtonFake("Reportes", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247).darker(), new Color(106, 203, 214), GoogleMaterialDesignIcons.CHROME_READER_MODE);
     public iButtonFake btn_curso = new iButtonFake("Cursos", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247).darker(), new Color(106, 203, 214), GoogleMaterialDesignIcons.ATTACH_FILE);
 
+    //BUSQUEDA RÁPIDA//
+    public JTable busquedas;
+    
     //Botones PANEL SUPERIOR
     //Botones asociados a Agregar solicitud
     public iButtonFake btn_niño = new iButtonFake("Niño", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.CHILD_CARE);
@@ -261,6 +265,7 @@ public class MainDashboard {
         modificar_persona_tipo_cbm = new iComboCheckBox(items);
         modificar_persona_curso_cbm = new iComboCheckBox(items);
         modificar_persona_psicologo_cbm = new iComboCheckBox(items);
+        busquedas  = new JTable();
 
         initComponents();
     }
@@ -281,6 +286,10 @@ public class MainDashboard {
         clock.setBounds(65, 450, 80, 100);
 
         menu_panel.setBackground(new Color(106, 203, 214));
+        
+        //Busqueda Ráída//
+        info_panel.AddObject(busquedas, 100, 90);
+        info_panel.newLine();
 
         //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
         menu_panel.AddSingleObject(menu_label, 180, 40, CENTER);
@@ -312,6 +321,9 @@ public class MainDashboard {
         search_panel.repaint();
         info_panel.dispose();
         info_panel.repaint();
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_fam, 100, 60, 425);
         btn_fam.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_pareja, 100, 60, 325);
@@ -323,6 +335,7 @@ public class MainDashboard {
         search_panel.AddObject(btn_niño, 100, 60, -1);
         btn_niño.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
+        info_panel.add(fondo_label);
         search_panel.finalice();
 
     }
@@ -333,11 +346,15 @@ public class MainDashboard {
         search_panel.repaint();
         info_panel.dispose();
         info_panel.repaint();
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_type, 150, 60, 99);
         btn_type.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_ced, 100, 60, -1);
         btn_ced.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
+        info_panel.add(fondo_label);
         //hola
         //holaMario
     }
@@ -349,6 +366,10 @@ public class MainDashboard {
         info_panel.dispose();
         info_panel.repaint();
 
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
+        
         JLabel id2_lbl = new JLabel();
         id2_lbl.setText("Cédula: ");
         id2_lbl.setForeground(new Color(255, 255, 255));
@@ -365,6 +386,8 @@ public class MainDashboard {
         search_panel.AddObject(btn_buscar_modificar_persona, 120, 30, 1);
         btn_buscar_modificar_persona.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
+        
+        info_panel.add(fondo_label);
 
     }
 
@@ -374,6 +397,9 @@ public class MainDashboard {
         search_panel.repaint();
         info_panel.dispose();
         info_panel.repaint();
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_eliTodos, 135, 60, 407);
         btn_eliTodos.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_eliPsico, 135, 60, 272);
@@ -383,6 +409,8 @@ public class MainDashboard {
         search_panel.AddObject(btn_mosPsico, 135, 60, -1);
         btn_mosPsico.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
+        
+        info_panel.add(fondo_label);
     }
 
     public void BtnCurso() {
@@ -391,6 +419,9 @@ public class MainDashboard {
         search_panel.repaint();
         info_panel.dispose();
         info_panel.repaint();
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_mosCurso, 135, 60, -1);
         btn_mosCurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_eliminar, 135, 60, 271);
@@ -398,6 +429,8 @@ public class MainDashboard {
         search_panel.AddObject(btn_agrcurso, 135, 60, 135);
         btn_agrcurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
+        
+        info_panel.add(fondo_label);
     }
 
     public void BtnJustificacion() {
@@ -405,11 +438,16 @@ public class MainDashboard {
         search_panel.repaint();
         info_panel.dispose();
         info_panel.repaint();
-        search_panel.AddObject(btn_justi, 140, 60, 129);
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
+        search_panel.AddObject(btn_justi, 140, 60, 2);
         btn_justi.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
         btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
         search_panel.newLine();
+        
+        info_panel.add(fondo_label);
     }
 
     public void BtnReportes() {
@@ -417,6 +455,9 @@ public class MainDashboard {
         search_panel.repaint();
         info_panel.dispose();
         info_panel.repaint();
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_report_diario, 120, 60, 240);
         btn_report_diario.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_report_semanal, 120, 60, 120);
@@ -424,6 +465,8 @@ public class MainDashboard {
         search_panel.AddObject(btn_report_mensual, 120, 60, -1);
         btn_report_mensual.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
+        
+        info_panel.add(fondo_label);
     }
 
 ///METODOS PARA BOTONES DEL PANEL DE BUSQUEDAS////  
