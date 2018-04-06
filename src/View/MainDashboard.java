@@ -17,8 +17,11 @@ import iComponents.iTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import javafx.geometry.Pos;
 import static javafx.geometry.Pos.BOTTOM_CENTER;
@@ -28,6 +31,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import static javax.swing.SwingConstants.BOTTOM;
 import static javax.swing.SwingConstants.CENTER;
@@ -55,8 +59,10 @@ public class MainDashboard {
     public iButtonFake btn_curso = new iButtonFake("Cursos", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247).darker(), new Color(106, 203, 214), GoogleMaterialDesignIcons.ATTACH_FILE);
 
     //BUSQUEDA RÁPIDA//
-    public JTable busquedas;
     
+    public JTable busquedas;
+    public iButtonFake btn_busqueda_rapida= new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+
     //Botones PANEL SUPERIOR
     //Botones asociados a Agregar solicitud
     public iButtonFake btn_niño = new iButtonFake("Niño", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.CHILD_CARE);
@@ -288,9 +294,12 @@ public class MainDashboard {
         menu_panel.setBackground(new Color(106, 203, 214));
         
         //Busqueda Ráída//
-        info_panel.AddObject(busquedas, 100, 90);
+        info_panel.AddObject(btn_busqueda_rapida, 80,30, LEFT);
+        info_panel.newLine();
+        info_panel.AddObject(busquedas, 200, 200, CENTER);
         info_panel.newLine();
 
+        
         //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
         menu_panel.AddSingleObject(menu_label, 180, 40, CENTER);
         menu_panel.AddSingleObject(btn_agregar, 171, 40, LEFT);
@@ -313,7 +322,13 @@ public class MainDashboard {
         dash_frm.add(menu_panel);
         dash_frm.finalice();
     }
-
+    //Metódo crear tabla de busqueda rápida//
+    public void BtnBusquedaRapida(){
+        
+   
+    }
+  
+    
     //Metódos para cargar botones al panel
     public void BtnAregarSolic() {
         //Metodo para cargar botones al clickear "AGREGAR SOLICITUD"    
@@ -1176,6 +1191,10 @@ public class MainDashboard {
         info_panel.dispose();
         info_panel.repaint();
         
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
+        
         JLabel id_lbl = new JLabel();
         id_lbl.setText("ID: ");
         id_lbl.setForeground(new Color(156, 156, 156));
@@ -1334,6 +1353,7 @@ public class MainDashboard {
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
 
+        info_panel.add(fondo_label);
     }
 
 ////////////////////PSICOLOGOS/////////////////////////////// 

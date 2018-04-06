@@ -41,6 +41,7 @@ public class InitManager implements ActionListener {
             cmd.starMD();
         } else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+           
         }
 
     }
