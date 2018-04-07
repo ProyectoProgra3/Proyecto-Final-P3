@@ -193,6 +193,7 @@ public class MainDashboard {
     public iTextField modificar_persona_nombre_txt = new iTextField("", 6);
     public iTextField modificar_persona_apellido_txt = new iTextField("", 6);
     public iTextField modificar_persona_edad_txt = new iTextField("", 6);
+    public iTextField modificar_persona_integrantes_txt = new iTextField("", 6);
     public iTextField modificar_persona_referencia_txt = new iTextField("", 6);
     public iTextField modificar_persona_ocupacion_txt = new iTextField("", 6);
     public iTextField modificar_persona_direccion_txt = new iTextField("", 6);
@@ -452,8 +453,8 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        search_panel.AddObject(btn_justi, 140, 60, 2);
-        btn_justi.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        search_panel.AddObject(btn_justi, 140, 60, CENTER);
+    
         /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
         btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
         search_panel.newLine();
@@ -1210,6 +1211,10 @@ public class MainDashboard {
         edad_lbl.setText("Edad: ");
         edad_lbl.setForeground(new Color(156, 156, 156));
 
+        JLabel integrantes_lbl = new JLabel();
+        integrantes_lbl.setText("No. Integrantes: ");
+        integrantes_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel referencia_lbl = new JLabel();
         referencia_lbl.setText("Referencia: ");
         referencia_lbl.setForeground(new Color(156, 156, 156));
@@ -1275,8 +1280,8 @@ public class MainDashboard {
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_id_txt, 160, 20, LEFT);
 
-        info_panel.AddObject(expediente_lbl, 60, 20, LEFT);
-        info_panel.AddObject(modificar_persona_expediente_txt, 160, 20, LEFT);
+        info_panel.AddObject(expediente_lbl, 100, 20, LEFT);
+        info_panel.AddObject(modificar_persona_expediente_txt, 120, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
@@ -1288,8 +1293,12 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_edad_txt, 160, 20, LEFT);
-        info_panel.newLine();
+        
 
+        info_panel.AddObject(integrantes_lbl, 100, 20, LEFT);
+        info_panel.AddObject(modificar_persona_integrantes_txt, 120, 20, LEFT);
+        info_panel.newLine();
+        
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_referencia_txt, 160, 20, LEFT);
         info_panel.newLine();
