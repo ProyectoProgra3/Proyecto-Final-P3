@@ -1471,25 +1471,19 @@ public class MainDashboard {
 
     public void Generar_Justificaccion() throws IOException {
         // Hay que revisarlo para solo agregar el word 
-
         info_panel.dispose();
         info_panel.repaint();
+        try {
 
-        JLabel lbl_tituloJust = new JLabel();
-        lbl_tituloJust.setText("Justificacion");
-
-        JLabel lbl_Justificacion = new JLabel();
-        String url = "C:\\Users\\Cesarpj\\Desktop\\Justificacion Proyecto.docx";
-        ProcessBuilder p = new ProcessBuilder();
-        p.command("cmd.exe", "/c", url);
-        p.start();
-
+            String url = "C:\\Users\\Cesarpj\\Desktop\\Justificacion Proyecto.docx";
+            ProcessBuilder p = new ProcessBuilder();
+            p.command("cmd.exe", "/c", url);
+            p.start();
+        } catch (IOException exe) {
+        }
         btn_generar_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         btn_Imprimir_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
-        info_panel.AddObject(lbl_Justificacion, 80, 20, LEFT);
-        info_panel.AddObject(generar_justi_txt, 80, 20, LEFT);
-
-        info_panel.AddObject(hotario_justi_txt, 80, 20, LEFT);
+        ;
         info_panel.newLine();
     }
 

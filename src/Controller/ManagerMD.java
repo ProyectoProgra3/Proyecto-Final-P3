@@ -10,6 +10,7 @@ import Model.BusinessLogic;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -185,7 +186,11 @@ public class ManagerMD implements MouseListener {
             md.BtnJustificacion();
         }
         if (md.btn_justi == me.getSource()) {
-            md.Generar_Justificaccion();
+         try {
+             md.Generar_Justificaccion();
+         }catch(IOException e){
+             
+         }
         }
         //reporte
         if (md.btn_report == me.getSource()) {
