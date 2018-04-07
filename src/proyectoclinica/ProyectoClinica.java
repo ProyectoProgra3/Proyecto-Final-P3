@@ -49,7 +49,7 @@ public class ProyectoClinica extends JPanel {
 //     * @param args the command line arguments
 //     */
     public static void main(String[] args) {
-//
+// 
 //
 //     
 //while(sQL==null){    
@@ -75,11 +75,6 @@ public class ProyectoClinica extends JPanel {
 //                ;
 //            }
 //        }
-// 
-// 
-//
-//
-//}
 //
 //        JOptionPane.showMessageDialog(null,"su base de datos esta"+ sQL.toString());
            InitController ic = new InitController();
