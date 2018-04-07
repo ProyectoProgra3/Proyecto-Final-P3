@@ -1361,6 +1361,7 @@ public class MainDashboard {
     public void Mostrar_Cursos(){
         
     }
+    
    public void Mostrar_Psicologos(){
         
     }
@@ -1517,4 +1518,128 @@ public class MainDashboard {
         info_panel.AddObject(hotario_justi_txt, 80, 20, LEFT);
         info_panel.newLine();
     }
+    
+    public void LimpiarCasillas (){
+        
+    nid_txt.setText("");
+    nnombre_txt.setText("");
+    napellido_txt.setText("");
+    nedad_txt.setText("");
+    nreferencia_txt.setText("");
+    nocupacion_txt.setText("");
+    ndireccion_txt.setText("");
+    ntelefono_txt.setText("");
+    nemail_txt.setText("");
+    nmotivo_txt.setText("");
+    nhorario_txt.setText("");
+    ndetalle_txt.setText("");
+    nsolicitante_txt.setText("");
+  
+    ///ADOLESCENTE///
+    adolescente_id_txt.setText("");
+    adolescente_nombre_txt.setText("");
+    adolescente_apellido_txt.setText("");
+    adolescente_edad_txt.setText("");
+    adolescente_referencia_txt.setText("");
+    adolescente_ocupacion_txt.setText("");
+    adolescente_direccion_txt.setText("");
+    adolescente_telefono_txt.setText("");
+    adolescente_email_txt.setText("");
+    adolescente_motivo_txt.setText("");
+    adolescente_horario_txt.setText("");
+    adolescente_detalle_txt.setText("");
+    adolescente_solicitante_txt .setText("");
+   
+    ///ADULTO///
+    adulto_id_txt.setText("");
+    adulto_nombre_txt.setText("");
+    adulto_apellido_txt.setText("");
+    adulto_edad_txt.setText("");
+    adulto_referencia_txt.setText("");
+    adulto_ocupacion_txt.setText("");
+    adulto_direccion_txt.setText("");
+    adulto_telefono_txt.setText("");
+    adulto_email_txt.setText("");
+    adulto_motivo_txt.setText("");
+    adulto_horario_txt.setText("");
+    adulto_detalle_txt.setText("");
+    adulto_solicitante_txt.setText("");
+   
+    ///PAREJA///
+    pareja_id_txt.setText("");
+    pareja2_id_txt.setText("");
+    pareja_apellido_txt.setText("");
+    pareja_nombre_txt.setText("");
+    pareja_edad_txt.setText("");
+    pareja2_edad_txt.setText("");
+    pareja_referencia_txt.setText("");
+    pareja_ocupacion_txt.setText("");
+    pareja2_ocupacion_txt.setText("");
+    pareja_direccion_txt.setText("");
+    pareja_telefono_txt.setText("");
+    pareja2_telefono_txt.setText("");
+    pareja_email_txt.setText("");
+    pareja_motivo_txt.setText("");
+    pareja_horario_txt.setText("");
+    pareja_detalle_txt.setText("");
+    pareja_solicitante_txt.setText("");
+    
+    ///FAMILIA///
+    familia_id_txt.setText("");
+    familia_nombre_txt.setText("");
+    familia_apellido_txt.setText("");
+    familia_integrantes_txt.setText("");
+    familia_edad_txt.setText("");
+    familia_referencia_txt.setText("");
+    familia_ocupacion_txt.setText("");
+    familia_direccion_txt.setText("");
+    familia_telefono_txt.setText("");
+    familia_email_txt.setText("");
+    familia_motivo_txt.setText("");
+    familia_horario_txt.setText("");
+    familia_detalle_txt.setText("");
+    familia_solicitante_txt.setText("");
+    
+    ///MODIFICAR PERSONA///
+    modificar_persona_id_txt.setText("");
+    modificar_persona_nombre_txt.setText("");
+    modificar_persona_apellido_txt.setText("");
+    modificar_persona_edad_txt.setText("");
+    modificar_persona_integrantes_txt.setText("");
+    modificar_persona_referencia_txt.setText("");
+    modificar_persona_ocupacion_txt.setText("");
+    modificar_persona_direccion_txt.setText("");
+    modificar_persona_telefono_txt.setText("");
+    modificar_persona_email_txt.setText("");
+    modificar_persona_motivo_txt.setText("");
+    modificar_persona_horario_txt.setText("");
+    modificar_persona_detalle_txt.setText("");
+    modificar_persona_solicitante_txt.setText("");
+    modificar_persona_cita_txt.setText("");
+    modificar_persona_expediente_txt.setText("");
+   
+    ///////////////////////AGREGAR PSICOLOGO
+    nombre_psicologo_txt.setText("");
+    apellidos_psicologo_txt.setText("");
+    carnet_psicologo_txt.setText("");
+    id_psicologo_txt.setText("");
+    celular_psicologo_txt.setText("");
+    email_psicologo_txt.setText("");
+     //////////////////////ELIMINAR PSICOLOGO
+  
+       /////////////////////AGREGAR CURSO
+    nombre_curso_txt.setText("");
+    siglas_curso_txt.setText("");
+    ////////////////////ELIMINAR CURSO
+    curso_eliminar_txt.setText("");
+   ////////////   generar Justificacion 
+    generar_justi_txt.setText("");
+    nombre_justi_txt.setText("");
+    apellidos_justi_txt.setText("");
+    cedula_justi_txt.setText("");
+    telefono_justi_txt.setText("");
+    hotario_justi_txt.setText("");
+        
+    }
+
 }
