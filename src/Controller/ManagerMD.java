@@ -56,7 +56,8 @@ public class ManagerMD implements MouseListener {
         //agregar psciologo
         this.md.btn_psico.addMouseListener(this);
         this.md.btn_eliTodos.addMouseListener(this);
-        this.md.btn_eliPsico.addMouseListener(this);
+        this.md.btn_mosCurso.addMouseListener(this);
+
         this.md.btn_agrePsico.addMouseListener(this);
         this.md.btn_agregar_psicologo.addMouseListener(this);
         this.md.btn_mosPsico.addMouseListener(this);
@@ -146,12 +147,13 @@ public class ManagerMD implements MouseListener {
         if (md.btn_psico == me.getSource()) {
             md.BtnPsicologos();
         }
+          if (md.btn_mosPsico == me.getSource()) {
+           md.Mostrar_Psicologos();
+        }        
         if (md.btn_eliTodos == me.getSource()) {
 //eliminartodos();ya esta no tocar !!!!
         }
-        if (md.btn_eliPsico == me.getSource()) {
-            md.Eliminar_Psicologo();
-        }
+    
         if (md.btn_agrePsico == me.getSource()) {
             md.Agregar_Psicologo();
         }
@@ -166,7 +168,7 @@ public class ManagerMD implements MouseListener {
             md.BtnCurso();
         }
         if (md.btn_mosCurso == me.getSource()) {
-
+            md.Mostrar_Cursos();
         }
         if (md.btn_agrcurso == me.getSource()) {
             md.Agregar_Curso();
