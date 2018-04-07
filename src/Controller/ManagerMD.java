@@ -50,9 +50,9 @@ public class ManagerMD implements MouseListener {
         this.md.btn_guardar_modificar_persona.addMouseListener(this);
 
         //agregar citas
-        this.md.btn_citas.addMouseListener(this);
-        this.md.btn_type.addMouseListener(this);
-        this.md.btn_ced.addMouseListener(this);
+        //this.md.btn_citas.addMouseListener(this);
+        //this.md.btn_type.addMouseListener(this);
+//        this.md.btn_ced.addMouseListener(this);
 
         //agregar psciologo
         this.md.btn_psico.addMouseListener(this);
@@ -137,11 +137,11 @@ public class ManagerMD implements MouseListener {
         //citas
         if (md.btn_citas == me.getSource()) {
             md.Btn_Cita();
-        }
-        if (md.btn_type == me.getSource()) {
+        //}
+        //if (md.btn_type == me.getSource()) {
 
-        }
-        if (md.btn_ced == me.getSource()) {
+        //}
+        //if (md.btn_ced == me.getSource()) {
 
         }
         //piscologo

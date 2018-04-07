@@ -75,8 +75,9 @@ public class MainDashboard {
     public iButtonFake btn_fam = new iButtonFake("Familia", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PEOPLE);
 
     //Botónes asociados a CITA
-    public iButtonFake btn_ced = new iButtonFake("Cédula", "Tipo Búsqueda", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCOUNT_BALANCE_WALLET);
-    public iButtonFake btn_type = new iButtonFake("Tipo Paciente", " Tipo Búsqueda", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.ACCOUNT_BALANCE_WALLET);
+    public iTextField cita_txt = new iTextField("", 6);
+    public iComboCheckBox cita_cbm;
+    public iButtonFake btn_buscar_cita = new iButtonFake("Buscar", "cita", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
     // Botones  modificar 
     public iTextField modificar_persona_txt = new iTextField("", 6);
@@ -241,6 +242,8 @@ public class MainDashboard {
 
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
+    
+    
     public MainDashboard() {
         this.sql = new SQL();
         //ARRAY DEL COMBOBOX
@@ -361,10 +364,23 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        search_panel.AddObject(btn_type, 150, 60, 99);
-        btn_type.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_ced, 100, 60, -1);
-        btn_ced.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        
+        JLabel id2_lbl = new JLabel();
+        id2_lbl.setText("Cédula: ");
+        id2_lbl.setForeground(new Color(255, 255, 255));
+
+        JLabel tipo_lbl = new JLabel();
+        tipo_lbl.setText("Tipo: ");
+        tipo_lbl.setForeground(new Color(255, 255, 255));
+        
+        search_panel.AddObject(id2_lbl, 50, 42, LEFT);
+        search_panel.AddObject(cita_txt, 120, 32, LEFT);
+        search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
+        search_panel.AddObject(cita_cbm, 120, 32, LEFT);
+
+        search_panel.AddObject(btn_buscar_cita, 120, 30, 1);
+        btn_buscar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        
         search_panel.newLine();
         info_panel.add(fondo_label);
         //hola
