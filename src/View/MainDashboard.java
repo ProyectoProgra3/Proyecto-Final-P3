@@ -193,6 +193,7 @@ public class MainDashboard {
     public iTextField modificar_persona_nombre_txt = new iTextField("", 6);
     public iTextField modificar_persona_apellido_txt = new iTextField("", 6);
     public iTextField modificar_persona_edad_txt = new iTextField("", 6);
+    public iTextField modificar_persona_integrantes_txt = new iTextField("", 6);
     public iTextField modificar_persona_referencia_txt = new iTextField("", 6);
     public iTextField modificar_persona_ocupacion_txt = new iTextField("", 6);
     public iTextField modificar_persona_direccion_txt = new iTextField("", 6);
@@ -1207,6 +1208,10 @@ public class MainDashboard {
         edad_lbl.setText("Edad: ");
         edad_lbl.setForeground(new Color(156, 156, 156));
 
+        JLabel integrantes_lbl = new JLabel();
+        integrantes_lbl.setText("No. Integrantes: ");
+        integrantes_lbl.setForeground(new Color(156, 156, 156));
+        
         JLabel referencia_lbl = new JLabel();
         referencia_lbl.setText("Referencia: ");
         referencia_lbl.setForeground(new Color(156, 156, 156));
@@ -1285,8 +1290,12 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_edad_txt, 160, 20, LEFT);
-        info_panel.newLine();
+        
 
+        info_panel.AddObject(integrantes_lbl, 100, 20, LEFT);
+        info_panel.AddObject(modificar_persona_integrantes_txt, 140, 20, LEFT);
+        info_panel.newLine();
+        
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_referencia_txt, 160, 20, LEFT);
         info_panel.newLine();
