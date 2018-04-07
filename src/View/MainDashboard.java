@@ -214,6 +214,9 @@ public class MainDashboard {
     public iTextField nombre_psicologo_txt = new iTextField("", 6);
     public iTextField apellidos_psicologo_txt = new iTextField("", 6);
     public iTextField carnet_psicologo_txt = new iTextField("", 6);
+    public iTextField id_psicologo_txt = new iTextField("",6);
+    public iTextField celular_psicologo_txt = new iTextField("",6);
+    public iTextField email_psicologo_txt = new iTextField("",6);
     public iButtonFake btn_agregar_psicologo = new iButtonFake("Agregar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     //////////////////////ELIMINAR PSICOLOGO
     public iTextField eliminar_nombre_psicologo_txt = new iTextField("", 6);
@@ -1364,10 +1367,27 @@ public class MainDashboard {
         JLabel lbl_carnet = new JLabel();
         lbl_carnet.setText("Carné: ");
         lbl_carnet.setForeground(new Color(156, 156, 156));
+        
+        JLabel lbl_id = new JLabel();
+        lbl_id.setText("Cédula: ");
+        lbl_id.setForeground(new Color(156, 156, 156));
+        
+        JLabel lbl_celular = new JLabel();
+        lbl_celular.setText("Teléfono Celular: ");
+        lbl_celular.setForeground(new Color(156, 156, 156));
+        
+        JLabel lbl_email = new JLabel();
+        lbl_email.setText("Correo Electrónico: ");
+        lbl_email.setForeground(new Color(156, 156, 156));
 
+        
         //////////////////////////////////////
         btn_agregar_psicologo.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
 
+        info_panel.AddObject(lbl_id, 80,20,LEFT);
+        info_panel.AddObject(id_psicologo_txt, 160,20,LEFT);
+        info_panel.newLine();
+        
         info_panel.AddObject(lbl_NombrePsicologo, 80, 20, LEFT);
         info_panel.AddObject(nombre_psicologo_txt, 160, 20, LEFT);
 
@@ -1377,6 +1397,14 @@ public class MainDashboard {
 
         info_panel.AddObject(lbl_carnet, 80, 20, LEFT);
         info_panel.AddObject(carnet_psicologo_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(lbl_celular, 100, 20, LEFT);
+        info_panel.AddObject(celular_psicologo_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
+        info_panel.AddObject(lbl_email, 120, 20, LEFT);
+        info_panel.AddObject(email_psicologo_txt, 160, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(btn_agregar_psicologo, 130, 40, CENTER);
