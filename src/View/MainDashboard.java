@@ -1361,6 +1361,13 @@ public class MainDashboard {
     }
 
 ////////////////////PSICOLOGOS/////////////////////////////// 
+    public void Mostrar_Cursos(){
+        
+    }
+   public void Mostrar_Psicologos(){
+        
+    }
+    
     public void Agregar_Psicologo() {
         info_panel.dispose();
         info_panel.repaint();
