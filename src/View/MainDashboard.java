@@ -18,6 +18,7 @@ import iComponents.iTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -46,7 +47,7 @@ import jiconfont.icons.GoogleMaterialDesignIcons;
  * @author crodas
  */
 public class MainDashboard {
-    
+
     public SQL sql;
 
     public iFrame dash_frm;
@@ -217,9 +218,9 @@ public class MainDashboard {
     public iTextField nombre_psicologo_txt = new iTextField("", 6);
     public iTextField apellidos_psicologo_txt = new iTextField("", 6);
     public iTextField carnet_psicologo_txt = new iTextField("", 6);
-    public iTextField id_psicologo_txt = new iTextField("",6);
-    public iTextField celular_psicologo_txt = new iTextField("",6);
-    public iTextField email_psicologo_txt = new iTextField("",6);
+    public iTextField id_psicologo_txt = new iTextField("", 6);
+    public iTextField celular_psicologo_txt = new iTextField("", 6);
+    public iTextField email_psicologo_txt = new iTextField("", 6);
     public iButtonFake btn_agregar_psicologo = new iButtonFake("Agregar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     /////////////////////AGREGAR CURSO
     public iTextField nombre_curso_txt = new iTextField("", 6);
@@ -241,7 +242,7 @@ public class MainDashboard {
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
     public MainDashboard() {
-        this.sql= new SQL();
+        this.sql = new SQL();
         //ARRAY DEL COMBOBOX
         ArrayList<String> items = new ArrayList<String>();
 
@@ -451,7 +452,7 @@ public class MainDashboard {
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_justi, 140, 60, CENTER);
-    
+
         /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
         btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
         search_panel.newLine();
@@ -1211,7 +1212,7 @@ public class MainDashboard {
         JLabel integrantes_lbl = new JLabel();
         integrantes_lbl.setText("No. Integrantes: ");
         integrantes_lbl.setForeground(new Color(156, 156, 156));
-        
+
         JLabel referencia_lbl = new JLabel();
         referencia_lbl.setText("Referencia: ");
         referencia_lbl.setForeground(new Color(156, 156, 156));
@@ -1290,12 +1291,11 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_edad_txt, 160, 20, LEFT);
-        
 
         info_panel.AddObject(integrantes_lbl, 100, 20, LEFT);
         info_panel.AddObject(modificar_persona_integrantes_txt, 120, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_referencia_txt, 160, 20, LEFT);
         info_panel.newLine();
@@ -1358,14 +1358,14 @@ public class MainDashboard {
     }
 
 ////////////////////PSICOLOGOS/////////////////////////////// 
-    public void Mostrar_Cursos(){
-        
+    public void Mostrar_Cursos() {
+
     }
-    
-   public void Mostrar_Psicologos(){
-        
+
+    public void Mostrar_Psicologos() {
+
     }
-    
+
     public void Agregar_Psicologo() {
         info_panel.dispose();
         info_panel.repaint();
@@ -1381,27 +1381,26 @@ public class MainDashboard {
         JLabel lbl_carnet = new JLabel();
         lbl_carnet.setText("Carné: ");
         lbl_carnet.setForeground(new Color(156, 156, 156));
-        
+
         JLabel lbl_id = new JLabel();
         lbl_id.setText("Cédula: ");
         lbl_id.setForeground(new Color(156, 156, 156));
-        
+
         JLabel lbl_celular = new JLabel();
         lbl_celular.setText("Teléfono Celular: ");
         lbl_celular.setForeground(new Color(156, 156, 156));
-        
+
         JLabel lbl_email = new JLabel();
         lbl_email.setText("Correo Electrónico: ");
         lbl_email.setForeground(new Color(156, 156, 156));
 
-        
         //////////////////////////////////////
         btn_agregar_psicologo.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
 
-        info_panel.AddObject(lbl_id, 80,20,LEFT);
-        info_panel.AddObject(id_psicologo_txt, 160,20,LEFT);
+        info_panel.AddObject(lbl_id, 80, 20, LEFT);
+        info_panel.AddObject(id_psicologo_txt, 160, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.AddObject(lbl_NombrePsicologo, 80, 20, LEFT);
         info_panel.AddObject(nombre_psicologo_txt, 160, 20, LEFT);
 
@@ -1412,11 +1411,11 @@ public class MainDashboard {
         info_panel.AddObject(lbl_carnet, 80, 20, LEFT);
         info_panel.AddObject(carnet_psicologo_txt, 160, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.AddObject(lbl_celular, 100, 20, LEFT);
         info_panel.AddObject(celular_psicologo_txt, 160, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.AddObject(lbl_email, 120, 20, LEFT);
         info_panel.AddObject(email_psicologo_txt, 160, 20, LEFT);
         info_panel.newLine();
@@ -1470,7 +1469,7 @@ public class MainDashboard {
         info_panel.newLine();
     }
 
-    public void Generar_Justificaccion() {
+    public void Generar_Justificaccion() throws IOException {
         // Hay que revisarlo para solo agregar el word 
 
         info_panel.dispose();
@@ -1480,166 +1479,141 @@ public class MainDashboard {
         lbl_tituloJust.setText("Justificacion");
 
         JLabel lbl_Justificacion = new JLabel();
-
-        JLabel lbl_nombre = new JLabel();
-        lbl_nombre.setText("Digite el  Nombre Pacinete ");
-        lbl_nombre.setForeground(new Color(156, 156, 156));
-
-        JLabel lbl_Apellidos = new JLabel();
-        lbl_Apellidos.setText("Digite el Apellidos del Paciente");
-        lbl_Apellidos.setForeground(new Color(156, 156, 156));
-
-        JLabel lbl_cedula = new JLabel();
-        lbl_cedula.setText("Digite el Cedula del Paciente");
-        lbl_cedula.setForeground(new Color(156, 156, 156));
-
-        JLabel lbl_telefono = new JLabel();
-        lbl_telefono.setText("Digite el Telefono del Paciente");
-        lbl_telefono.setForeground(new Color(156, 156, 156));
-
-        JLabel lbl_horario = new JLabel();
-        lbl_horario.setText("Digite el Horario de cita");
-        lbl_horario.setForeground(new Color(156, 156, 156));
+        String url = "C:\\Users\\Cesarpj\\Desktop\\Justificacion Proyecto.docx";
+        ProcessBuilder p = new ProcessBuilder();
+        p.command("cmd.exe", "/c", url);
+        p.start();
 
         btn_generar_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         btn_Imprimir_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         info_panel.AddObject(lbl_Justificacion, 80, 20, LEFT);
         info_panel.AddObject(generar_justi_txt, 80, 20, LEFT);
 
-        info_panel.AddObject(lbl_nombre, 80, 20, LEFT);
-        info_panel.AddObject(nombre_justi_txt, 80, 20, LEFT);
-        info_panel.AddObject(lbl_Apellidos, 80, 20, LEFT);
-        info_panel.AddObject(apellidos_justi_txt, 80, 20, LEFT);
-        info_panel.AddObject(lbl_cedula, 80, 20, LEFT);
-        info_panel.AddObject(cedula_justi_txt, 80, 20, LEFT);
-        info_panel.AddObject(lbl_telefono, 80, 20, LEFT);
-        info_panel.AddObject(telefono_justi_txt, 80, 20, LEFT);
-        info_panel.AddObject(lbl_horario, 80, 20, LEFT);
         info_panel.AddObject(hotario_justi_txt, 80, 20, LEFT);
         info_panel.newLine();
     }
-    
-    public void LimpiarCasillas (){
-        
-    nid_txt.setText("");
-    nnombre_txt.setText("");
-    napellido_txt.setText("");
-    nedad_txt.setText("");
-    nreferencia_txt.setText("");
-    nocupacion_txt.setText("");
-    ndireccion_txt.setText("");
-    ntelefono_txt.setText("");
-    nemail_txt.setText("");
-    nmotivo_txt.setText("");
-    nhorario_txt.setText("");
-    ndetalle_txt.setText("");
-    nsolicitante_txt.setText("");
-  
-    ///ADOLESCENTE///
-    adolescente_id_txt.setText("");
-    adolescente_nombre_txt.setText("");
-    adolescente_apellido_txt.setText("");
-    adolescente_edad_txt.setText("");
-    adolescente_referencia_txt.setText("");
-    adolescente_ocupacion_txt.setText("");
-    adolescente_direccion_txt.setText("");
-    adolescente_telefono_txt.setText("");
-    adolescente_email_txt.setText("");
-    adolescente_motivo_txt.setText("");
-    adolescente_horario_txt.setText("");
-    adolescente_detalle_txt.setText("");
-    adolescente_solicitante_txt .setText("");
-   
-    ///ADULTO///
-    adulto_id_txt.setText("");
-    adulto_nombre_txt.setText("");
-    adulto_apellido_txt.setText("");
-    adulto_edad_txt.setText("");
-    adulto_referencia_txt.setText("");
-    adulto_ocupacion_txt.setText("");
-    adulto_direccion_txt.setText("");
-    adulto_telefono_txt.setText("");
-    adulto_email_txt.setText("");
-    adulto_motivo_txt.setText("");
-    adulto_horario_txt.setText("");
-    adulto_detalle_txt.setText("");
-    adulto_solicitante_txt.setText("");
-   
-    ///PAREJA///
-    pareja_id_txt.setText("");
-    pareja2_id_txt.setText("");
-    pareja_apellido_txt.setText("");
-    pareja_nombre_txt.setText("");
-    pareja_edad_txt.setText("");
-    pareja2_edad_txt.setText("");
-    pareja_referencia_txt.setText("");
-    pareja_ocupacion_txt.setText("");
-    pareja2_ocupacion_txt.setText("");
-    pareja_direccion_txt.setText("");
-    pareja_telefono_txt.setText("");
-    pareja2_telefono_txt.setText("");
-    pareja_email_txt.setText("");
-    pareja_motivo_txt.setText("");
-    pareja_horario_txt.setText("");
-    pareja_detalle_txt.setText("");
-    pareja_solicitante_txt.setText("");
-    
-    ///FAMILIA///
-    familia_id_txt.setText("");
-    familia_nombre_txt.setText("");
-    familia_apellido_txt.setText("");
-    familia_integrantes_txt.setText("");
-    familia_edad_txt.setText("");
-    familia_referencia_txt.setText("");
-    familia_ocupacion_txt.setText("");
-    familia_direccion_txt.setText("");
-    familia_telefono_txt.setText("");
-    familia_email_txt.setText("");
-    familia_motivo_txt.setText("");
-    familia_horario_txt.setText("");
-    familia_detalle_txt.setText("");
-    familia_solicitante_txt.setText("");
-    
-    ///MODIFICAR PERSONA///
-    modificar_persona_id_txt.setText("");
-    modificar_persona_nombre_txt.setText("");
-    modificar_persona_apellido_txt.setText("");
-    modificar_persona_edad_txt.setText("");
-    modificar_persona_integrantes_txt.setText("");
-    modificar_persona_referencia_txt.setText("");
-    modificar_persona_ocupacion_txt.setText("");
-    modificar_persona_direccion_txt.setText("");
-    modificar_persona_telefono_txt.setText("");
-    modificar_persona_email_txt.setText("");
-    modificar_persona_motivo_txt.setText("");
-    modificar_persona_horario_txt.setText("");
-    modificar_persona_detalle_txt.setText("");
-    modificar_persona_solicitante_txt.setText("");
-    modificar_persona_cita_txt.setText("");
-    modificar_persona_expediente_txt.setText("");
-   
-    ///////////////////////AGREGAR PSICOLOGO
-    nombre_psicologo_txt.setText("");
-    apellidos_psicologo_txt.setText("");
-    carnet_psicologo_txt.setText("");
-    id_psicologo_txt.setText("");
-    celular_psicologo_txt.setText("");
-    email_psicologo_txt.setText("");
-     //////////////////////ELIMINAR PSICOLOGO
-  
-       /////////////////////AGREGAR CURSO
-    nombre_curso_txt.setText("");
-    siglas_curso_txt.setText("");
-    ////////////////////ELIMINAR CURSO
-    curso_eliminar_txt.setText("");
-   ////////////   generar Justificacion 
-    generar_justi_txt.setText("");
-    nombre_justi_txt.setText("");
-    apellidos_justi_txt.setText("");
-    cedula_justi_txt.setText("");
-    telefono_justi_txt.setText("");
-    hotario_justi_txt.setText("");
-        
+
+    public void LimpiarCasillas() {
+
+        nid_txt.setText("");
+        nnombre_txt.setText("");
+        napellido_txt.setText("");
+        nedad_txt.setText("");
+        nreferencia_txt.setText("");
+        nocupacion_txt.setText("");
+        ndireccion_txt.setText("");
+        ntelefono_txt.setText("");
+        nemail_txt.setText("");
+        nmotivo_txt.setText("");
+        nhorario_txt.setText("");
+        ndetalle_txt.setText("");
+        nsolicitante_txt.setText("");
+
+        ///ADOLESCENTE///
+        adolescente_id_txt.setText("");
+        adolescente_nombre_txt.setText("");
+        adolescente_apellido_txt.setText("");
+        adolescente_edad_txt.setText("");
+        adolescente_referencia_txt.setText("");
+        adolescente_ocupacion_txt.setText("");
+        adolescente_direccion_txt.setText("");
+        adolescente_telefono_txt.setText("");
+        adolescente_email_txt.setText("");
+        adolescente_motivo_txt.setText("");
+        adolescente_horario_txt.setText("");
+        adolescente_detalle_txt.setText("");
+        adolescente_solicitante_txt.setText("");
+
+        ///ADULTO///
+        adulto_id_txt.setText("");
+        adulto_nombre_txt.setText("");
+        adulto_apellido_txt.setText("");
+        adulto_edad_txt.setText("");
+        adulto_referencia_txt.setText("");
+        adulto_ocupacion_txt.setText("");
+        adulto_direccion_txt.setText("");
+        adulto_telefono_txt.setText("");
+        adulto_email_txt.setText("");
+        adulto_motivo_txt.setText("");
+        adulto_horario_txt.setText("");
+        adulto_detalle_txt.setText("");
+        adulto_solicitante_txt.setText("");
+
+        ///PAREJA///
+        pareja_id_txt.setText("");
+        pareja2_id_txt.setText("");
+        pareja_apellido_txt.setText("");
+        pareja_nombre_txt.setText("");
+        pareja_edad_txt.setText("");
+        pareja2_edad_txt.setText("");
+        pareja_referencia_txt.setText("");
+        pareja_ocupacion_txt.setText("");
+        pareja2_ocupacion_txt.setText("");
+        pareja_direccion_txt.setText("");
+        pareja_telefono_txt.setText("");
+        pareja2_telefono_txt.setText("");
+        pareja_email_txt.setText("");
+        pareja_motivo_txt.setText("");
+        pareja_horario_txt.setText("");
+        pareja_detalle_txt.setText("");
+        pareja_solicitante_txt.setText("");
+
+        ///FAMILIA///
+        familia_id_txt.setText("");
+        familia_nombre_txt.setText("");
+        familia_apellido_txt.setText("");
+        familia_integrantes_txt.setText("");
+        familia_edad_txt.setText("");
+        familia_referencia_txt.setText("");
+        familia_ocupacion_txt.setText("");
+        familia_direccion_txt.setText("");
+        familia_telefono_txt.setText("");
+        familia_email_txt.setText("");
+        familia_motivo_txt.setText("");
+        familia_horario_txt.setText("");
+        familia_detalle_txt.setText("");
+        familia_solicitante_txt.setText("");
+
+        ///MODIFICAR PERSONA///
+        modificar_persona_id_txt.setText("");
+        modificar_persona_nombre_txt.setText("");
+        modificar_persona_apellido_txt.setText("");
+        modificar_persona_edad_txt.setText("");
+        modificar_persona_integrantes_txt.setText("");
+        modificar_persona_referencia_txt.setText("");
+        modificar_persona_ocupacion_txt.setText("");
+        modificar_persona_direccion_txt.setText("");
+        modificar_persona_telefono_txt.setText("");
+        modificar_persona_email_txt.setText("");
+        modificar_persona_motivo_txt.setText("");
+        modificar_persona_horario_txt.setText("");
+        modificar_persona_detalle_txt.setText("");
+        modificar_persona_solicitante_txt.setText("");
+        modificar_persona_cita_txt.setText("");
+        modificar_persona_expediente_txt.setText("");
+
+        ///////////////////////AGREGAR PSICOLOGO
+        nombre_psicologo_txt.setText("");
+        apellidos_psicologo_txt.setText("");
+        carnet_psicologo_txt.setText("");
+        id_psicologo_txt.setText("");
+        celular_psicologo_txt.setText("");
+        email_psicologo_txt.setText("");
+        //////////////////////ELIMINAR PSICOLOGO
+
+        /////////////////////AGREGAR CURSO
+        nombre_curso_txt.setText("");
+        siglas_curso_txt.setText("");
+        ////////////////////ELIMINAR CURSO
+        curso_eliminar_txt.setText("");
+        ////////////   generar Justificacion 
+        generar_justi_txt.setText("");
+        nombre_justi_txt.setText("");
+        apellidos_justi_txt.setText("");
+        cedula_justi_txt.setText("");
+        telefono_justi_txt.setText("");
+        hotario_justi_txt.setText("");
+
     }
 
 }
