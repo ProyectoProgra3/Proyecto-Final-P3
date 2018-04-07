@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.SQL;
 import static iComponents.ComponentInterfaz.LEFT;
 import iComponents.iButton;
 import iComponents.iButtonFake;
@@ -45,6 +46,8 @@ import jiconfont.icons.GoogleMaterialDesignIcons;
  * @author crodas
  */
 public class MainDashboard {
+    
+    public SQL sql;
 
     public iFrame dash_frm;
     public iPanel info_panel;
@@ -82,7 +85,6 @@ public class MainDashboard {
     // BOTONES Psicologis 
     public iButtonFake btn_mosPsico = new iButtonFake("Mostar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.VISIBILITY);
     public iButtonFake btn_agrePsico = new iButtonFake("Agregar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.GROUP_ADD);
-    public iButtonFake btn_eliPsico = new iButtonFake("Eliminar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DELETE);
     public iButtonFake btn_eliTodos = new iButtonFake("Eliminar Todos ", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DELETE_FOREVER);
 
     //Botones Cursos
@@ -219,10 +221,6 @@ public class MainDashboard {
     public iTextField celular_psicologo_txt = new iTextField("",6);
     public iTextField email_psicologo_txt = new iTextField("",6);
     public iButtonFake btn_agregar_psicologo = new iButtonFake("Agregar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
-    //////////////////////ELIMINAR PSICOLOGO
-    public iTextField eliminar_nombre_psicologo_txt = new iTextField("", 6);
-    public iTextField eliminar_apellidos_psicologo_txt = new iTextField("", 6);
-    public iButtonFake btn_psicologo_eliminar = new iButtonFake("Eliminar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     /////////////////////AGREGAR CURSO
     public iTextField nombre_curso_txt = new iTextField("", 6);
     public iTextField siglas_curso_txt = new iTextField("", 6);
@@ -243,6 +241,7 @@ public class MainDashboard {
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
     public MainDashboard() {
+        this.sql= new SQL();
         //ARRAY DEL COMBOBOX
         ArrayList<String> items = new ArrayList<String>();
 
@@ -412,10 +411,8 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        search_panel.AddObject(btn_eliTodos, 135, 60, 407);
+        search_panel.AddObject(btn_eliTodos, 135, 60, 272);
         btn_eliTodos.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_eliPsico, 135, 60, 272);
-        btn_eliPsico.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_agrePsico, 135, 60, 135);
         btn_agrePsico.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_mosPsico, 135, 60, -1);
@@ -1424,38 +1421,6 @@ public class MainDashboard {
         info_panel.newLine();
 
         info_panel.AddObject(btn_agregar_psicologo, 130, 40, CENTER);
-        info_panel.newLine();
-    }
-
-    public void Eliminar_Psicologo() {
-        info_panel.dispose();
-        info_panel.repaint();
-
-        JLabel lbl_titulo = new JLabel();
-        lbl_titulo.setText("Digite el psicologo a eliminar: ");
-        lbl_titulo.setForeground(new Color(156, 156, 156));
-
-        JLabel lbl_nombreEliminar = new JLabel();
-        lbl_nombreEliminar.setText("Nombre: ");
-        lbl_nombreEliminar.setForeground(new Color(156, 156, 156));
-
-        JLabel lbl_apellidoEliminar = new JLabel();
-        lbl_apellidoEliminar.setText("Apellido: ");
-        lbl_apellidoEliminar.setForeground(new Color(156, 156, 156));
-
-        btn_psicologo_eliminar.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
-
-        info_panel.AddObject(lbl_titulo, 250, 20, LEFT);
-        info_panel.newLine();
-
-        info_panel.AddObject(lbl_nombreEliminar, 60, 20, LEFT);
-        info_panel.AddObject(eliminar_nombre_psicologo_txt, 200, 20, LEFT);
-
-        info_panel.AddObject(lbl_apellidoEliminar, 60, 20, LEFT);
-        info_panel.AddObject(eliminar_apellidos_psicologo_txt, 200, 20, LEFT);
-        info_panel.newLine();
-
-        info_panel.AddObject(btn_psicologo_eliminar, 130, 40, CENTER);
         info_panel.newLine();
     }
 
