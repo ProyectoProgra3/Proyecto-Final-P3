@@ -1470,11 +1470,9 @@ public class MainDashboard {
     }
 
     public void Generar_Justificaccion() throws IOException {
-        // Hay que revisarlo para solo agregar el word 
         info_panel.dispose();
         info_panel.repaint();
         try {
-
             String url = System.getProperty("user.dir") +( "//src//Img//Justificacion Proyecto.docx");
             ProcessBuilder p = new ProcessBuilder();
             p.command("cmd.exe", "/c", url);
