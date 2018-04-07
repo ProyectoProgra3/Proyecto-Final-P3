@@ -1475,7 +1475,7 @@ public class MainDashboard {
         info_panel.repaint();
         try {
 
-            String url = "C:\\Users\\Cesarpj\\Desktop\\Justificacion Proyecto.docx";
+            String url = System.getProperty("user.dir") +( "//src//Img//Justificacion Proyecto.docx");
             ProcessBuilder p = new ProcessBuilder();
             p.command("cmd.exe", "/c", url);
             p.start();
