@@ -1277,8 +1277,8 @@ public class MainDashboard {
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_id_txt, 160, 20, LEFT);
 
-        info_panel.AddObject(expediente_lbl, 60, 20, LEFT);
-        info_panel.AddObject(modificar_persona_expediente_txt, 160, 20, LEFT);
+        info_panel.AddObject(expediente_lbl, 100, 20, LEFT);
+        info_panel.AddObject(modificar_persona_expediente_txt, 120, 20, LEFT);
         info_panel.newLine();
 
         info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
@@ -1293,7 +1293,7 @@ public class MainDashboard {
         
 
         info_panel.AddObject(integrantes_lbl, 100, 20, LEFT);
-        info_panel.AddObject(modificar_persona_integrantes_txt, 140, 20, LEFT);
+        info_panel.AddObject(modificar_persona_integrantes_txt, 120, 20, LEFT);
         info_panel.newLine();
         
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
