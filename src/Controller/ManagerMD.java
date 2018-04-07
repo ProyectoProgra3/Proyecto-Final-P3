@@ -232,8 +232,8 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Falta gente ");
             return;
         }
-        this.bl.AgregarSolicitudAdoslecente(md.familia_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.familia_nombre_txt.getText(), md.familia_apellido_txt.getText(), Integer.parseInt(md.familia_telefono_txt.getText()), Integer.parseInt(md.familia_edad_txt.getText()), md.familia_ocupacion_txt.getText(), md.familia_motivo_txt.getText(), md.familia_referencia_txt.getText(), md.familia_horario_txt.getText(), md.familia_email_txt.getText(), md.familia_detalle_txt.getText(),
-                md.familia_solicitante_txt.getText(), md.familia_direccion_txt.getText());
+        this.bl.AgregarSolicitudFamilia(md.familia_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.familia_nombre_txt.getText(), md.familia_apellido_txt.getText(), Integer.parseInt(md.familia_telefono_txt.getText()), Integer.parseInt(md.familia_edad_txt.getText()), md.familia_ocupacion_txt.getText(), md.familia_motivo_txt.getText(), md.familia_referencia_txt.getText(), md.familia_horario_txt.getText(), md.familia_email_txt.getText(), md.familia_detalle_txt.getText(),
+                md.familia_solicitante_txt.getText(), md.familia_direccion_txt.getText(),Integer.parseInt(this.md.familia_integrantes_txt.getText()));
     }
 
     public void llenarModificar() {

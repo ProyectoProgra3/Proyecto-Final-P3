@@ -352,8 +352,8 @@ public class BusinessLogic extends InitModel {
                     Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion));
             boolean result = sql.exec(
                     "INSERT INTO `icompone_mario`.`Persona`"
-                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`) "
-                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '1',?,?,?,?,?,?,?,?,?,?,?,?,?);", objs);
+                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
+                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '1',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
                 System.out.println("Se añadio correctamente");
             }
@@ -387,8 +387,8 @@ public class BusinessLogic extends InitModel {
                     Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion));
             boolean result = sql.exec(
                     "INSERT INTO `icompone_mario`.`Persona`"
-                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`) "
-                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '2',?,?,?,?,?,?,?,?,?,?,?,?,?);", objs);
+                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
+                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '2',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
                 System.out.println("Se añadio correctamente");
             }
@@ -422,8 +422,8 @@ public class BusinessLogic extends InitModel {
                     Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion));
             boolean result = sql.exec(
                     "INSERT INTO `icompone_mario`.`Persona`"
-                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`) "
-                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '3',?,?,?,?,?,?,?,?,?,?,?,?,?);", objs);
+                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
+                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '3',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
                 System.out.println("Se añadio correctamente");
             }
@@ -457,8 +457,8 @@ public class BusinessLogic extends InitModel {
                     Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion));
             boolean result = sql.exec(
                     "INSERT INTO `icompone_mario`.`Persona`"
-                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`) "
-                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '4',?,?,?,?,?,?,?,?,?,?,?,?,?);", objs);
+                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
+                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '4',?,?,?,?,?,?,?,?,?,?,?,?,?,2);", objs);
             if (result) {
                 System.out.println("Se añadio correctamente");
             }
@@ -483,17 +483,17 @@ public class BusinessLogic extends InitModel {
      */
     public boolean AgregarSolicitudFamilia(String ID, String Estado, String Nombre, String Apellido, int edad,
             int telefono, String Ocupacion, String Motivo, String Referencia,
-            String Detalle_Horario, String email, String detalle, String NombreSolicitante, String Direccion) {
+            String Detalle_Horario, String email, String detalle, String NombreSolicitante, String Direccion,int integrantes) {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             objs.addAll(Arrays.asList(ID, Estado, Nombre,
                     Apellido, edad,
                     telefono, Ocupacion, Motivo, Referencia,
-                    Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion));
+                    Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion,integrantes));
             boolean result = sql.exec(
                     "INSERT INTO `icompone_mario`.`Persona`"
-                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`) "
-                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '5',?,?,?,?,?,?,?,?,?,?,?,?,?);", objs);
+                    + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
+                    + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '5',?,?,?,?,?,?,?,?,?,?,?,?,?,?);", objs);
             if (result) {
                 System.out.println("Se añadio correctamente");
             }
