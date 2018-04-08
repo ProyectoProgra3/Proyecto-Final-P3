@@ -215,6 +215,17 @@ public class MainDashboard {
     public iComboCheckBox modificar_persona_curso_cbm;
     public iComboCheckBox modificar_persona_psicologo_cbm;
 
+    ///MODIFICAR CITA///
+    public iTextField modificar_cita_id_txt = new iTextField("", 6);
+    public iTextField modificar_cita_nombre_txt = new iTextField("", 6);
+    public iTextField modificar_cita_apellido_txt = new iTextField("", 6);
+    public iTextField modificar_cita_motivo_txt = new iTextField("", 6);
+    public iTextField modificar_cita_horario_txt = new iTextField("", 6);
+    public iTextField modificar_cita_expediente_txt = new iTextField("", 6);
+    public iButtonFake btn_guardar_modificar_cita = new iButtonFake("Guardar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+    public iComboCheckBox modificar_cita_curso_cbm;
+    public iComboCheckBox modificar_cita_psicologo_cbm;
+    
     ///////////////////////AGREGAR PSICOLOGO
     public iTextField nombre_psicologo_txt = new iTextField("", 6);
     public iTextField apellidos_psicologo_txt = new iTextField("", 6);
@@ -273,6 +284,8 @@ public class MainDashboard {
         modificar_persona_tipo_cbm = new iComboCheckBox();
         modificar_persona_curso_cbm = new iComboCheckBox();
         modificar_persona_psicologo_cbm = new iComboCheckBox();
+        modificar_cita_curso_cbm = new iComboCheckBox();
+        modificar_cita_psicologo_cbm = new iComboCheckBox();
         busquedas = new JTable();
 
         initComponents();
@@ -315,6 +328,7 @@ public class MainDashboard {
         search_panel.setBackground(new Color(137, 185, 185));
 
         //Panel de informacion (Aqui se desplegara toda la informacion de prueba)
+        
         ///////////////////////////////////////////////////////////////       
         menu_panel.add(clock);
         info_panel.add(fondo_label);
@@ -380,11 +394,10 @@ public class MainDashboard {
 
         search_panel.AddObject(btn_buscar_cita, 120, 30, 1);
         btn_buscar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
-        
         search_panel.newLine();
+        
         info_panel.add(fondo_label);
-        //hola
-        //holaMario
+        
     }
 
     public void BtnModificarPersona() {
@@ -1373,6 +1386,87 @@ public class MainDashboard {
         info_panel.add(fondo_label);
     }
 
+    
+////////////////////CITAS////////////////////////////////////
+    public void modificar_citas(){
+        info_panel.dispose();
+        info_panel.repaint();
+
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
+
+        JLabel id_lbl = new JLabel();
+        id_lbl.setText("ID: ");
+        id_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel expediente_lbl = new JLabel();
+        expediente_lbl.setText("Expediente: ");
+        expediente_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel nombre_lbl = new JLabel();
+        nombre_lbl.setText("Nombre: ");
+        nombre_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel apellido_lbl = new JLabel();
+        apellido_lbl.setText("Apellido: ");
+        apellido_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel cita_lbl = new JLabel();
+        cita_lbl.setText("Cita: ");
+        cita_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel horario_lbl = new JLabel();
+        horario_lbl.setText("Horario: ");
+        horario_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel combo3_lbl = new JLabel();
+        combo3_lbl.setText("Curso: ");
+        combo3_lbl.setForeground(new Color(156, 156, 156));
+
+        JLabel combo4_lbl = new JLabel();
+        combo4_lbl.setText("Psicólogo: ");
+        combo4_lbl.setForeground(new Color(156, 156, 156));
+        
+        JLabel clock2_lbl = new JLabel();
+        clock2_lbl.setText("Registro: ");
+        clock2_lbl.setForeground(new Color(156, 156, 156));
+        
+
+        Solicitud = new JLabel();
+
+        info_panel.AddObject(id_lbl, 80, 20, LEFT);
+        info_panel.AddObject(modificar_cita_id_txt, 160, 20, LEFT);
+
+        info_panel.AddObject(expediente_lbl, 100, 20, LEFT);
+        info_panel.AddObject(modificar_cita_expediente_txt, 120, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
+        info_panel.AddObject(modificar_cita_nombre_txt, 160, 20, LEFT);
+
+        info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
+        info_panel.AddObject(modificar_cita_apellido_txt, 160, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(horario_lbl, 80, 20, LEFT);
+        info_panel.AddObject(modificar_cita_horario_txt, 160, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(combo3_lbl, 80, 20, LEFT);
+        info_panel.AddObject(modificar_cita_curso_cbm, 160, 20, LEFT);
+
+        info_panel.AddObject(combo4_lbl, 60, 20, LEFT);
+        info_panel.AddObject(modificar_cita_psicologo_cbm, 160, 20, LEFT);
+        info_panel.AddObject(btn_guardar_modificar_cita, 100, 60, LEFT);
+        info_panel.newLine();
+
+        info_panel.AddObject(clock2_lbl, 80, 20, LEFT);
+        info_panel.AddObject(Solicitud, 200, 20, LEFT);
+        info_panel.newLine();
+
+        info_panel.add(fondo_label);
+    }
 ////////////////////PSICOLOGOS/////////////////////////////// 
     public void Mostrar_Cursos() {
 
@@ -1485,6 +1579,7 @@ public class MainDashboard {
         info_panel.newLine();
     }
 
+    ////////////JUSTIFICACION///////////////////////////////////
     public void Generar_Justificaccion() throws IOException {
         info_panel.dispose();
         info_panel.repaint();
