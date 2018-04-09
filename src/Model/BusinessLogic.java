@@ -731,14 +731,14 @@ public class BusinessLogic extends InitModel {
         }
 
         // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream(System.getProperty("user.dir") + ("//src//Img//Resportes.xlsx"));
+        FileOutputStream fileOut = new FileOutputStream(System.getProperty("user.dir") + ("//src//Img//Reportes.xlsx"));
         workbook.write(fileOut);
         fileOut.close();
 
         // Closing the workbook
         workbook.close();
           try {
-            String url = System.getProperty("user.dir") + ("//src//Img//Resportes.xlsx");
+            String url = System.getProperty("user.dir") + ("//src//Img//Reportes.xlsx");
             ProcessBuilder p = new ProcessBuilder();
             p.command("cmd.exe", "/c", url);
             p.start();
