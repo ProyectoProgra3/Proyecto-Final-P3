@@ -17,6 +17,8 @@ import iComponents.iTable;
 import iComponents.iTextField;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -309,11 +311,7 @@ public class MainDashboard {
         menu_panel.setBackground(new Color(106, 203, 214));
 
         //Busqueda Ráída//
-        info_panel.AddObject(btn_busqueda_rapida, 80, 30, LEFT);
-        info_panel.newLine();
-        info_panel.AddObject(busquedas, 200, 200, CENTER);
-        info_panel.newLine();
-
+       
         //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
         menu_panel.AddSingleObject(menu_label, 180, 40, CENTER);
         menu_panel.AddSingleObject(btn_agregar, 171, 40, LEFT);
@@ -603,6 +601,18 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(nedad_txt, 160, 20, LEFT);
+        nedad_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
@@ -619,6 +629,18 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(ntelefono_txt, 160, 20, LEFT);
+         ntelefono_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
 
         info_panel.AddObject(email_lbl, 60, 20, LEFT);
         info_panel.AddObject(nemail_txt, 160, 20, LEFT);
