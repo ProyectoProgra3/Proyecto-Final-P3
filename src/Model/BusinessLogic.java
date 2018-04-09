@@ -5,12 +5,24 @@
  */
 package Model;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class BusinessLogic extends InitModel {
 
@@ -571,6 +583,169 @@ public class BusinessLogic extends InitModel {
             JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
         }
         return result;
+    }
+
+    public boolean GenerarExcel() throws FileNotFoundException, IOException {
+        String[] Columnas = {"Cedula", "Estado", "Tipo de solicitud",
+            "Nombre", "Apellido", "Edad",
+            "Telefono", "Ocupacion", "Motivo",
+            "Referencia", "Horario", "Email",
+            "Detalle", "Fecha de solicitud", "Solicitante",
+            "Curso", "Psicologo", "Expediente", "Direccion", "Integrantes"};
+        ArrayList<Persona> Personas = new ArrayList<>();
+
+        try {
+            ArrayList<Object> objs = new ArrayList<>();
+            ResultSet rs = sql.SELECT("Select ID,"
+                    + "Estado,"
+                    + "Tipo_de_solicitud.`Tipo de solicitud`,"
+                    + " Persona.Nombre,"
+                    + "Persona.Apellido,\n"
+                    + "Persona.Edad,"
+                    + "Persona.Telefono,"
+                    + "Persona.Ocupacion,"
+                    + "Persona.Motivo,"
+                    + "Persona.Referencia,"
+                    + "Persona.Detalle_Horario,\n"
+                    + "Persona.Email,"
+                    + "Persona.Detalle,"
+                    + "Persona.Fecha_Solicitud,"
+                    + "Persona.NombreSolicitante,\n"
+                    + " Curso.Nombre,"
+                    + " Psicologo.Nombre,"
+                    + "Persona.Expediente,"
+                    + "Persona.Dir,"
+                    + "Persona.Integrantes from Persona \n"
+                    + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
+                    + "left join 	Curso on Persona.Curso_idCurso=Curso.idCurso \n"
+                    + "left join Psicologo on Persona.Psicologo_idPsicologo=Psicologo.idPsicologo", objs);
+            try {
+                while (rs.next()) {
+                    Persona p = new Persona(rs.getObject("ID").toString(),
+                            rs.getObject("Estado").toString(),
+                            rs.getObject("Tipo_de_solicitud.Tipo de solicitud").toString(),
+                            rs.getObject("Persona.Nombre").toString(),
+                            rs.getObject("Persona.Apellido").toString(),
+                            rs.getObject("Persona.Ocupacion").toString(),
+                            rs.getObject("Persona.Motivo").toString(),
+                            rs.getObject("Persona.Referencia").toString(),
+                            rs.getObject("Persona.Detalle_Horario").toString(),
+                            rs.getObject("Persona.Email").toString(),
+                            rs.getObject("Persona.Detalle").toString(),
+                            rs.getObject("Persona.Fecha_Solicitud").toString(),
+                            rs.getObject("Persona.NombreSolicitante").toString(),
+                            rs.getObject("Curso.Nombre").toString(),
+                            rs.getObject("Psicologo.Nombre").toString(),
+                            rs.getObject("Persona.Expediente").toString(),
+                            rs.getObject("Persona.Dir").toString(),
+                            Integer.parseInt(rs.getObject("Persona.Integrantes").toString()),
+                            Integer.parseInt(rs.getObject("Persona.Edad").toString()),
+                            Integer.parseInt(rs.getObject("Persona.Telefono").toString()));
+                    Personas.add(p);
+                }
+
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+                 return false;
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+             return false;
+
+        }
+
+        Workbook workbook = new XSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+        Sheet sheet = workbook.createSheet("Persona");
+        Font headerFont = workbook.createFont();
+        headerFont.setBold(true);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+        Row headerRow = sheet.createRow(0);
+//        sheet = workbook.getSheetAt(0);
+//        Iterator<Row> rowIte = sheet.iterator();
+//        while (rowIte.hasNext()) {
+//            rowIte.next();
+//            rowIte.remove();
+//        }
+//         Creating cells
+        for (int i = 0; i < Columnas.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(Columnas[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+        int rowNum = 1;
+        for (Persona persona : Personas) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0)
+                    .setCellValue(persona.getID());
+            row.createCell(1)
+                    .setCellValue(persona.getEstado_idEstado());
+            row.createCell(2)
+                    .setCellValue(persona.getTipo_de_solicitud_idSolicitud());
+            row.createCell(3)
+                    .setCellValue(persona.getNombre());
+            row.createCell(4)
+                    .setCellValue(persona.getApellido());
+            row.createCell(5)
+                    .setCellValue(persona.getEdad());
+            row.createCell(6)
+                    .setCellValue(persona.getTelefono());
+            row.createCell(7)
+                    .setCellValue(persona.getOcupacion());
+            row.createCell(8)
+                    .setCellValue(persona.getMotivo());
+            row.createCell(9)
+                    .setCellValue(persona.getReferencia());
+            row.createCell(10)
+                    .setCellValue(persona.getDetalle_Horario());
+            row.createCell(11)
+                    .setCellValue(persona.getEmail());
+            row.createCell(12)
+                    .setCellValue(persona.getDetalle());
+            row.createCell(13)
+                    .setCellValue(persona.getFecha_Solicitud());
+            row.createCell(14)
+                    .setCellValue(persona.getNombreSolicitante());
+            row.createCell(15)
+                    .setCellValue(persona.getCurso_idCurso());
+            row.createCell(16)
+                    .setCellValue(persona.getPsicologo_idPsicologo());
+            row.createCell(17)
+                    .setCellValue(persona.getExpediente());
+            row.createCell(18)
+                    .setCellValue(persona.getDir());
+            row.createCell(19)
+                    .setCellValue(persona.getIntegrantes());
+
+        }
+
+//         Resize all columns to fit the content size
+        for (int i = 0; i < Columnas.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream(System.getProperty("user.dir") + ("//src//Img//Resportes.xlsx"));
+        workbook.write(fileOut);
+        fileOut.close();
+
+        // Closing the workbook
+        workbook.close();
+          try {
+            String url = System.getProperty("user.dir") + ("//src//Img//Resportes.xlsx");
+            ProcessBuilder p = new ProcessBuilder();
+            p.command("cmd.exe", "/c", url);
+            p.start();
+        } catch (IOException exe) {
+            return false;
+        }
+return true;
     }
 
     /**

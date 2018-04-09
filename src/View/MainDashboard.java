@@ -492,10 +492,10 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        search_panel.AddObject(btn_report_diario, 120, 60, 240);
-        btn_report_diario.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_report_semanal, 120, 60, 120);
-        btn_report_semanal.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+//        search_panel.AddObject(btn_report_diario, 120, 60, 240);
+//        btn_report_diario.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+//        search_panel.AddObject(btn_report_semanal, 120, 60, 120);
+//        btn_report_semanal.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_report_mensual, 120, 60, -1);
         btn_report_mensual.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();

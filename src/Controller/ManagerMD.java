@@ -14,6 +14,8 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -76,6 +78,7 @@ public class ManagerMD implements MouseListener {
 
         //reportes
         this.md.btn_report.addMouseListener(this);
+        this.md.btn_report_mensual.addMouseListener(this);
         this.md.btn_justi.addMouseListener(this);
 
     }
@@ -140,8 +143,8 @@ public class ManagerMD implements MouseListener {
         if (md.btn_citas == me.getSource()) {
             md.Btn_Cita();
         }
-        if(this.md.btn_buscar_cita== me.getSource()){
-        md.modificar_citas();
+        if (this.md.btn_buscar_cita == me.getSource()) {
+            md.modificar_citas();
         }
 
         //piscologo
@@ -198,6 +201,13 @@ public class ManagerMD implements MouseListener {
         //reporte
         if (md.btn_report == me.getSource()) {
             md.BtnReportes();
+        }
+           if (md.btn_report_mensual == me.getSource()) {
+            try {
+                GenerarReporte();
+            } catch (IOException ex) {
+                Logger.getLogger(ManagerMD.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }
@@ -336,6 +346,14 @@ public class ManagerMD implements MouseListener {
 
     public void eliminarCurso() {
         this.bl.deleteCurso(this.md.curso_eliminar_txt.getText());
+    }
+    
+    public void GenerarReporte() throws IOException{
+   if(this.bl.GenerarExcel()){
+       JOptionPane.showMessageDialog(null,"Su Reporte se genero ");
+   }else{
+          JOptionPane.showMessageDialog(null,"Upsss hubo un error ");
+   }
     }
 
     @Override
