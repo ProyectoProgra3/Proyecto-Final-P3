@@ -1705,6 +1705,44 @@ public class MainDashboard {
     }
 
     public void Mostrar_Psicologos() {
+        ArrayList<String> cols = new ArrayList<>();
+        iTable tab = null;
+
+        tab = new iTable(cols);
+        ResultSet rs = sql.SELECT("SELECT `idPsicologo`, `Nombre`, `Apellido`, `Carnet`,`Celular`,`Email` FROM `Psicologo`", new ArrayList<>() );
+        
+        if (sql.Exists(rs)) 
+        {
+            try {
+
+                if (rs.next()) {
+                    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                        cols.add(rs.getMetaData().getColumnName(i));
+                    }
+                }
+
+                tab = new iTable(cols);
+                ResultSet rt = sql.SELECT("SELECT * FROM  `Psicologo`", new ArrayList<>());
+                while (rt.next()) {
+                    Object[] row = new Object[rt.getMetaData().getColumnCount()];
+                    for (int i = 1; i <= rt.getMetaData().getColumnCount(); i++) {
+                        row[i - 1] = rt.getObject(i);
+                    }
+                    tab.addrow(row);
+                }
+
+            } catch (SQLException ex) {
+                System.out.println("no object fetch'd");
+            }
+        }
+       
+
+        JScrollPane scrollPane = new JScrollPane(tab);
+
+        scrollPane.setBounds(0, 0, 600, 460);
+        
+        info_panel.add(scrollPane);
+        
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
