@@ -382,8 +382,8 @@ public class BusinessLogic extends InitModel {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             objs.addAll(Arrays.asList(ID, Estado, Nombre,
-                    Apellido, edad,
-                    telefono, Ocupacion, Motivo, Referencia,
+                    Apellido, telefono,
+                    edad, Ocupacion, Motivo, Referencia,
                     Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion));
             boolean result = sql.exec(
                     "INSERT INTO `icompone_mario`.`Persona`"
