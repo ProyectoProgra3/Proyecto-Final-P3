@@ -227,7 +227,7 @@ public class MainDashboard {
     public iButtonFake btn_guardar_modificar_cita = new iButtonFake("Guardar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox modificar_cita_curso_cbm;
     public iComboCheckBox modificar_cita_psicologo_cbm;
-    
+
     ///////////////////////AGREGAR PSICOLOGO
     public iTextField nombre_psicologo_txt = new iTextField("", 6);
     public iTextField apellidos_psicologo_txt = new iTextField("", 6);
@@ -255,8 +255,6 @@ public class MainDashboard {
 
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
-    
-    
     public MainDashboard() {
         this.sql = new SQL();
         //ARRAY DEL COMBOBOX
@@ -312,7 +310,6 @@ public class MainDashboard {
         menu_panel.setBackground(new Color(106, 203, 214));
 
         //Busqueda Ráída//
-       
         //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
         menu_panel.AddSingleObject(menu_label, 180, 40, CENTER);
         menu_panel.AddSingleObject(btn_agregar, 171, 40, LEFT);
@@ -327,7 +324,6 @@ public class MainDashboard {
         search_panel.setBackground(new Color(137, 185, 185));
 
         //Panel de informacion (Aqui se desplegara toda la informacion de prueba)
-
         ///////////////////////////////////////////////////////////////       
         menu_panel.add(clock);
         info_panel.add(fondo_label);
@@ -377,7 +373,7 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         JLabel id2_lbl = new JLabel();
         id2_lbl.setText("Cédula: ");
         id2_lbl.setForeground(new Color(255, 255, 255));
@@ -385,19 +381,18 @@ public class MainDashboard {
         JLabel tipo_lbl = new JLabel();
         tipo_lbl.setText("Tipo: ");
         tipo_lbl.setForeground(new Color(255, 255, 255));
-        
+
         search_panel.AddObject(id2_lbl, 50, 42, LEFT);
         search_panel.AddObject(cita_txt, 120, 32, LEFT);
         search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
         search_panel.AddObject(cita_cbm, 120, 32, LEFT);
-        
-        
+
         search_panel.AddObject(btn_buscar_cita, 120, 30, 1);
         btn_buscar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
-        
+
         info_panel.add(fondo_label);
-        
+
     }
 
     public void BtnModificarPersona() {
@@ -518,7 +513,7 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         JLabel titulo_lbl = new JLabel();
         titulo_lbl.setText("- Modulo Agregar Niño -");
         titulo_lbl.setForeground(new Color(156, 156, 156));
@@ -631,7 +626,7 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(ntelefono_txt, 160, 20, LEFT);
-         ntelefono_txt.addKeyListener(new KeyAdapter() {
+        ntelefono_txt.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 char caracter = e.getKeyChar();
 
@@ -683,7 +678,7 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         JLabel titulo_lbl = new JLabel();
         titulo_lbl.setText("- Modulo Agregar Adolescente -");
         titulo_lbl.setForeground(new Color(156, 156, 156));
@@ -768,7 +763,7 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(adolescente_edad_txt, 160, 20, LEFT);
-         adolescente_edad_txt.addKeyListener(new KeyAdapter() {
+        adolescente_edad_txt.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 char caracter = e.getKeyChar();
 
@@ -781,7 +776,6 @@ public class MainDashboard {
             }
         });
         info_panel.newLine();
-        
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(adolescente_referencia_txt, 160, 20, LEFT);
@@ -838,7 +832,7 @@ public class MainDashboard {
         info_panel.AddObject(clock2_lbl, 80, 20, LEFT);
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.add(fondo_label);
 
     }
@@ -850,7 +844,7 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         JLabel titulo_lbl = new JLabel();
         titulo_lbl.setText("- Modulo Agregar Adulto -");
         titulo_lbl.setForeground(new Color(156, 156, 156));
@@ -948,7 +942,6 @@ public class MainDashboard {
             }
         });
         info_panel.newLine();
-        
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(adulto_referencia_txt, 160, 20, LEFT);
@@ -964,7 +957,7 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(adulto_telefono_txt, 160, 20, LEFT);
-         adulto_telefono_txt.addKeyListener(new KeyAdapter() {
+        adulto_telefono_txt.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 char caracter = e.getKeyChar();
 
@@ -1004,7 +997,7 @@ public class MainDashboard {
         info_panel.AddObject(clock2_lbl, 80, 20, LEFT);
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.add(fondo_label);
 
     }
@@ -1016,7 +1009,7 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         JLabel titulo_lbl = new JLabel();
         titulo_lbl.setText("- Modulo Agregar Pareja -");
         titulo_lbl.setForeground(new Color(156, 156, 156));
@@ -1187,7 +1180,7 @@ public class MainDashboard {
     public void Agregar_solicitud_familia() {
         info_panel.dispose();
         info_panel.repaint();
-        
+
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
@@ -1366,7 +1359,7 @@ public class MainDashboard {
         info_panel.AddObject(clock2_lbl, 80, 20, LEFT);
         info_panel.AddObject(clock2, 80, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.add(fondo_label);
     }
 
@@ -1582,9 +1575,8 @@ public class MainDashboard {
         info_panel.add(fondo_label);
     }
 
-    
 ////////////////////CITAS////////////////////////////////////
-    public void modificar_citas(){
+    public void modificar_citas() {
         info_panel.dispose();
         info_panel.repaint();
 
@@ -1623,11 +1615,10 @@ public class MainDashboard {
         JLabel combo4_lbl = new JLabel();
         combo4_lbl.setText("Psicólogo: ");
         combo4_lbl.setForeground(new Color(156, 156, 156));
-        
+
         JLabel clock2_lbl = new JLabel();
         clock2_lbl.setText("Registro: ");
         clock2_lbl.setForeground(new Color(156, 156, 156));
-        
 
         Solicitud = new JLabel();
 
@@ -1648,10 +1639,10 @@ public class MainDashboard {
         info_panel.AddObject(horario_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_horario_txt, 160, 20, LEFT);
         info_panel.newLine();
-
+        modificar_cita_curso_cbm.addItem("hola");
         info_panel.AddObject(combo3_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_curso_cbm, 160, 20, LEFT);
-
+        modificar_cita_psicologo_cbm.addItem("hola");
         info_panel.AddObject(combo4_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_cita_psicologo_cbm, 160, 20, LEFT);
         info_panel.AddObject(btn_guardar_modificar_cita, 100, 60, LEFT);
@@ -1664,15 +1655,14 @@ public class MainDashboard {
         info_panel.add(fondo_label);
     }
 ////////////////////PSICOLOGOS/////////////////////////////// 
+
     public void Mostrar_Cursos() {
-        
-        
+
         ArrayList<String> cols = new ArrayList<>();
         iTable tab = null;
         tab = new iTable(cols);
-        ResultSet rs = sql.SELECT("SELECT `Siglas`, `Nombre` FROM `Curso`", new ArrayList<>() );
-        if (sql.Exists(rs)) 
-        {
+        ResultSet rs = sql.SELECT("SELECT `Siglas`, `Nombre` FROM `Curso`", new ArrayList<>());
+        if (sql.Exists(rs)) {
             try {
                 if (rs.next()) {
                     for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
@@ -1697,13 +1687,13 @@ public class MainDashboard {
         JScrollPane scrollPane = new JScrollPane(tab);
         scrollPane.setBounds(0, 0, 600, 460);
         info_panel.add(scrollPane);
-        
+
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         info_panel.add(fondo_label);
-        
+
     }
 
     public void Mostrar_Psicologos() {
@@ -1711,10 +1701,9 @@ public class MainDashboard {
         iTable tab = null;
 
         tab = new iTable(cols);
-        ResultSet rs = sql.SELECT("SELECT `idPsicologo`, `Nombre`, `Apellido`, `Carnet`,`Celular`,`Email` FROM `Psicologo`", new ArrayList<>() );
-        
-        if (sql.Exists(rs)) 
-        {
+        ResultSet rs = sql.SELECT("SELECT `idPsicologo`, `Nombre`, `Apellido`, `Carnet`,`Celular`,`Email` FROM `Psicologo`", new ArrayList<>());
+
+        if (sql.Exists(rs)) {
             try {
 
                 if (rs.next()) {
@@ -1737,29 +1726,28 @@ public class MainDashboard {
                 System.out.println("no object fetch'd");
             }
         }
-       
 
         JScrollPane scrollPane = new JScrollPane(tab);
 
         scrollPane.setBounds(0, 0, 600, 460);
-        
+
         info_panel.add(scrollPane);
-        
+
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         info_panel.add(fondo_label);
     }
 
     public void Agregar_Psicologo() {
         info_panel.dispose();
         info_panel.repaint();
-        
+
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         JLabel lbl_NombrePsicologo = new JLabel();
         lbl_NombrePsicologo.setText("Nombre: ");
         lbl_NombrePsicologo.setForeground(new Color(156, 156, 156));
@@ -1836,14 +1824,14 @@ public class MainDashboard {
 
         info_panel.AddObject(btn_agregar_psicologo, 130, 40, CENTER);
         info_panel.newLine();
-        
+
         info_panel.add(fondo_label);
     }
 
     public void Agregar_Curso() {
         info_panel.dispose();
         info_panel.repaint();
-        
+
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
@@ -1869,7 +1857,7 @@ public class MainDashboard {
 
         info_panel.AddObject(btn_agregar_curso, 130, 40, CENTER);
         info_panel.newLine();
-        
+
         info_panel.add(fondo_label);
     }
 
@@ -1880,7 +1868,7 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         JLabel lbl_titulo = new JLabel();
         lbl_titulo.setText("Digite el curso a eliminar: ");
         lbl_titulo.setForeground(new Color(156, 156, 156));
@@ -1893,7 +1881,7 @@ public class MainDashboard {
 
         info_panel.AddObject(btn_curso_eliminar, 130, 40, CENTER);
         info_panel.newLine();
-        
+
         info_panel.add(fondo_label);
     }
 
@@ -1901,13 +1889,13 @@ public class MainDashboard {
     public void Generar_Justificaccion() throws IOException {
         info_panel.dispose();
         info_panel.repaint();
-        
+
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         try {
-            String url = System.getProperty("user.dir") +( "//src//Img//Justificacion Proyecto.docx");
+            String url = System.getProperty("user.dir") + ("//src//Img//Justificacion Proyecto.docx");
             ProcessBuilder p = new ProcessBuilder();
             p.command("cmd.exe", "/c", url);
             p.start();
@@ -1917,7 +1905,7 @@ public class MainDashboard {
         btn_Imprimir_justi.setBorder(2, 2, 2, 2, new Color(162, 202, 202));
         ;
         info_panel.newLine();
-        
+
         info_panel.add(fondo_label);
     }
 
@@ -2044,5 +2032,4 @@ public class MainDashboard {
 
     }
 
-    
 }

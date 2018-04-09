@@ -265,6 +265,25 @@ public class BusinessLogic extends InitModel {
         return result;
     }
 
+    public void deleteCurso(String Nombre) {
+        ArrayList<Object> objs = new ArrayList<>();
+        objs.addAll(Arrays.asList(Nombre));
+        ResultSet rs = sql.SELECT("SELECT `Nombre` FROM Curso Where `Nombre`=? ", objs);
+        if (!sql.Exists(rs)) {
+            JOptionPane.showMessageDialog(null, "El curso no existe");
+            return;
+        }
+        boolean result = sql.exec("delete \n"
+                + "from Curso\n"
+                + "where Nombre= ?", objs);
+        if (result) {
+            JOptionPane.showMessageDialog(null, "Se borro corectamente");
+        } else {
+            JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
+        }
+
+    }
+
     /**
      * Inserta un psicologo en la tabla
      *
@@ -483,13 +502,13 @@ public class BusinessLogic extends InitModel {
      */
     public boolean AgregarSolicitudFamilia(String ID, String Estado, String Nombre, String Apellido, int edad,
             int telefono, String Ocupacion, String Motivo, String Referencia,
-            String Detalle_Horario, String email, String detalle, String NombreSolicitante, String Direccion,int integrantes) {
+            String Detalle_Horario, String email, String detalle, String NombreSolicitante, String Direccion, int integrantes) {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             objs.addAll(Arrays.asList(ID, Estado, Nombre,
                     Apellido, edad,
                     telefono, Ocupacion, Motivo, Referencia,
-                    Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion,integrantes));
+                    Detalle_Horario, email, detalle, this.getDate(), NombreSolicitante, Direccion, integrantes));
             boolean result = sql.exec(
                     "INSERT INTO `icompone_mario`.`Persona`"
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
