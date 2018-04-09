@@ -389,10 +389,11 @@ public class MainDashboard {
         search_panel.AddObject(cita_txt, 120, 32, LEFT);
         search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
         search_panel.AddObject(cita_cbm, 120, 32, LEFT);
-
-        search_panel.AddObject(btn_buscar_cita, 120, 30, 1);
-        btn_buscar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
+        
+        //search_panel.AddObject(btn_buscar_cita, 120, 30, 1);
+        //btn_buscar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        //search_panel.newLine();
         
         info_panel.add(fondo_label);
         
