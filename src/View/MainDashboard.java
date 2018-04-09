@@ -766,7 +766,20 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(adolescente_edad_txt, 160, 20, LEFT);
+         adolescente_edad_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
+        
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(adolescente_referencia_txt, 160, 20, LEFT);
@@ -782,6 +795,18 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(adolescente_telefono_txt, 160, 20, LEFT);
+        adolescente_telefono_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
 
         info_panel.AddObject(email_lbl, 60, 20, LEFT);
         info_panel.AddObject(adolescente_email_txt, 160, 20, LEFT);
@@ -908,7 +933,20 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(adulto_edad_txt, 160, 20, LEFT);
+        adulto_edad_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
+        
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
         info_panel.AddObject(adulto_referencia_txt, 160, 20, LEFT);
@@ -924,7 +962,18 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(adulto_telefono_txt, 160, 20, LEFT);
+         adulto_telefono_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
 
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.AddObject(email_lbl, 60, 20, LEFT);
         info_panel.AddObject(adulto_email_txt, 160, 20, LEFT);
         info_panel.newLine();
@@ -1059,6 +1108,18 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl2, 80, 20, LEFT);
         info_panel.AddObject(pareja_edad_txt, 150, 20, LEFT);
+        pareja_edad_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
@@ -1075,6 +1136,18 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(pareja_telefono_txt, 150, 20, LEFT);
+        pareja_telefono_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(email_lbl, 80, 20, LEFT);
@@ -1206,10 +1279,34 @@ public class MainDashboard {
 
         info_panel.AddObject(integrantes_lbl, 80, 20, LEFT);
         info_panel.AddObject(familia_integrantes_txt, 150, 20, LEFT);
+        familia_integrantes_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(familia_edad_txt, 150, 20, LEFT);
+        familia_edad_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
@@ -1226,6 +1323,18 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(familia_telefono_txt, 150, 20, LEFT);
+        familia_telefono_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
 
         info_panel.AddObject(email_lbl, 80, 20, LEFT);
         info_panel.AddObject(familia_email_txt, 150, 20, LEFT);
@@ -1370,9 +1479,33 @@ public class MainDashboard {
 
         info_panel.AddObject(edad_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_edad_txt, 160, 20, LEFT);
+        modificar_persona_edad_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
 
         info_panel.AddObject(integrantes_lbl, 100, 20, LEFT);
         info_panel.AddObject(modificar_persona_integrantes_txt, 120, 20, LEFT);
+        modificar_persona_integrantes_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(referencia_lbl, 80, 20, LEFT);
@@ -1393,7 +1526,18 @@ public class MainDashboard {
 
         info_panel.AddObject(telefono_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_persona_telefono_txt, 160, 20, LEFT);
+        modificar_persona_telefono_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
 
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.AddObject(email_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_persona_email_txt, 160, 20, LEFT);
         info_panel.newLine();
@@ -1616,10 +1760,34 @@ public class MainDashboard {
 
         info_panel.AddObject(lbl_carnet, 80, 20, LEFT);
         info_panel.AddObject(carnet_psicologo_txt, 160, 20, LEFT);
+        carnet_psicologo_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(lbl_celular, 100, 20, LEFT);
         info_panel.AddObject(celular_psicologo_txt, 140, 20, LEFT);
+        celular_psicologo_txt.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+
+                // Verificar si la tecla pulsada no es un digito
+                if (((caracter < '0')
+                        || (caracter > '9'))
+                        && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+                    e.consume();  // ignorar el evento de teclado
+                }
+            }
+        });
         info_panel.newLine();
 
         info_panel.AddObject(lbl_email, 120, 20, LEFT);
