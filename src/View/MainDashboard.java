@@ -221,6 +221,7 @@ public class MainDashboard {
     public iTextField modificar_cita_apellido_txt = new iTextField("", 6);
     public iTextField modificar_cita_motivo_txt = new iTextField("", 6);
     public iTextField modificar_cita_horario_txt = new iTextField("", 6);
+    public iTextField modificar_cita_cita_txt = new iTextField("", 6);
     public iTextField modificar_cita_expediente_txt = new iTextField("", 6);
     public iButtonFake btn_guardar_modificar_cita = new iButtonFake("Guardar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
     public iComboCheckBox modificar_cita_curso_cbm;
@@ -1678,6 +1679,11 @@ public class MainDashboard {
         info_panel.AddObject(horario_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_horario_txt, 160, 20, LEFT);
         info_panel.newLine();
+        
+        info_panel.AddObject(cita_lbl, 80, 20, LEFT);
+        info_panel.AddObject(modificar_cita_cita_txt, 160, 20, LEFT);
+        info_panel.newLine();
+        
         modificar_cita_curso_cbm.addItem("hola");
         info_panel.AddObject(combo3_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_curso_cbm, 160, 20, LEFT);
@@ -1726,7 +1732,7 @@ public class MainDashboard {
             }
         }
         JScrollPane scrollPane = new JScrollPane(tab);
-        scrollPane.setBounds(0, 0, 600, 460);
+        scrollPane.setBounds(0, 0, 620, 480);
         info_panel.add(scrollPane);
 
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
