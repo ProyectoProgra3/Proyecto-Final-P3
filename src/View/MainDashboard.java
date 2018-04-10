@@ -63,11 +63,9 @@ public class MainDashboard {
     public iButtonFake btn_just = new iButtonFake("Justificación", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247).darker(), new Color(106, 203, 214), GoogleMaterialDesignIcons.CLASS);
     public iButtonFake btn_report = new iButtonFake("Reportes", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247).darker(), new Color(106, 203, 214), GoogleMaterialDesignIcons.CHROME_READER_MODE);
     public iButtonFake btn_curso = new iButtonFake("Cursos", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247).darker(), new Color(106, 203, 214), GoogleMaterialDesignIcons.ATTACH_FILE);
+    public iButtonFake btn_busqueda_rapida = new iButtonFake("Buscar", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
-    //BUSQUEDA RÁPIDA//
-    public JTable busquedas;
-    public iButtonFake btn_busqueda_rapida = new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
-
+   
     //Botones PANEL SUPERIOR
     //Botones asociados a Agregar solicitud
     public iButtonFake btn_niño = new iButtonFake("Niño", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.CHILD_CARE);
@@ -287,7 +285,7 @@ public class MainDashboard {
         modificar_cita_curso_cbm = new iComboCheckBox();
         modificar_cita_psicologo_cbm = new iComboCheckBox();
         cita_cbm = new iComboCheckBox(items);
-        busquedas = new JTable();
+       
 
         initComponents();
     }
@@ -314,7 +312,8 @@ public class MainDashboard {
 
         //Busqueda Ráída//
         //*** Aqui agregamos los FAKE BUTTONS al panel, (Nombre, largo, ancho, posicion)
-        menu_panel.AddSingleObject(menu_label, 180, 40, CENTER);
+        menu_panel.AddSingleObject(menu_label, 180, 50, CENTER);
+        menu_panel.AddSingleObject(btn_busqueda_rapida, 110, 40, LEFT);
         menu_panel.AddSingleObject(btn_agregar, 171, 40, LEFT);
         menu_panel.AddSingleObject(btn_modif, 172, 40, LEFT);
         menu_panel.AddSingleObject(btn_citas, 95, 40, LEFT);
@@ -322,11 +321,12 @@ public class MainDashboard {
         menu_panel.AddSingleObject(btn_curso, 105, 40, LEFT);
         menu_panel.AddSingleObject(btn_just, 140, 40, LEFT);
         menu_panel.AddSingleObject(btn_report, 120, 40, LEFT);
-        search_panel.AddObject(bienvenidos_lbl, 300, 250, CENTER);
+        
         menu_panel.newLine();
 
         search_panel.setBackground(new Color(137, 185, 185));
-
+        search_panel.AddObject(bienvenidos_lbl, 300, 250, CENTER);
+        search_panel.newLine();
         //Panel de informacion (Aqui se desplegara toda la informacion de prueba)
         ///////////////////////////////////////////////////////////////       
         menu_panel.add(clock);

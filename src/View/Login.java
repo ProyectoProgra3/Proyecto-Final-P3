@@ -91,7 +91,7 @@ public class Login {
         panel.AddObject(btn_ingresar, 140, 30, CENTER);
         panel.newLine();
 
-        panel.AddObject(clock, 80, 100, LEFT);
+        panel.AddObject(clock, 80, 100, CENTER);
         panel.newLine();
 
         frm.add(panel);
