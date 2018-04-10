@@ -174,6 +174,18 @@ public class BusinessLogic extends InitModel {
             return null;
         }
     }
+    
+     public ResultSet SearchbyIdandEstadoCitas(String Id, String Estado) {
+        try {
+            ArrayList<Object> objs = new ArrayList<>();
+            objs.addAll(Arrays.asList(Id, Estado));
+            ResultSet rs = sql.SELECT("SELECT  `ID`, `Nombre`,  `Apellido`, `NombreSolicitante`,`Detalle_Horario`,`Curso_idCurso`,  `Psicologo_idPsicologo`,  `Cita` ,  `Expediente` FROM `Persona` Where  ID = ? and `Estado_idEstado`=(Select `idEstado` from `Estado` where Estado = ? ) ; ", objs);
+            return rs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+            return null;
+        }
+    }
 
     /**
      * Busca a los pacientes por estado

@@ -24,10 +24,11 @@ public class InitManager implements ActionListener {
         this.initModel = initModel;
         this.login = login;
         this.login.btn_ingresar.addActionListener(this);
+        this.login.pass_txt.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent evento) {
-        if (login.btn_ingresar == evento.getSource()) {
+        if (login.btn_ingresar == evento.getSource() || login.pass_txt == evento.getSource()) {
             mangaerLogin();
         }
 
@@ -36,12 +37,12 @@ public class InitManager implements ActionListener {
     public void mangaerLogin() {
         if (initModel.Login(login.usr_txt.getText(), login.pass_txt.getText())) {
             login.frm.dispose();
-            login.frm.setVisible(false);            
+            login.frm.setVisible(false);
             ControllerMD cmd = new ControllerMD();
             cmd.starMD();
         } else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
-           
+
         }
 
     }
