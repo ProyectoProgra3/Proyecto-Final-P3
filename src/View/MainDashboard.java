@@ -253,6 +253,13 @@ public class MainDashboard {
 
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
+//////////// BUSQUEDA ///////////////
+    
+    public iTextField busqueda_rapida_txt = new iTextField("", 6);
+    public iComboCheckBox busqueda_rapida_cbm;
+    public iButtonFake btn_busqueda = new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+
+ 
     public MainDashboard() {
         this.sql = new SQL();
         //ARRAY DEL COMBOBOX
@@ -329,6 +336,7 @@ public class MainDashboard {
         search_panel.newLine();
         //Panel de informacion (Aqui se desplegara toda la informacion de prueba)
         ///////////////////////////////////////////////////////////////       
+        bienvenidos_lbl.setVisible(true);
         menu_panel.add(clock);
         info_panel.add(fondo_label);
         dash_frm.add(info_panel);
@@ -339,7 +347,34 @@ public class MainDashboard {
 
     //Metódo crear tabla de busqueda rápida//
     public void BtnBusquedaRapida() {
+        //Panel de busquedas      
+        search_panel.dispose();
+        search_panel.repaint();
+        info_panel.dispose();
+        info_panel.repaint();
 
+        ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
+        JLabel fondo_label = new JLabel(fondo);
+        fondo_label.setBounds(110, 30, 400, 400);
+
+        JLabel id2_lbl = new JLabel();
+        id2_lbl.setText("Texto: ");
+        id2_lbl.setForeground(new Color(255, 255, 255));
+
+        JLabel tipo_lbl = new JLabel();
+        tipo_lbl.setText("Parámetro: ");
+        tipo_lbl.setForeground(new Color(255, 255, 255));
+
+        search_panel.AddObject(id2_lbl, 50, 42, LEFT);
+        search_panel.AddObject(busqueda_rapida_txt, 120, 32, LEFT);
+        search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
+        search_panel.AddObject(busqueda_rapida_cbm, 120, 32, LEFT);
+
+        search_panel.AddObject(btn_busqueda, 120, 30, 1);
+        btn_busqueda.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        search_panel.newLine();
+
+        info_panel.add(fondo_label);
     }
 
     //Metódos para cargar botones al panel
@@ -501,7 +536,7 @@ public class MainDashboard {
 //        search_panel.AddObject(btn_report_semanal, 120, 60, 120);
 //        btn_report_semanal.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_report_mensual, 120, 60, CENTER);
-        btn_report_mensual.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        //btn_report_mensual.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
 
         info_panel.add(fondo_label);
