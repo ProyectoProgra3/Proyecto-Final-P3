@@ -293,6 +293,9 @@ public class MainDashboard {
     }
 
     public void initComponents() {
+        JLabel bienvenidos_lbl = new JLabel();
+        bienvenidos_lbl.setText("BIENVENIDOS");
+        bienvenidos_lbl.setForeground(new Color(55, 55, 5));
 
         ImageIcon logo_menu = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//logo_menu.png"));
         JLabel menu_label = new JLabel(logo_menu);
@@ -319,6 +322,7 @@ public class MainDashboard {
         menu_panel.AddSingleObject(btn_curso, 105, 40, LEFT);
         menu_panel.AddSingleObject(btn_just, 140, 40, LEFT);
         menu_panel.AddSingleObject(btn_report, 120, 40, LEFT);
+        search_panel.AddObject(bienvenidos_lbl, 300, 250, CENTER);
         menu_panel.newLine();
 
         search_panel.setBackground(new Color(137, 185, 185));
