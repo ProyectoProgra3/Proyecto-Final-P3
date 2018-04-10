@@ -1684,10 +1684,10 @@ public class MainDashboard {
         info_panel.AddObject(modificar_cita_cita_txt, 160, 20, LEFT);
         info_panel.newLine();
         
-        modificar_cita_curso_cbm.addItem("hola");
+   
         info_panel.AddObject(combo3_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_curso_cbm, 160, 20, LEFT);
-        modificar_cita_psicologo_cbm.addItem("hola");
+  
         info_panel.AddObject(combo4_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_cita_psicologo_cbm, 160, 20, LEFT);
         info_panel.AddObject(btn_guardar_modificar_cita, 100, 60, LEFT);

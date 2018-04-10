@@ -174,12 +174,25 @@ public class BusinessLogic extends InitModel {
             return null;
         }
     }
-    
-     public ResultSet SearchbyIdandEstadoCitas(String Id, String Estado) {
+
+    public ResultSet SearchbyIdandEstadoCitas(String Id, String Estado) {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             objs.addAll(Arrays.asList(Id, Estado));
-            ResultSet rs = sql.SELECT("SELECT  `ID`, `Nombre`,  `Apellido`, `NombreSolicitante`,`Detalle_Horario`,`Curso_idCurso`,  `Psicologo_idPsicologo`,  `Cita` ,  `Expediente` FROM `Persona` Where  ID = ? and `Estado_idEstado`=(Select `idEstado` from `Estado` where Estado = ? ) ; ", objs);
+            ResultSet rs = sql.SELECT("SELECT  `ID`, "
+                    + "Persona.Nombre,"
+                    + "Psicologo.Nombre,"
+                    + " Persona.Apellido,"
+                    + " `Detalle_Horario`,"
+                    + " Curso.Nombre, "
+                    + " `Cita` , "
+                    + "`Expediente` ,"
+                    + "Persona.Fecha_Solicitud \n"
+                    + "FROM `Persona` \n"
+                    + "inner join Curso on Persona.Curso_idCurso= Curso.idCurso\n"
+                    + "inner join Psicologo on Persona.Psicologo_idPsicologo=Psicologo.idPsicologo\n"
+                    + "Where  ID = ? "
+                    + " and `Estado_idEstado`=(Select `idEstado` from `Estado` where Estado = ? ) ", objs);
             return rs;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
@@ -215,7 +228,20 @@ public class BusinessLogic extends InitModel {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             objs.addAll(Arrays.asList(Id, Estado));
-            ResultSet rs = sql.SELECT("SELECT  `ID`,  `Estado_idEstado`,  `Tipo_de_solicitud_idSolicitud`,  `Nombre`,  `Apellido`,  `Edad`,  `Telefono`,  `Ocupacion`,`Motivo`,  `Referencia`,  `Detalle_Horario`,  `Email`,  `Detalle`,  `Fecha_Solicitud`,  `NombreSolicitante`,   `Curso_idCurso`,  `Psicologo_idPsicologo`,  `Cita` ,  `Expediente` FROM `Persona` Where  ID = ? and `Estado_idEstado`=(Select `idEstado` from `Estado` where Estado = ? ) ; ", objs);
+            ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
+                    + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
+                    + "Persona.Nombre,  Persona.Apellido,  \n"
+                    + "`Edad`,  `Telefono`,  `Ocupacion`,`Motivo`,\n"
+                    + "`Referencia`,  `Detalle_Horario`,  Persona.Email,\n"
+                    + "`Detalle`,  `Fecha_Solicitud`,  `NombreSolicitante`, \n"
+                    + "Curso.Nombre,  Psicologo.Nombre,  `Cita` ,  \n"
+                    + "`Expediente` \n"
+                    + "FROM `Persona`\n"
+                    + "inner join Curso on Persona.Curso_idCurso= Curso.idCurso\n"
+                    + "inner join Psicologo on Persona.Psicologo_idPsicologo=Psicologo.idPsicologo\n"
+                    + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
+                    + "Where  ID = ? and `Estado_idEstado`=(Select `idEstado` from `Estado` where Estado = ?) ", objs);
             return rs;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
@@ -233,13 +259,20 @@ public class BusinessLogic extends InitModel {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             objs.addAll(Arrays.asList(Id, Tipo));
-            ResultSet rs = sql.SELECT("SELECT  `ID`,  `Estado_idEstado`,  `Tipo_de_solicitud_idSolicitud`, "
-                    + " `Nombre`,  `Apellido`,  `Edad`,  `Telefono`,  `Ocupacion`,`Motivo`,  `Referencia`, "
-                    + " `Detalle_Horario`,  `Email`,  `Detalle`,  `Fecha_Solicitud`,  `NombreSolicitante`,"
-                    + "   `Curso_idCurso`,  `Psicologo_idPsicologo`,  `Cita` ,`Dir`,  "
-                    + "`Expediente` FROM `Persona`"
-                    + " Where  ID = ? and `Tipo_de_Solicitud_idSolicitud`=(Select `idSolicitud` "
-                    + "from `Tipo_de_solicitud` where `Tipo de solicitud` = ? ) ; ", objs);
+            ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
+                    + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
+                    + "Persona.Nombre,  Persona.Apellido,  \n"
+                    + "`Edad`,  `Telefono`,  `Ocupacion`,`Motivo`,\n"
+                    + "`Referencia`,  `Detalle_Horario`,  Persona.Email,\n"
+                    + "`Detalle`,  `Fecha_Solicitud`,  `NombreSolicitante`, \n"
+                    + "Curso.Nombre,  Psicologo.Nombre,  `Cita` ,  \n"
+                    + "`Expediente`,`Dir` \n"
+                    + "FROM `Persona`\n"
+                    + "inner join Curso on Persona.Curso_idCurso= Curso.idCurso\n"
+                    + "inner join Psicologo on Persona.Psicologo_idPsicologo=Psicologo.idPsicologo\n"
+                    + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
+                    + "Where  ID = ? and `Tipo_de_solicitud_idSolicitud`=(Select `idSolicitud`  from Tipo_de_solicitud where  `Tipo de solicitud` = ?) ; ", objs);
             return rs;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
@@ -659,12 +692,12 @@ public class BusinessLogic extends InitModel {
 
             } catch (Exception e) {
                 System.out.println("Error" + e);
-                 return false;
+                return false;
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
-             return false;
+            return false;
 
         }
 
@@ -749,7 +782,7 @@ public class BusinessLogic extends InitModel {
 
         // Closing the workbook
         workbook.close();
-          try {
+        try {
             String url = System.getProperty("user.dir") + ("//src//Img//Reportes.xlsx");
             ProcessBuilder p = new ProcessBuilder();
             p.command("cmd.exe", "/c", url);
@@ -757,7 +790,7 @@ public class BusinessLogic extends InitModel {
         } catch (IOException exe) {
             return false;
         }
-return true;
+        return true;
     }
 
     /**

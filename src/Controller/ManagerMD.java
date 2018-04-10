@@ -142,9 +142,12 @@ public class ManagerMD implements MouseListener {
         //citas
         if (md.btn_citas == me.getSource()) {
             md.Btn_Cita();
+
         }
         if (this.md.btn_buscar_cita == me.getSource()) {
+            LLenarCboxcita();
             md.modificar_citas();
+            llenarCita();
         }
 
         //piscologo
@@ -202,7 +205,7 @@ public class ManagerMD implements MouseListener {
         if (md.btn_report == me.getSource()) {
             md.BtnReportes();
         }
-           if (md.btn_report_mensual == me.getSource()) {
+        if (md.btn_report_mensual == me.getSource()) {
             try {
                 GenerarReporte();
             } catch (IOException ex) {
@@ -278,21 +281,25 @@ public class ManagerMD implements MouseListener {
             while (rs.next()) {
 
                 this.md.modificar_persona_id_txt.setText(rs.getObject("ID").toString());
-                this.md.modificar_persona_nombre_txt.setText(rs.getObject("Nombre").toString());
-                this.md.modificar_persona_apellido_txt.setText(rs.getObject("Apellido").toString());
+                this.md.modificar_persona_nombre_txt.setText(rs.getObject("Persona.Nombre").toString());
+                this.md.modificar_persona_apellido_txt.setText(rs.getObject("Persona.Apellido").toString());
                 this.md.modificar_persona_edad_txt.setText(rs.getObject("Edad").toString());
                 this.md.modificar_persona_telefono_txt.setText(rs.getObject("Telefono").toString());
                 this.md.modificar_persona_ocupacion_txt.setText(rs.getObject("Ocupacion").toString());
                 this.md.modificar_persona_motivo_txt.setText(rs.getObject("Motivo").toString());
                 this.md.modificar_persona_referencia_txt.setText(rs.getObject("Referencia").toString());
                 this.md.modificar_persona_horario_txt.setText(rs.getObject("Detalle_Horario").toString());
-                this.md.modificar_persona_email_txt.setText(rs.getObject("Email").toString());
+                this.md.modificar_persona_email_txt.setText(rs.getObject("Persona.Email").toString());
                 this.md.modificar_persona_detalle_txt.setText(rs.getObject("Detalle").toString());
                 this.md.modificar_persona_solicitante_txt.setText(rs.getObject("NombreSolicitante").toString());
                 this.md.modificar_persona_direccion_txt.setText(rs.getObject("Dir").toString());
                 this.md.modificar_persona_expediente_txt.setText(rs.getObject("Expediente").toString());
-                this.md.modificar_persona_cita_txt.setText(rs.getObject("Cita").toString());
+//                this.md.modificar_persona_cita_txt.setText(rs.getObject("Cita").toString());
                 this.md.Solicitud.setText(rs.getObject("Fecha_Solicitud").toString());
+                this.md.modificar_persona_clase_cbm.setSelectedItem(rs.getObject("Estado.Estado").toString());
+                this.md.modificar_persona_psicologo_cbm.setSelectedItem(rs.getObject("Psicologo.Nombre").toString());
+                this.md.modificar_persona_curso_cbm.setSelectedItem(rs.getObject("Curso.Nombre").toString());
+                this.md.modificar_persona_tipo_cbm.setSelectedItem(rs.getObject("Tipo_de_solicitud.Tipo de solicitud").toString());
             }
         } catch (Exception e) {
             System.out.println("error" + e);
@@ -336,6 +343,17 @@ public class ManagerMD implements MouseListener {
         }
     }
 
+    public void LLenarCboxcita() {
+        ArrayList b = this.bl.SearchCursos();
+        for (int i = 0; i < b.size(); i++) {
+            this.md.modificar_cita_curso_cbm.addItem(b.get(i));
+        }
+        ArrayList c = this.bl.SearchPsicologos();
+        for (int i = 0; i < c.size(); i++) {
+            this.md.modificar_cita_psicologo_cbm.addItem(c.get(i));
+        }
+    }
+
     public void llenar1Modificar() {
         ArrayList n = this.bl.SearchTipo();
         for (int i = 0; i < n.size(); i++) {
@@ -347,13 +365,34 @@ public class ManagerMD implements MouseListener {
     public void eliminarCurso() {
         this.bl.deleteCurso(this.md.curso_eliminar_txt.getText());
     }
-    
-    public void GenerarReporte() throws IOException{
-   if(this.bl.GenerarExcel()){
-       JOptionPane.showMessageDialog(null,"Su Reporte se genero ");
-   }else{
-          JOptionPane.showMessageDialog(null,"Upsss hubo un error ");
-   }
+
+    public void GenerarReporte() throws IOException {
+        if (this.bl.GenerarExcel()) {
+            JOptionPane.showMessageDialog(null, "Su Reporte se genero ");
+        } else {
+            JOptionPane.showMessageDialog(null, "Upsss hubo un error ");
+        }
+    }
+
+    public void llenarCita() {
+        ResultSet rs = this.bl.SearchbyIdandEstadoCitas(this.md.cita_txt.getText(), this.md.cita_cbm.getSelectedItem().toString());
+        if (rs != null) {
+            try {
+                while (rs.next()) {
+                    this.md.modificar_cita_id_txt.setText(rs.getObject("ID").toString());
+                    this.md.modificar_cita_nombre_txt.setText(rs.getObject("Persona.Nombre").toString());
+                    this.md.modificar_cita_apellido_txt.setText(rs.getObject("Persona.Apellido").toString());
+                    this.md.modificar_cita_horario_txt.setText(rs.getObject("Detalle_Horario").toString());
+                    this.md.modificar_cita_expediente_txt.setText(rs.getObject("Expediente").toString());
+                    this.md.modificar_cita_cita_txt.setText(rs.getObject("Cita").toString());
+                    this.md.Solicitud.setText(rs.getObject("Persona.Fecha_Solicitud").toString());
+                    this.md.modificar_cita_psicologo_cbm.setSelectedItem(rs.getObject("Psicologo.Nombre").toString());
+                    this.md.modificar_cita_curso_cbm.setSelectedItem(rs.getObject("Curso.Nombre").toString());
+                }
+            } catch (Exception e) {
+            }
+
+        }
     }
 
     @Override
