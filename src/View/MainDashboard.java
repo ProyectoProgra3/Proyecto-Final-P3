@@ -365,7 +365,8 @@ public class MainDashboard {
         JLabel tipo_lbl = new JLabel();
         tipo_lbl.setText("Parámetro: ");
         tipo_lbl.setForeground(new Color(255, 255, 255));
-
+        busqueda_rapida_cbm= new iComboCheckBox();
+        busqueda_rapida_cbm.addItem("hola");
         search_panel.AddObject(id2_lbl, 50, 42, LEFT);
         search_panel.AddObject(busqueda_rapida_txt, 120, 32, LEFT);
         search_panel.AddObject(tipo_lbl, 50, 42, LEFT);

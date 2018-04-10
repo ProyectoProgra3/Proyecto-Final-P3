@@ -29,6 +29,10 @@ public class ManagerMD implements MouseListener {
     public ManagerMD(MainDashboard md, BusinessLogic bl) {
         this.md = md;
         this.bl = bl;
+        //busqueda
+        this.md.btn_busqueda_rapida.addMouseListener(this);
+            this.md.btn_busqueda.addMouseListener(this);
+        
         //agregar solicitud
         this.md.btn_agregar.addMouseListener(this);
         //nino
@@ -84,6 +88,10 @@ public class ManagerMD implements MouseListener {
     }
 
     public void mousePressed(MouseEvent me) {
+        //buscar
+        if(md.btn_busqueda_rapida==me.getSource()){
+        md.BtnBusquedaRapida();
+        }
         //agregar
         if (md.btn_agregar == me.getSource()) {
             md.BtnAregarSolic();
