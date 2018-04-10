@@ -31,8 +31,8 @@ public class ManagerMD implements MouseListener {
         this.bl = bl;
         //busqueda
         this.md.btn_busqueda_rapida.addMouseListener(this);
-            this.md.btn_busqueda.addMouseListener(this);
-        
+        this.md.btn_busqueda.addMouseListener(this);
+
         //agregar solicitud
         this.md.btn_agregar.addMouseListener(this);
         //nino
@@ -89,8 +89,11 @@ public class ManagerMD implements MouseListener {
 
     public void mousePressed(MouseEvent me) {
         //buscar
-        if(md.btn_busqueda_rapida==me.getSource()){
-        md.BtnBusquedaRapida();
+        if (md.btn_busqueda_rapida == me.getSource()) {
+            md.BtnBusquedaRapida();
+        }
+        if (md.btn_busqueda == me.getSource()) {
+            md.TABLA();
         }
         //agregar
         if (md.btn_agregar == me.getSource()) {

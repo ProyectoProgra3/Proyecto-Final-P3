@@ -35,6 +35,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import static javax.swing.SwingConstants.BOTTOM;
@@ -65,7 +66,6 @@ public class MainDashboard {
     public iButtonFake btn_curso = new iButtonFake("Cursos", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247).darker(), new Color(106, 203, 214), GoogleMaterialDesignIcons.ATTACH_FILE);
     public iButtonFake btn_busqueda_rapida = new iButtonFake("Buscar", "", new Color(247, 247, 247), new Color(106, 203, 214), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
-   
     //Botones PANEL SUPERIOR
     //Botones asociados a Agregar solicitud
     public iButtonFake btn_niño = new iButtonFake("Niño", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.CHILD_CARE);
@@ -255,12 +255,10 @@ public class MainDashboard {
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
 //////////// BUSQUEDA ///////////////
-    
     public iTextField busqueda_rapida_txt = new iTextField("", 6);
     public iComboCheckBox busqueda_rapida_cbm;
     public iButtonFake btn_busqueda = new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
- 
     public MainDashboard() {
         this.sql = new SQL();
         //ARRAY DEL COMBOBOX
@@ -293,7 +291,6 @@ public class MainDashboard {
         modificar_cita_curso_cbm = new iComboCheckBox();
         modificar_cita_psicologo_cbm = new iComboCheckBox();
         cita_cbm = new iComboCheckBox(items);
-       
 
         initComponents();
     }
@@ -329,7 +326,7 @@ public class MainDashboard {
         menu_panel.AddSingleObject(btn_curso, 105, 40, LEFT);
         menu_panel.AddSingleObject(btn_just, 140, 40, LEFT);
         menu_panel.AddSingleObject(btn_report, 120, 40, LEFT);
-        
+
         menu_panel.newLine();
 
         search_panel.setBackground(new Color(137, 185, 185));
@@ -365,7 +362,7 @@ public class MainDashboard {
         JLabel tipo_lbl = new JLabel();
         tipo_lbl.setText("Parámetro: ");
         tipo_lbl.setForeground(new Color(255, 255, 255));
-        busqueda_rapida_cbm= new iComboCheckBox();
+        busqueda_rapida_cbm = new iComboCheckBox();
         busqueda_rapida_cbm.addItem("hola");
         search_panel.AddObject(id2_lbl, 50, 42, LEFT);
         search_panel.AddObject(busqueda_rapida_txt, 120, 32, LEFT);
@@ -378,6 +375,25 @@ public class MainDashboard {
 
         info_panel.add(fondo_label);
     }
+
+    //UN POQUITO MAS ABAJO
+    public void TABLA() {
+        //RAQUEL
+        //RAQUEL
+        //RAQUEL
+        //RAQUEL 
+        //RAQUEL
+        //AQUI
+        //RAQUEL
+        //RAQUEL
+        //RAQUEL 
+        //RAQUEL
+        //RAQUEL
+        //RAQUEL
+        JOptionPane.showMessageDialog(null,"hola");
+
+    }
+    //YA SE PASO 
 
     //Metódos para cargar botones al panel
     public void BtnAregarSolic() {
@@ -1680,15 +1696,14 @@ public class MainDashboard {
         info_panel.AddObject(horario_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_horario_txt, 160, 20, LEFT);
         info_panel.newLine();
-        
+
         info_panel.AddObject(cita_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_cita_txt, 160, 20, LEFT);
         info_panel.newLine();
-        
-   
+
         info_panel.AddObject(combo3_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_curso_cbm, 160, 20, LEFT);
-  
+
         info_panel.AddObject(combo4_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_cita_psicologo_cbm, 160, 20, LEFT);
         info_panel.AddObject(btn_guardar_modificar_cita, 100, 60, LEFT);
@@ -1705,7 +1720,7 @@ public class MainDashboard {
     public void Mostrar_Cursos() {
         info_panel.dispose();
         info_panel.repaint();
-        
+
         ArrayList<String> cols = new ArrayList<>();
         iTable tab = null;
         tab = new iTable(cols);
