@@ -500,7 +500,7 @@ public class MainDashboard {
 //        btn_report_diario.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
 //        search_panel.AddObject(btn_report_semanal, 120, 60, 120);
 //        btn_report_semanal.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_report_mensual, 120, 60, -1);
+        search_panel.AddObject(btn_report_mensual, 120, 60, CENTER);
         btn_report_mensual.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.newLine();
 
@@ -1417,7 +1417,7 @@ public class MainDashboard {
         direccion_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setText("Telfono: ");
         telefono_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel email_lbl = new JLabel();
@@ -1661,7 +1661,9 @@ public class MainDashboard {
 ////////////////////PSICOLOGOS/////////////////////////////// 
 
     public void Mostrar_Cursos() {
-
+        info_panel.dispose();
+        info_panel.repaint();
+        
         ArrayList<String> cols = new ArrayList<>();
         iTable tab = null;
         tab = new iTable(cols);
@@ -1701,6 +1703,8 @@ public class MainDashboard {
     }
 
     public void Mostrar_Psicologos() {
+        info_panel.dispose();
+        info_panel.repaint();
         ArrayList<String> cols = new ArrayList<>();
         iTable tab = null;
 
