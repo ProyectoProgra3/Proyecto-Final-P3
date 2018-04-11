@@ -51,7 +51,7 @@ import jiconfont.icons.GoogleMaterialDesignIcons;
  */
 public class MainDashboard {
 
-    public SQL sql;
+    private final SQL sql;
 
     public iFrame dash_frm;
     public iPanel info_panel;
@@ -378,20 +378,38 @@ public class MainDashboard {
 
     //UN POQUITO MAS ABAJO
     public void TABLA() {
-        //RAQUEL
-        //RAQUEL
-        //RAQUEL
-        //RAQUEL 
-        //RAQUEL
-        //AQUI
-        //RAQUEL
-        //RAQUEL
-        //RAQUEL 
-        //RAQUEL
-        //RAQUEL
-        //RAQUEL
-        JOptionPane.showMessageDialog(null,"hola");
+         ArrayList<String> cols = new ArrayList<>();
+        iTable tab = null;
+        tab = new iTable(cols);
+        ResultSet rs = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>() );
+        
+        if (sql.Exists(rs)) 
+        {
+            try {
 
+                if (rs.next()) {
+                    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                        cols.add(rs.getMetaData().getColumnName(i));
+                    }
+                }
+
+                tab = new iTable(cols);
+                ResultSet rt = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>() );
+                while (rt.next()) {
+                    Object[] row = new Object[rt.getMetaData().getColumnCount()];
+                    for (int i = 1; i <= rt.getMetaData().getColumnCount(); i++) {
+                        row[i - 1] = rt.getObject(i);
+                    }
+                    tab.addrow(row);
+                }
+
+            } catch (SQLException ex) {
+                System.out.println("no object fetch'd");
+            }
+        }
+        JScrollPane scrollPane = new JScrollPane(tab);
+        scrollPane.setBounds(0, 0, 600, 460);
+        info_panel.add(scrollPane);
     }
     //YA SE PASO 
 
