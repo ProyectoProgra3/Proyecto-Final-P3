@@ -1752,7 +1752,7 @@ public class MainDashboard {
             }
         }
         JScrollPane scrollPane = new JScrollPane(tab);
-        scrollPane.setBounds(0, 0, 620, 480);
+        scrollPane.setBounds(0, 0, 620, 493);
         info_panel.add(scrollPane);
 
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
@@ -1798,7 +1798,7 @@ public class MainDashboard {
 
         JScrollPane scrollPane = new JScrollPane(tab);
 
-        scrollPane.setBounds(0, 0, 600, 460);
+        scrollPane.setBounds(0, 0, 620, 493);
 
         info_panel.add(scrollPane);
 
