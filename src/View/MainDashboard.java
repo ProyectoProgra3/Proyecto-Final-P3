@@ -1681,13 +1681,16 @@ public class MainDashboard {
 
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_id_txt, 160, 20, LEFT);
+        modificar_cita_id_txt.setEditable(false); 
 
         info_panel.AddObject(expediente_lbl, 100, 20, LEFT);
         info_panel.AddObject(modificar_cita_expediente_txt, 120, 20, LEFT);
+        modificar_cita_expediente_txt.setEditable(false); 
         info_panel.newLine();
 
         info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_nombre_txt, 160, 20, LEFT);
+        modificar_cita_nombre_txt.setEditable(false); 
 
         info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_cita_apellido_txt, 160, 20, LEFT);
@@ -1695,6 +1698,7 @@ public class MainDashboard {
 
         info_panel.AddObject(horario_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_horario_txt, 160, 20, LEFT);
+        modificar_cita_horario_txt.setEditable(false); 
         info_panel.newLine();
 
         info_panel.AddObject(cita_lbl, 80, 20, LEFT);
