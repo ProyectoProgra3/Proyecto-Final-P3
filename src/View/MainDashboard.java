@@ -73,35 +73,47 @@ public class MainDashboard {
     public iButtonFake btn_adulto = new iButtonFake("Adulto", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DIRECTIONS_WALK);
     public iButtonFake btn_pareja = new iButtonFake("Pareja", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.WC);
     public iButtonFake btn_fam = new iButtonFake("Familia", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PEOPLE);
-
+//** AYUDA 
+    public iButtonFake btn_ayuda_agregarsol = new iButtonFake("Ayuda", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRIORITY_HIGH);
     //Botónes asociados a CITA
     public iTextField cita_txt = new iTextField("", 6);
     public iComboCheckBox cita_cbm;
     public iButtonFake btn_buscar_cita = new iButtonFake("Buscar", "cita", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+    public iButtonFake btn_ayuda_cita = new iButtonFake("Ayuda", " cita", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRIORITY_HIGH);
 
     // Botones  modificar 
     public iTextField modificar_persona_txt = new iTextField("", 6);
     public iComboCheckBox modificar_persona_cbm;
     public iButtonFake btn_buscar_modificar_persona = new iButtonFake("Buscar", " Persona", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+//** AYUDA 
+    public iButtonFake btn_ayuda_modificar = new iButtonFake("Ayuda", " Persona", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRIORITY_HIGH);
 
     // BOTONES Psicologis 
     public iButtonFake btn_mosPsico = new iButtonFake("Mostar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.VISIBILITY);
     public iButtonFake btn_agrePsico = new iButtonFake("Agregar Psicólogos", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.GROUP_ADD);
     public iButtonFake btn_eliTodos = new iButtonFake("Eliminar Todos ", "Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DELETE_FOREVER);
+//** AYUDA 
+    public iButtonFake btn_ayuda_psicologos = new iButtonFake("Ayuda ", " Psicólogos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRIORITY_HIGH);
 
     //Botones Cursos
     public iButtonFake btn_mosCurso = new iButtonFake("Mostar Cursos", "Cursos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.VISIBILITY);
     public iButtonFake btn_eliminar = new iButtonFake("Eliminar", "Curso", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DELETE_SWEEP);
     public iButtonFake btn_agrcurso = new iButtonFake("Agregar", "Curso", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.LIBRARY_ADD);
+//** AYUDA 
+    public iButtonFake btn_ayuda_cursos = new iButtonFake("Ayuda ", " Curso", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRIORITY_HIGH);
 
     //Botones justificacion
     public iButtonFake btn_justi = new iButtonFake("Justificación", " Generar Justificacion", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INSERT_CHART);
     /* public iButtonFake btn_justi_print = new iButtonFake("Imprimir", "Imprimir justificación", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRINT);*/
+//** AYUDA 
+    public iButtonFake btn_ayuda_justificacion = new iButtonFake("Ayuda", " Justificación", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRIORITY_HIGH);
 
     //Boton Reportes
     public iButtonFake btn_report_diario = new iButtonFake("Diario", "Reporte Diario", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.TODAY);
     public iButtonFake btn_report_semanal = new iButtonFake("Semanal", "Reporte Semanal", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DATE_RANGE);
     public iButtonFake btn_report_mensual = new iButtonFake("Mensual", "Reporte Mensual", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.EVENT_NOTE);
+//** AYUDA 
+    public iButtonFake btn_ayuda_reportes = new iButtonFake("Ayuda", " Reportes ", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.PRIORITY_HIGH);
 
     ///////////////////////////////////////////////////////////////////////////
     //// CONTENIDO DEL PANEL DE INFORMACIÓN////////////////////////////////////
@@ -378,13 +390,12 @@ public class MainDashboard {
 
     //UN POQUITO MAS ABAJO
     public void TABLA() {
-         ArrayList<String> cols = new ArrayList<>();
+        ArrayList<String> cols = new ArrayList<>();
         iTable tab = null;
         tab = new iTable(cols);
-        ResultSet rs = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>() );
-        
-        if (sql.Exists(rs)) 
-        {
+        ResultSet rs = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>());
+
+        if (sql.Exists(rs)) {
             try {
 
                 if (rs.next()) {
@@ -394,7 +405,7 @@ public class MainDashboard {
                 }
 
                 tab = new iTable(cols);
-                ResultSet rt = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>() );
+                ResultSet rt = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>());
                 while (rt.next()) {
                     Object[] row = new Object[rt.getMetaData().getColumnCount()];
                     for (int i = 1; i <= rt.getMetaData().getColumnCount(); i++) {
@@ -423,16 +434,27 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
+        
+        search_panel.AddObject(btn_ayuda_agregarsol, 100, 60, 525);
+        btn_ayuda_agregarsol.setBorder(0, 0, 0, 1, new Color(162, 202, 202)); 
+        
+          
         search_panel.AddObject(btn_fam, 100, 60, 425);
         btn_fam.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        
         search_panel.AddObject(btn_pareja, 100, 60, 325);
         btn_pareja.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+//        
         search_panel.AddObject(btn_adulto, 100, 60, 225);
         btn_adulto.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_adol, 125, 60, 100);
+        
+        search_panel.AddObject(btn_adol, 100, 60, 125);
         btn_adol.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+//        
         search_panel.AddObject(btn_niño, 100, 60, -1);
-        btn_niño.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        btn_niño.setBorder(0, 0, 0, 1, new Color(162, 202, 202)); 
+        
+      
         search_panel.newLine();
         info_panel.add(fondo_label);
         search_panel.finalice();
@@ -462,8 +484,13 @@ public class MainDashboard {
         search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
         search_panel.AddObject(cita_cbm, 120, 32, LEFT);
 
-        search_panel.AddObject(btn_buscar_cita, 120, 30, 1);
+        search_panel.AddObject(btn_buscar_cita, 120, 30, 2);
         btn_buscar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+         
+        search_panel.AddObject(btn_ayuda_cita, 120, 30, 1);
+        btn_ayuda_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202)); 
+        
+        
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -494,8 +521,12 @@ public class MainDashboard {
         search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
         search_panel.AddObject(modificar_persona_cbm, 120, 32, LEFT);
 
-        search_panel.AddObject(btn_buscar_modificar_persona, 120, 30, 1);
+        search_panel.AddObject(btn_buscar_modificar_persona, 120, 30, 2);
         btn_buscar_modificar_persona.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        
+         search_panel.AddObject(btn_ayuda_modificar, 120, 30,1);
+        btn_ayuda_modificar.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -517,6 +548,9 @@ public class MainDashboard {
         btn_agrePsico.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_mosPsico, 135, 60, -1);
         btn_mosPsico.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        
+         search_panel.AddObject(btn_ayuda_psicologos, 135, 60, 372);
+        btn_ayuda_psicologos.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -537,6 +571,11 @@ public class MainDashboard {
         btn_eliminar.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_agrcurso, 135, 60, 135);
         btn_agrcurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        
+        
+         search_panel.AddObject(btn_ayuda_cursos, 135, 60,375);
+        btn_ayuda_cursos.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -552,6 +591,8 @@ public class MainDashboard {
         fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_justi, 140, 60, CENTER);
 
+         search_panel.AddObject(btn_ayuda_justificacion, 140, 60, RIGHT);
+//        btn_ayuda_justificacion.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
         btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
         search_panel.newLine();
@@ -571,8 +612,12 @@ public class MainDashboard {
 //        btn_report_diario.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
 //        search_panel.AddObject(btn_report_semanal, 120, 60, 120);
 //        btn_report_semanal.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        search_panel.AddObject(btn_report_mensual, 120, 60, CENTER);
+        search_panel.AddObject(btn_report_mensual, 120, 60, RIGHT);
         //btn_report_mensual.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+        
+      
+         search_panel.AddObject(btn_ayuda_reportes, 120, 60,CENTER);
+//        btn_ayuda_reportes.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -1699,16 +1744,16 @@ public class MainDashboard {
 
         info_panel.AddObject(id_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_id_txt, 160, 20, LEFT);
-        modificar_cita_id_txt.setEditable(false); 
+        modificar_cita_id_txt.setEditable(false);
 
         info_panel.AddObject(expediente_lbl, 100, 20, LEFT);
         info_panel.AddObject(modificar_cita_expediente_txt, 120, 20, LEFT);
-        modificar_cita_expediente_txt.setEditable(false); 
+        modificar_cita_expediente_txt.setEditable(false);
         info_panel.newLine();
 
         info_panel.AddObject(nombre_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_nombre_txt, 160, 20, LEFT);
-        modificar_cita_nombre_txt.setEditable(false); 
+        modificar_cita_nombre_txt.setEditable(false);
 
         info_panel.AddObject(apellido_lbl, 60, 20, LEFT);
         info_panel.AddObject(modificar_cita_apellido_txt, 160, 20, LEFT);
@@ -1716,7 +1761,7 @@ public class MainDashboard {
 
         info_panel.AddObject(horario_lbl, 80, 20, LEFT);
         info_panel.AddObject(modificar_cita_horario_txt, 160, 20, LEFT);
-        modificar_cita_horario_txt.setEditable(false); 
+        modificar_cita_horario_txt.setEditable(false);
         info_panel.newLine();
 
         info_panel.AddObject(cita_lbl, 80, 20, LEFT);
