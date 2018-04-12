@@ -93,7 +93,7 @@ public class ManagerMD implements MouseListener {
             md.BtnBusquedaRapida();
         }
         if (md.btn_busqueda == me.getSource()) {
-            md.TABLA();
+            md.TABLA(this.bl.addAllPersonas(),this.bl.addAllPersonasObject());
         }
         //agregar
         if (md.btn_agregar == me.getSource()) {

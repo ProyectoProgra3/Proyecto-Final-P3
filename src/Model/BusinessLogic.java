@@ -49,6 +49,64 @@ public class BusinessLogic extends InitModel {
      * @param
      * @return ResultSet con los cursos de la base de datos
      */
+    public ArrayList addAllPersonas() {
+        try {
+            ArrayList<Object> objs = new ArrayList<>();
+             ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
+                    + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
+                    + "Persona.Nombre,  Persona.Apellido,  \n"
+                    + "`Telefono`,`Motivo`,"
+                    + "`Fecha_Solicitud`"
+                    + "FROM `Persona`\n"
+                    + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n", objs);
+     
+            try {
+                if (rs.next()) {
+                    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                        objs.add(rs.getMetaData().getColumnName(i));
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+            return null;
+        }
+    }
+
+    public ArrayList<Object[]> addAllPersonasObject() {
+        try {
+            ArrayList<Object []> objs = new ArrayList<>();
+            ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
+                    + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
+                    + "Persona.Nombre,  Persona.Apellido,  \n"
+                    + "`Telefono`,`Motivo`,"
+                    + "`Fecha_Solicitud`"
+                    + "FROM `Persona`\n"
+                    + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n", new ArrayList<>());
+       
+            try {
+                while (rt.next()) {
+                    Object[] row = new Object[rt.getMetaData().getColumnCount()];
+                    for (int i = 1; i <= rt.getMetaData().getColumnCount(); i++) {
+                        row[i - 1] = rt.getObject(i);
+                    }
+                   objs.add(row);
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+            return null;
+        }
+    }
+
     public ArrayList SearchCursos() {
         try {
             ArrayList<Object> objs = new ArrayList<>();

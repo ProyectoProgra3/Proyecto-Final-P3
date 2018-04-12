@@ -389,34 +389,15 @@ public class MainDashboard {
     }
 
     //UN POQUITO MAS ABAJO
-    public void TABLA() {
-        ArrayList<String> cols = new ArrayList<>();
-        iTable tab = null;
+    public iTable tab;
+
+    public void TABLA(ArrayList cols, ArrayList<Object[]> row) {
+        info_panel.dispose();
+        info_panel.repaint();
         tab = new iTable(cols);
-        ResultSet rs = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>());
-
-        if (sql.Exists(rs)) {
-            try {
-
-                if (rs.next()) {
-                    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-                        cols.add(rs.getMetaData().getColumnName(i));
-                    }
-                }
-
-                tab = new iTable(cols);
-                ResultSet rt = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>());
-                while (rt.next()) {
-                    Object[] row = new Object[rt.getMetaData().getColumnCount()];
-                    for (int i = 1; i <= rt.getMetaData().getColumnCount(); i++) {
-                        row[i - 1] = rt.getObject(i);
-                    }
-                    tab.addrow(row);
-                }
-
-            } catch (SQLException ex) {
-                System.out.println("no object fetch'd");
-            }
+        ResultSet rt = sql.SELECT("SELECT * FROM `Persona`", new ArrayList<>());
+        for (int i = 0; i < row.size(); i++) {
+            tab.addrow(row.get(i));
         }
         JScrollPane scrollPane = new JScrollPane(tab);
         scrollPane.setBounds(0, 0, 600, 460);
@@ -434,27 +415,25 @@ public class MainDashboard {
         ImageIcon fondo = new ImageIcon(System.getProperty("user.dir") + ("//src//Img//fondo.png"));
         JLabel fondo_label = new JLabel(fondo);
         fondo_label.setBounds(110, 30, 400, 400);
-        
+
         search_panel.AddObject(btn_ayuda_agregarsol, 100, 60, 525);
-        btn_ayuda_agregarsol.setBorder(0, 0, 0, 1, new Color(162, 202, 202)); 
-        
-          
+        btn_ayuda_agregarsol.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+
         search_panel.AddObject(btn_fam, 100, 60, 425);
         btn_fam.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        
+
         search_panel.AddObject(btn_pareja, 100, 60, 325);
         btn_pareja.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
 //        
         search_panel.AddObject(btn_adulto, 100, 60, 225);
         btn_adulto.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        
+
         search_panel.AddObject(btn_adol, 100, 60, 125);
         btn_adol.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
 //        
         search_panel.AddObject(btn_niño, 100, 60, -1);
-        btn_niño.setBorder(0, 0, 0, 1, new Color(162, 202, 202)); 
-        
-      
+        btn_niño.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
+
         search_panel.newLine();
         info_panel.add(fondo_label);
         search_panel.finalice();
@@ -486,11 +465,10 @@ public class MainDashboard {
 
         search_panel.AddObject(btn_buscar_cita, 120, 30, 2);
         btn_buscar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
-         
+
         search_panel.AddObject(btn_ayuda_cita, 120, 30, 1);
-        btn_ayuda_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202)); 
-        
-        
+        btn_ayuda_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -523,10 +501,10 @@ public class MainDashboard {
 
         search_panel.AddObject(btn_buscar_modificar_persona, 120, 30, 2);
         btn_buscar_modificar_persona.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
-        
-         search_panel.AddObject(btn_ayuda_modificar, 120, 30,1);
+
+        search_panel.AddObject(btn_ayuda_modificar, 120, 30, 1);
         btn_ayuda_modificar.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
-        
+
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -548,8 +526,8 @@ public class MainDashboard {
         btn_agrePsico.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_mosPsico, 135, 60, -1);
         btn_mosPsico.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        
-         search_panel.AddObject(btn_ayuda_psicologos, 135, 60, 372);
+
+        search_panel.AddObject(btn_ayuda_psicologos, 135, 60, 372);
         btn_ayuda_psicologos.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
 
@@ -571,11 +549,10 @@ public class MainDashboard {
         btn_eliminar.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_agrcurso, 135, 60, 135);
         btn_agrcurso.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        
-        
-         search_panel.AddObject(btn_ayuda_cursos, 135, 60,375);
+
+        search_panel.AddObject(btn_ayuda_cursos, 135, 60, 375);
         btn_ayuda_cursos.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        
+
         search_panel.newLine();
 
         info_panel.add(fondo_label);
@@ -591,7 +568,7 @@ public class MainDashboard {
         fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_justi, 140, 60, CENTER);
 
-         search_panel.AddObject(btn_ayuda_justificacion, 140, 60, RIGHT);
+        search_panel.AddObject(btn_ayuda_justificacion, 140, 60, RIGHT);
 //        btn_ayuda_justificacion.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
         btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
@@ -614,9 +591,8 @@ public class MainDashboard {
 //        btn_report_semanal.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
         search_panel.AddObject(btn_report_mensual, 120, 60, RIGHT);
         //btn_report_mensual.setBorder(0, 0, 0, 1, new Color(162, 202, 202));
-        
-      
-         search_panel.AddObject(btn_ayuda_reportes, 120, 60,CENTER);
+
+        search_panel.AddObject(btn_ayuda_reportes, 120, 60, CENTER);
 //        btn_ayuda_reportes.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
 
