@@ -60,6 +60,7 @@ public class ManagerMD implements MouseListener {
         //agregar citas
         this.md.btn_citas.addMouseListener(this);
         this.md.btn_buscar_cita.addMouseListener(this);
+        md.btn_guardar_modificar_cita.addMouseListener(this);
         //this.md.btn_type.addMouseListener(this);
 //        this.md.btn_ced.addMouseListener(this);
 
@@ -168,6 +169,9 @@ public class ManagerMD implements MouseListener {
             LLenarCboxcita();
             md.modificar_citas();
             llenarCita();
+        }
+        if (md.btn_guardar_modificar_cita == me.getSource()) {
+            modificarcitas();
         }
 
         //piscologo
@@ -445,6 +449,15 @@ public class ManagerMD implements MouseListener {
                 md.modificar_persona_cbm.getSelectedItem().toString())) {
             JOptionPane.showMessageDialog(null, "Se modifico correctamente");
         }
+    }
+
+    public void modificarcitas() {
+        if (md.modificar_cita_cita_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Te faltan campos por llenar");
+            return;
+        }
+      
+        this.bl.modificarcitas(md.modificar_cita_curso_cbm.getSelectedItem().toString(), md.modificar_cita_psicologo_cbm.getSelectedItem().toString(), md.modificar_cita_cita_txt.getText(), md.cita_txt.getText(), md.cita_cbm.getSelectedItem().toString());
     }
 
     public void agregarPsicologo() {

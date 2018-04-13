@@ -769,6 +769,26 @@ public class BusinessLogic extends InitModel {
         return result;
     }
 
+    public boolean modificarcitas(String Curso,
+            String Psicologo, String Cita, String cedula, String estado
+    ) {
+        ArrayList<Object> objs = new ArrayList<>();
+        objs.addAll(Arrays.asList( Curso, Psicologo, Cita,cedula,  estado
+        ));
+        boolean result = sql.exec("UPDATE Persona \n"
+                + "                  SET "
+                + "                  `Curso_idCurso`  =(SELECT `idCurso` FROM Curso where `Nombre`= ?), \n"
+                + "                 `Psicologo_idPsicologo`  =(SELECT `idPsicologo` FROM Psicologo where `Nombre`= ?), \n"
+                + "                   `Cita`  = ? "
+                + " WHERE `ID`=? "+ " AND `Estado_idEstado`=(SELECT `idEstado` FROM Estado where `Estado`= ?)", objs);
+        if (result) {
+            JOptionPane.showMessageDialog(null, "Se modifico correctamente");
+        } else {
+            JOptionPane.showMessageDialog(null, "Upsss ,Hubo un problema");
+        }
+        return result;
+    }
+
     public boolean GenerarExcel() throws FileNotFoundException, IOException {
         String[] Columnas = {"Cedula", "Estado", "Tipo de solicitud",
             "Nombre", "Apellido", "Edad",
