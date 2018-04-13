@@ -267,8 +267,8 @@ public class MainDashboard {
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
 //////////// BUSQUEDA ///////////////
-    public iTextField busqueda_rapida_txt = new iTextField("", 6);
-    public iComboCheckBox busqueda_rapida_cbm;
+    public iButtonFake busqueda_sincitas;
+    public iButtonFake busqueda_citasdia;
     public iButtonFake btn_busqueda = new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
     public MainDashboard() {
@@ -371,15 +371,12 @@ public class MainDashboard {
         id2_lbl.setText("Texto: ");
         id2_lbl.setForeground(new Color(255, 255, 255));
 
-        JLabel tipo_lbl = new JLabel();
-        tipo_lbl.setText("Parámetro: ");
-        tipo_lbl.setForeground(new Color(255, 255, 255));
-        busqueda_rapida_cbm = new iComboCheckBox();
-        busqueda_rapida_cbm.addItem("hola");
-        search_panel.AddObject(id2_lbl, 50, 42, LEFT);
-        search_panel.AddObject(busqueda_rapida_txt, 120, 32, LEFT);
-        search_panel.AddObject(tipo_lbl, 50, 42, LEFT);
-        search_panel.AddObject(busqueda_rapida_cbm, 120, 32, LEFT);
+        JLabel tipo_lbl = new JLabel();   
+        busqueda_citasdia= new iButtonFake("Citas del dia", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+        busqueda_sincitas = new iButtonFake("Personas sin cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+        search_panel.AddObject(busqueda_citasdia, 120, 32, LEFT);
+  
+        search_panel.AddObject(busqueda_sincitas, 120, 32, LEFT);
 
         search_panel.AddObject(btn_busqueda, 120, 30, 1);
         btn_busqueda.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
@@ -643,7 +640,7 @@ public class MainDashboard {
         direccion_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setText("Teléfono: ");
         telefono_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel email_lbl = new JLabel();
@@ -808,7 +805,7 @@ public class MainDashboard {
         direccion_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setText("Teléfono: ");
         telefono_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel email_lbl = new JLabel();
@@ -974,7 +971,7 @@ public class MainDashboard {
         direccion_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel telefono_lbl = new JLabel();
-        telefono_lbl.setText("Teléono: ");
+        telefono_lbl.setText("Teléfono: ");
         telefono_lbl.setForeground(new Color(156, 156, 156));
 
         JLabel email_lbl = new JLabel();

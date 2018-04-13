@@ -52,15 +52,18 @@ public class BusinessLogic extends InitModel {
     public ArrayList addAllPersonas() {
         try {
             ArrayList<Object> objs = new ArrayList<>();
-             ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
+            ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
                     + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
                     + "Persona.Nombre,  Persona.Apellido,  \n"
                     + "`Telefono`,`Motivo`,"
                     + "`Fecha_Solicitud`"
                     + "FROM `Persona`\n"
                     + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
-                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n", objs);
-     
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
+                    + "where Cita = \"0000-00-00\" \n"
+                    + "order by Persona.Fecha_Solicitud\n"
+                    + "limit 2", objs);
+
             try {
                 if (rs.next()) {
                     for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
@@ -79,7 +82,7 @@ public class BusinessLogic extends InitModel {
 
     public ArrayList<Object[]> addAllPersonasObject() {
         try {
-            ArrayList<Object []> objs = new ArrayList<>();
+            ArrayList<Object[]> objs = new ArrayList<>();
             ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
                     + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
                     + "Persona.Nombre,  Persona.Apellido,  \n"
@@ -87,15 +90,18 @@ public class BusinessLogic extends InitModel {
                     + "`Fecha_Solicitud`"
                     + "FROM `Persona`\n"
                     + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
-                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n", new ArrayList<>());
-       
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
+                    + "where Cita = \"0000-00-00\" \n"
+                    + "order by Persona.Fecha_Solicitud\n"
+                    + "limit 10", new ArrayList<>());
+
             try {
                 while (rt.next()) {
                     Object[] row = new Object[rt.getMetaData().getColumnCount()];
                     for (int i = 1; i <= rt.getMetaData().getColumnCount(); i++) {
                         row[i - 1] = rt.getObject(i);
                     }
-                   objs.add(row);
+                    objs.add(row);
                 }
             } catch (Exception e) {
                 System.out.println("Error" + e);
