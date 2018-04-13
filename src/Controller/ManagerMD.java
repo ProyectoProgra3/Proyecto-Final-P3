@@ -32,6 +32,8 @@ public class ManagerMD implements MouseListener {
         //busqueda
         this.md.btn_busqueda_rapida.addMouseListener(this);
         this.md.btn_busqueda.addMouseListener(this);
+        this.md.busqueda_citasdia.addMouseListener(this);
+        this.md.busqueda_sincitas.addMouseListener(this);
 
         //agregar solicitud
         this.md.btn_agregar.addMouseListener(this);
@@ -93,8 +95,15 @@ public class ManagerMD implements MouseListener {
             md.BtnBusquedaRapida();
         }
         if (md.btn_busqueda == me.getSource()) {
-            md.TABLA(this.bl.addAllPersonas(),this.bl.addAllPersonasObject());
+
         }
+        if (md.busqueda_sincitas == me.getSource()) {
+            md.TABLA(this.bl.addAllPersonassincita(), this.bl.addAllPersonasObjectsincita());
+        }
+        if (md.busqueda_citasdia == me.getSource()) {
+            md.TABLA(this.bl.addAllPersonascitadia(), this.bl.addAllPersonasObjectcitadia());
+        }
+
         //agregar
         if (md.btn_agregar == me.getSource()) {
             md.BtnAregarSolic();
@@ -227,8 +236,20 @@ public class ManagerMD implements MouseListener {
     }
 
     public void agregarSolicitanteNiño() {
-        if (md.nid_txt.getText().compareTo("") == 0 || md.nnombre_txt.getText().compareTo("") == 0 || md.napellido_txt.getText().compareTo("") == 0 || md.nedad_txt.getText().compareTo("") == 0 || md.ntelefono_txt.getText().compareTo("") == 0 || md.nocupacion_txt.getText().compareTo("") == 0 || md.ndireccion_txt.getText().compareTo("") == 0 || md.nmotivo_txt.getText().compareTo("") == 0 || md.nhorario_txt.getText().compareTo("") == 0 || md.nsolicitante_txt.getText().compareTo("") == 0) {
-            JOptionPane.showMessageDialog(null, "Falta gente ");
+        if (md.nid_txt.getText().compareTo("") == 0
+                || md.nnombre_txt.getText().compareTo("") == 0
+                || md.napellido_txt.getText().compareTo("") == 0
+                || md.nedad_txt.getText().compareTo("") == 0
+                || md.nreferencia_txt.getText().compareTo("") == 0
+                || md.nocupacion_txt.getText().compareTo("") == 0
+                || md.ntelefono_txt.getText().compareTo("") == 0
+                || md.nemail_txt.getText().compareTo("") == 0
+                || md.nocupacion_txt.getText().compareTo("") == 0
+                || md.ndireccion_txt.getText().compareTo("") == 0
+                || md.nmotivo_txt.getText().compareTo("") == 0
+                || md.nhorario_txt.getText().compareTo("") == 0
+                || md.nsolicitante_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Te faltan campos por llenar");
             return;
         }
         if (this.bl.AgregarSolicitudNiño(md.nid_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.nnombre_txt.getText(), md.napellido_txt.getText(), Integer.parseInt(md.nedad_txt.getText()), Integer.parseInt(md.ntelefono_txt.getText()), md.nocupacion_txt.getText(), md.nmotivo_txt.getText(), md.nreferencia_txt.getText(), md.nhorario_txt.getText(), md.nemail_txt.getText(), md.ndetalle_txt.getText(), md.nsolicitante_txt.getText(), md.ndireccion_txt.getText())) {
@@ -237,8 +258,20 @@ public class ManagerMD implements MouseListener {
     }
 
     public void agregarSolicitudAdolescente() {
-        if (md.adolescente_id_txt.getText().compareTo("") == 0 || md.adolescente_apellido_txt.getText().compareTo("") == 0 || md.adolescente_edad_txt.getText().compareTo("") == 0 || md.adolescente_nombre_txt.getText().compareTo("") == 0 || md.adolescente_horario_txt.getText().compareTo("") == 0 || md.adolescente_motivo_txt.getText().compareTo("") == 0 || md.adolescente_telefono_txt.getText().compareTo("") == 0 || md.adolescente_ocupacion_txt.getText().compareTo("") == 0) {
-            JOptionPane.showMessageDialog(null, "Falta gente ");
+        if (md.adolescente_id_txt.getText().compareTo("") == 0
+                || md.adolescente_nombre_txt.getText().compareTo("") == 0
+                || md.adolescente_apellido_txt.getText().compareTo("") == 0
+                || md.adolescente_edad_txt.getText().compareTo("") == 0
+                || md.adolescente_referencia_txt.getText().compareTo("") == 0
+                || md.adolescente_ocupacion_txt.getText().compareTo("") == 0
+                || md.adolescente_telefono_txt.getText().compareTo("") == 0
+                || md.adolescente_email_txt.getText().compareTo("") == 0
+                || md.adolescente_ocupacion_txt.getText().compareTo("") == 0
+                || md.adolescente_direccion_txt.getText().compareTo("") == 0
+                || md.adolescente_motivo_txt.getText().compareTo("") == 0
+                || md.adolescente_horario_txt.getText().compareTo("") == 0
+                || md.adolescente_solicitante_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Te faltan campos");
             return;
         }
         if (this.bl.AgregarSolicitudAdoslecente(md.adolescente_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.adolescente_nombre_txt.getText(), md.adolescente_apellido_txt.getText(), Integer.parseInt(md.adolescente_telefono_txt.getText()), Integer.parseInt(md.adolescente_edad_txt.getText()), md.adolescente_ocupacion_txt.getText(), md.adolescente_motivo_txt.getText(), md.adolescente_referencia_txt.getText(), md.adolescente_horario_txt.getText(), md.adolescente_email_txt.getText(), md.adolescente_detalle_txt.getText(),
@@ -248,8 +281,20 @@ public class ManagerMD implements MouseListener {
     }
 
     public void agregarSolicitudAdulto() {
-        if (md.adulto_id_txt.getText().compareTo("") == 0 || md.adulto_apellido_txt.getText().compareTo("") == 0 || md.adulto_edad_txt.getText().compareTo("") == 0 || md.adulto_nombre_txt.getText().compareTo("") == 0 || md.adulto_horario_txt.getText().compareTo("") == 0 || md.adulto_motivo_txt.getText().compareTo("") == 0 || md.adulto_telefono_txt.getText().compareTo("") == 0 || md.adulto_ocupacion_txt.getText().compareTo("") == 0) {
-            JOptionPane.showMessageDialog(null, "Falta gente ");
+        if (md.adulto_id_txt.getText().compareTo("") == 0
+                || md.adulto_nombre_txt.getText().compareTo("") == 0
+                || md.adulto_apellido_txt.getText().compareTo("") == 0
+                || md.adulto_edad_txt.getText().compareTo("") == 0
+                || md.adulto_referencia_txt.getText().compareTo("") == 0
+                || md.adulto_ocupacion_txt.getText().compareTo("") == 0
+                || md.adulto_telefono_txt.getText().compareTo("") == 0
+                || md.adulto_email_txt.getText().compareTo("") == 0
+                || md.adulto_ocupacion_txt.getText().compareTo("") == 0
+                || md.adulto_direccion_txt.getText().compareTo("") == 0
+                || md.adulto_motivo_txt.getText().compareTo("") == 0
+                || md.adulto_horario_txt.getText().compareTo("") == 0
+                || md.adulto_solicitante_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Te faltan campos");
             return;
         }
         if (this.bl.AgregarSolicitudAdoslecente(md.adulto_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.adulto_nombre_txt.getText(), md.adulto_apellido_txt.getText(), Integer.parseInt(md.adulto_telefono_txt.getText()), Integer.parseInt(md.adulto_edad_txt.getText()), md.adulto_ocupacion_txt.getText(), md.adulto_motivo_txt.getText(), md.adulto_referencia_txt.getText(), md.adulto_horario_txt.getText(), md.adulto_email_txt.getText(), md.adulto_detalle_txt.getText(),
@@ -259,23 +304,62 @@ public class ManagerMD implements MouseListener {
     }
 
     public void agregarSolicitudPareja() {
-        if (md.pareja_id_txt.getText().compareTo("") == 0 || md.pareja_apellido_txt.getText().compareTo("") == 0 || md.pareja_edad_txt.getText().compareTo("") == 0 || md.adulto_nombre_txt.getText().compareTo("") == 0 || md.pareja_horario_txt.getText().compareTo("") == 0 || md.pareja_motivo_txt.getText().compareTo("") == 0 || md.pareja_telefono_txt.getText().compareTo("") == 0 || md.adulto_ocupacion_txt.getText().compareTo("") == 0) {
-            JOptionPane.showMessageDialog(null, "Falta gente ");
+        if (md.pareja_id_txt.getText().compareTo("") == 0
+                || md.pareja_nombre_txt.getText().compareTo("") == 0
+                || md.pareja_apellido_txt.getText().compareTo("") == 0
+                || md.pareja_edad_txt.getText().compareTo("") == 0
+                || md.pareja_referencia_txt.getText().compareTo("") == 0
+                || md.pareja_ocupacion_txt.getText().compareTo("") == 0
+                || md.pareja_telefono_txt.getText().compareTo("") == 0
+                || md.pareja_email_txt.getText().compareTo("") == 0
+                || md.pareja_ocupacion_txt.getText().compareTo("") == 0
+                || md.pareja_direccion_txt.getText().compareTo("") == 0
+                || md.pareja_motivo_txt.getText().compareTo("") == 0
+                || md.pareja_horario_txt.getText().compareTo("") == 0
+                || md.pareja_solicitante_txt.getText().compareTo("") == 0
+                || md.pareja_detalle_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Te faltan campos");
             return;
         }
-        if (this.bl.AgregarSolicitudAdoslecente(md.adulto_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.pareja_nombre_txt.getText(), md.pareja_apellido_txt.getText(), Integer.parseInt(md.pareja_telefono_txt.getText()), Integer.parseInt(md.pareja_edad_txt.getText()), md.pareja_ocupacion_txt.getText(), md.pareja_motivo_txt.getText(), md.pareja_referencia_txt.getText(), md.pareja_horario_txt.getText(), md.pareja_email_txt.getText(), md.pareja_detalle_txt.getText(),
-                md.pareja_solicitante_txt.getText(), md.pareja_direccion_txt.getText())) {
+        if (this.bl.AgregarSolicitudAdoslecente(md.pareja_id_txt.getText(),
+                md.tipo_cbm.getSelectedItem().toString(),
+                md.pareja_nombre_txt.getText(),
+                md.pareja_apellido_txt.getText(),
+                Integer.parseInt(md.pareja_telefono_txt.getText()),
+                Integer.parseInt(md.pareja_edad_txt.getText()),
+                md.pareja_ocupacion_txt.getText(),
+                md.pareja_motivo_txt.getText(),
+                md.pareja_referencia_txt.getText(),
+                md.pareja_horario_txt.getText(),
+                md.pareja_email_txt.getText(),
+                md.pareja_detalle_txt.getText(),
+                md.pareja_solicitante_txt.getText(),
+                md.pareja_direccion_txt.getText())) {
             md.LimpiarCasillas();
         };
     }
 
     public void agregarSolicitudFamilia() {
-        if (md.familia_id_txt.getText().compareTo("") == 0 || md.familia_apellido_txt.getText().compareTo("") == 0 || md.familia_edad_txt.getText().compareTo("") == 0 || md.familia_nombre_txt.getText().compareTo("") == 0 || md.familia_horario_txt.getText().compareTo("") == 0 || md.familia_motivo_txt.getText().compareTo("") == 0 || md.pareja_telefono_txt.getText().compareTo("") == 0 || md.adulto_ocupacion_txt.getText().compareTo("") == 0) {
-            JOptionPane.showMessageDialog(null, "Falta gente ");
+        if (md.familia_id_txt.getText().compareTo("") == 0
+                || md.familia_nombre_txt.getText().compareTo("") == 0
+                || md.familia_apellido_txt.getText().compareTo("") == 0
+                || md.familia_edad_txt.getText().compareTo("") == 0
+                || md.familia_referencia_txt.getText().compareTo("") == 0
+                || md.familia_ocupacion_txt.getText().compareTo("") == 0
+                || md.familia_telefono_txt.getText().compareTo("") == 0
+                || md.familia_email_txt.getText().compareTo("") == 0
+                || md.familia_ocupacion_txt.getText().compareTo("") == 0
+                || md.familia_direccion_txt.getText().compareTo("") == 0
+                || md.familia_motivo_txt.getText().compareTo("") == 0
+                || md.familia_horario_txt.getText().compareTo("") == 0
+                || md.familia_solicitante_txt.getText().compareTo("") == 0
+                || md.familia_detalle_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Te faltan campos");
             return;
         }
         this.bl.AgregarSolicitudFamilia(md.familia_id_txt.getText(), md.tipo_cbm.getSelectedItem().toString(), md.familia_nombre_txt.getText(), md.familia_apellido_txt.getText(), Integer.parseInt(md.familia_telefono_txt.getText()), Integer.parseInt(md.familia_edad_txt.getText()), md.familia_ocupacion_txt.getText(), md.familia_motivo_txt.getText(), md.familia_referencia_txt.getText(), md.familia_horario_txt.getText(), md.familia_email_txt.getText(), md.familia_detalle_txt.getText(),
                 md.familia_solicitante_txt.getText(), md.familia_direccion_txt.getText(), Integer.parseInt(this.md.familia_integrantes_txt.getText()));
+        md.LimpiarCasillas();
     }
 
     public void llenarModificar() {
@@ -283,8 +367,6 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "La cedula esta vacia");
             return;
         }
-//        ResultSet rs = this.bl.SearchbyIdandEstado(this.md.modificar_persona_txt.getText(),
-//                md.modificar_persona_cbm.getSelectedItem().toString());
         ResultSet rs = this.bl.SearchbyIdandTipo(this.md.modificar_persona_txt.getText(),
                 md.modificar_persona_cbm.getSelectedItem().toString());
         try {

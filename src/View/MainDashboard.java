@@ -167,18 +167,14 @@ public class MainDashboard {
     public iButtonFake btn_agregar_adulto = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
     ///PAREJA///
-    public iTextField pareja_id_txt = new iTextField("", 6);
-    public iTextField pareja2_id_txt = new iTextField("", 6);
+    public iTextField pareja_id_txt = new iTextField("", 6); 
     public iTextField pareja_apellido_txt = new iTextField("", 6);
     public iTextField pareja_nombre_txt = new iTextField("", 6);
-    public iTextField pareja_edad_txt = new iTextField("", 6);
-    public iTextField pareja2_edad_txt = new iTextField("", 6);
+    public iTextField pareja_edad_txt = new iTextField("", 6); 
     public iTextField pareja_referencia_txt = new iTextField("", 6);
     public iTextField pareja_ocupacion_txt = new iTextField("", 6);
-    public iTextField pareja2_ocupacion_txt = new iTextField("", 6);
     public iTextField pareja_direccion_txt = new iTextField("", 6);
-    public iTextField pareja_telefono_txt = new iTextField("", 6);
-    public iTextField pareja2_telefono_txt = new iTextField("", 6);
+    public iTextField pareja_telefono_txt = new iTextField("", 6);  
     public iTextField pareja_email_txt = new iTextField("", 6);
     public iTextField pareja_motivo_txt = new iTextField("", 6);
     public iTextField pareja_horario_txt = new iTextField("", 6);
@@ -267,8 +263,8 @@ public class MainDashboard {
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
 //////////// BUSQUEDA ///////////////
-    public iButtonFake busqueda_sincitas;
-    public iButtonFake busqueda_citasdia;
+    public iButtonFake busqueda_sincitas= new iButtonFake("Personas sin cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+    public iButtonFake busqueda_citasdia= new iButtonFake("Citas del dia", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
     public iButtonFake btn_busqueda = new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
     public MainDashboard() {
@@ -372,8 +368,8 @@ public class MainDashboard {
         id2_lbl.setForeground(new Color(255, 255, 255));
 
         JLabel tipo_lbl = new JLabel();   
-        busqueda_citasdia= new iButtonFake("Citas del dia", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
-        busqueda_sincitas = new iButtonFake("Personas sin cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+ 
+
         search_panel.AddObject(busqueda_citasdia, 120, 32, LEFT);
   
         search_panel.AddObject(busqueda_sincitas, 120, 32, LEFT);
@@ -2062,17 +2058,17 @@ public class MainDashboard {
 
         ///PAREJA///
         pareja_id_txt.setText("");
-        pareja2_id_txt.setText("");
+    
         pareja_apellido_txt.setText("");
         pareja_nombre_txt.setText("");
         pareja_edad_txt.setText("");
-        pareja2_edad_txt.setText("");
+  
         pareja_referencia_txt.setText("");
         pareja_ocupacion_txt.setText("");
-        pareja2_ocupacion_txt.setText("");
+   
         pareja_direccion_txt.setText("");
         pareja_telefono_txt.setText("");
-        pareja2_telefono_txt.setText("");
+    
         pareja_email_txt.setText("");
         pareja_motivo_txt.setText("");
         pareja_horario_txt.setText("");

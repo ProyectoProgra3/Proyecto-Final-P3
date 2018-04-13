@@ -49,11 +49,11 @@ public class BusinessLogic extends InitModel {
      * @param
      * @return ResultSet con los cursos de la base de datos
      */
-    public ArrayList addAllPersonas() {
+    public ArrayList addAllPersonassincita() {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
-                    + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
+   
                     + "Persona.Nombre,  Persona.Apellido,  \n"
                     + "`Telefono`,`Motivo`,"
                     + "`Fecha_Solicitud`"
@@ -80,11 +80,10 @@ public class BusinessLogic extends InitModel {
         }
     }
 
-    public ArrayList<Object[]> addAllPersonasObject() {
+    public ArrayList<Object[]> addAllPersonasObjectsincita() {
         try {
             ArrayList<Object[]> objs = new ArrayList<>();
-            ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
-                    + "Tipo_de_solicitud.`Tipo de solicitud`,\n"
+            ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"             
                     + "Persona.Nombre,  Persona.Apellido,  \n"
                     + "`Telefono`,`Motivo`,"
                     + "`Fecha_Solicitud`"
@@ -112,6 +111,69 @@ public class BusinessLogic extends InitModel {
             return null;
         }
     }
+      public ArrayList addAllPersonascitadia() {
+        try {
+            ArrayList<Object> objs = new ArrayList<>();
+            ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"            
+                    + "Persona.Nombre,  Persona.Apellido,  \n"
+                    + "`Telefono`,`Motivo`,"
+                    + "`Fecha_Solicitud`"
+                    + "FROM `Persona`\n"
+                    + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
+                    + "where  Cita = CURDATE()"
+                    + "order by Persona.Fecha_Solicitud\n"
+                    + "limit 25", objs);
+
+            try {
+                if (rs.next()) {
+                    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                        objs.add(rs.getMetaData().getColumnName(i));
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+            return null;
+        }
+    }
+
+    public ArrayList<Object[]> addAllPersonasObjectcitadia() {
+        try {
+            ArrayList<Object[]> objs = new ArrayList<>();
+            ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
+              
+                    + "Persona.Nombre,  Persona.Apellido,  \n"
+                    + "`Telefono`,`Motivo`,"
+                    + "`Fecha_Solicitud`"
+                    + "FROM `Persona`\n"
+                    + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
+                    + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
+                    + "where Cita = CURDATE()"
+                    + "order by Persona.Fecha_Solicitud\n"
+                    + "limit 25", new ArrayList<>());
+
+            try {
+                while (rt.next()) {
+                    Object[] row = new Object[rt.getMetaData().getColumnCount()];
+                    for (int i = 1; i <= rt.getMetaData().getColumnCount(); i++) {
+                        row[i - 1] = rt.getObject(i);
+                    }
+                    objs.add(row);
+                }
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+            return objs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something was wrong contact the Admin" + e);
+            return null;
+        }
+    }
+    
 
     public ArrayList SearchCursos() {
         try {
