@@ -53,7 +53,6 @@ public class BusinessLogic extends InitModel {
         try {
             ArrayList<Object> objs = new ArrayList<>();
             ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
-   
                     + "Persona.Nombre,  Persona.Apellido,  \n"
                     + "`Telefono`,`Motivo`,"
                     + "`Fecha_Solicitud`"
@@ -83,7 +82,7 @@ public class BusinessLogic extends InitModel {
     public ArrayList<Object[]> addAllPersonasObjectsincita() {
         try {
             ArrayList<Object[]> objs = new ArrayList<>();
-            ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"             
+            ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
                     + "Persona.Nombre,  Persona.Apellido,  \n"
                     + "`Telefono`,`Motivo`,"
                     + "`Fecha_Solicitud`"
@@ -111,10 +110,11 @@ public class BusinessLogic extends InitModel {
             return null;
         }
     }
-      public ArrayList addAllPersonascitadia() {
+
+    public ArrayList addAllPersonascitadia() {
         try {
             ArrayList<Object> objs = new ArrayList<>();
-            ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"            
+            ResultSet rs = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
                     + "Persona.Nombre,  Persona.Apellido,  \n"
                     + "`Telefono`,`Motivo`,"
                     + "`Fecha_Solicitud`"
@@ -145,7 +145,6 @@ public class BusinessLogic extends InitModel {
         try {
             ArrayList<Object[]> objs = new ArrayList<>();
             ResultSet rt = sql.SELECT("SELECT  `ID`,  Estado.Estado ,\n"
-              
                     + "Persona.Nombre,  Persona.Apellido,  \n"
                     + "`Telefono`,`Motivo`,"
                     + "`Fecha_Solicitud`"
@@ -173,7 +172,6 @@ public class BusinessLogic extends InitModel {
             return null;
         }
     }
-    
 
     public ArrayList SearchCursos() {
         try {
@@ -392,7 +390,7 @@ public class BusinessLogic extends InitModel {
                     + "`Referencia`,  `Detalle_Horario`,  Persona.Email,\n"
                     + "`Detalle`,  `Fecha_Solicitud`,  `NombreSolicitante`, \n"
                     + "Curso.Nombre,  Psicologo.Nombre,  `Cita` ,  \n"
-                    + "`Expediente`,`Dir` \n"
+                    + "`Expediente`,`Dir`,`Integrantes` \n"
                     + "FROM `Persona`\n"
                     + "inner join Curso on Persona.Curso_idCurso= Curso.idCurso\n"
                     + "inner join Psicologo on Persona.Psicologo_idPsicologo=Psicologo.idPsicologo\n"
@@ -733,21 +731,36 @@ public class BusinessLogic extends InitModel {
             String Apellido, int edad, int telefono, String Ocupacion, String Motivo,
             String Referencia, String Detalle_Horario, String email, String detalle,
             String NombreSolicitante, String Curso, String Psicologo, String Cita, String Expediente,
-            String Direccion) {
+            String Direccion, int integrantes, String cedula, String estadoini) {
 
-        ArrayList<Object> objs1 = new ArrayList<>();
         ArrayList<Object> objs = new ArrayList<>();
         objs.addAll(Arrays.asList(ID, Estado, TipodeSolicitud, Nombre,
                 Apellido, edad, telefono, Ocupacion, Motivo,
                 Referencia, Detalle_Horario, email, detalle,
                 NombreSolicitante, Curso, Psicologo, Cita, Expediente,
-                Direccion));
-        boolean result = sql.exec("UPDATE `icompone_mario`.`Persona` SET `ID`= ?, `Estado_idEstado`=?, "
-                + "`Tipo_de_solicitud_idSolicitud`=?, `Nombre`=?, `Apellido`=?, `Edad`=?, `Telefono`=?, "
-                + "`Ocupacion`=?, `Motivo`=?, `Referencia`=?, `Detalle_Horario`=?, `Email`=?, `Detalle`=?,"
-                + " `NombreSolicitante`=?, `Curso_idCurso`=?, `Psicologo_idPsicologo`=?, `Cita`=?, "
-                + "`Expediente`=?, `Direccion`=? "
-                + "WHERE  `ID`=? AND `Estado_idEstado`=? AND `Tipo_de_solicitud_idSolicitud`=?;", objs1);
+                Direccion, integrantes, cedula, estadoini));
+        boolean result = sql.exec("UPDATE Persona\n"
+                + "                  SET `ID`= ? ,\n"
+                + "                  `Estado_idEstado`  =(SELECT `idEstado` FROM Estado where `Estado`= ?),\n"
+                + "                  `Tipo_de_solicitud_idSolicitud`  =(SELECT `idSolicitud` FROM Tipo_de_solicitud where `Tipo de solicitud`= ?),\n"
+                + "                   `Nombre`=?, \n"
+                + "                   `Apellido`=?,"
+                + "                   `Edad`=?,\n"
+                + "                   `Telefono` =?, \n"
+                + "                  `Ocupacion`  =?,\n"
+                + "                   `Motivo`  =?,\n"
+                + "                   `Referencia`  =?,\n"
+                + "                   `Detalle_Horario` =?,\n"
+                + "                   `Email`  =?, \n"
+                + "                  `Detalle`  =?,\n"
+                + "                   `NombreSolicitante`  =?,\n"
+                + "                  `Curso_idCurso`  =(SELECT `idCurso` FROM Curso where `Nombre`= ?), \n"
+                + "                 `Psicologo_idPsicologo`  =(SELECT `idPsicologo` FROM Psicologo where `Nombre`= ?), \n"
+                + "                   `Cita`  =?, \n"
+                + "                   `Expediente`  =?, \n"
+                + "                   `Dir`  =?, \n"
+                + "                `Integrantes` =? \n"
+                + "                 WHERE  `ID`=? and `Tipo_de_solicitud_idSolicitud`=(SELECT `idSolicitud` FROM Tipo_de_solicitud where `Tipo de solicitud`=?)", objs);
         if (result) {
             JOptionPane.showMessageDialog(null, "Se modifico correctamente");
         } else {

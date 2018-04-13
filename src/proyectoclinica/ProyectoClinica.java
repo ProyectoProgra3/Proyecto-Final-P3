@@ -48,6 +48,7 @@ public class ProyectoClinica extends JPanel {
 //    /**
 //     * @param args the command line arguments
 //     */
+     static SQL sql= new SQL();
     public static void main(String[] args) {
 // 
 //

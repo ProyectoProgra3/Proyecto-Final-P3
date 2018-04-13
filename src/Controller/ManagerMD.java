@@ -156,7 +156,7 @@ public class ManagerMD implements MouseListener {
             llenarModificar();
         }
         if (md.btn_guardar_modificar_persona == me.getSource()) {
-
+            modificar();
         }
 
         //citas
@@ -387,7 +387,8 @@ public class ManagerMD implements MouseListener {
                 this.md.modificar_persona_solicitante_txt.setText(rs.getObject("NombreSolicitante").toString());
                 this.md.modificar_persona_direccion_txt.setText(rs.getObject("Dir").toString());
                 this.md.modificar_persona_expediente_txt.setText(rs.getObject("Expediente").toString());
-//                this.md.modificar_persona_cita_txt.setText(rs.getObject("Cita").toString());
+                this.md.modificar_persona_cita_txt.setText(rs.getObject("Cita").toString());
+                this.md.modificar_persona_integrantes_txt.setText(rs.getObject("Integrantes").toString());
                 this.md.Solicitud.setText(rs.getObject("Fecha_Solicitud").toString());
                 this.md.modificar_persona_clase_cbm.setSelectedItem(rs.getObject("Estado.Estado").toString());
                 this.md.modificar_persona_psicologo_cbm.setSelectedItem(rs.getObject("Psicologo.Nombre").toString());
@@ -398,6 +399,52 @@ public class ManagerMD implements MouseListener {
             System.out.println("error" + e);
         }
 
+    }
+
+    public void modificar() {
+        if (md.modificar_persona_id_txt.getText().compareTo("") == 0
+                || md.modificar_persona_nombre_txt.getText().compareTo("") == 0
+                || md.modificar_persona_apellido_txt.getText().compareTo("") == 0
+                || md.modificar_persona_edad_txt.getText().compareTo("") == 0
+                || md.modificar_persona_telefono_txt.getText().compareTo("") == 0
+                || md.modificar_persona_ocupacion_txt.getText().compareTo("") == 0
+                || md.modificar_persona_motivo_txt.getText().compareTo("") == 0
+                || md.modificar_persona_referencia_txt.getText().compareTo("") == 0
+                || md.modificar_persona_horario_txt.getText().compareTo("") == 0
+                || md.modificar_persona_detalle_txt.getText().compareTo("") == 0
+                || md.modificar_persona_email_txt.getText().compareTo("") == 0
+                || md.modificar_persona_solicitante_txt.getText().compareTo("") == 0
+                || md.modificar_persona_direccion_txt.getText().compareTo("") == 0
+                || md.modificar_persona_expediente_txt.getText().compareTo("") == 0
+                || md.modificar_persona_cita_txt.getText().compareTo("") == 0
+                || md.modificar_persona_integrantes_txt.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(null, "Te faltan datos por llenar");
+            return;
+        }
+        if (this.bl.modifyPersona(md.modificar_persona_id_txt.getText(),
+                md.modificar_persona_clase_cbm.getSelectedItem().toString(),
+                md.modificar_persona_tipo_cbm.getSelectedItem().toString(),
+                md.modificar_persona_nombre_txt.getText(),
+                md.modificar_persona_nombre_txt.getText(),
+                Integer.parseInt(md.modificar_persona_edad_txt.getText()),
+                Integer.parseInt(md.modificar_persona_telefono_txt.getText()),
+                md.modificar_persona_ocupacion_txt.getText(),
+                md.modificar_persona_motivo_txt.getText(),
+                md.modificar_persona_referencia_txt.getText(),
+                md.modificar_persona_horario_txt.getText(),
+                md.modificar_persona_email_txt.getText(),
+                md.modificar_persona_detalle_txt.getText(),
+                md.modificar_persona_solicitante_txt.getText(),
+                md.modificar_persona_curso_cbm.getSelectedItem().toString(),
+                md.modificar_persona_psicologo_cbm.getSelectedItem().toString(),
+                md.modificar_persona_cita_txt.getText(),
+                md.modificar_persona_expediente_txt.getText(),
+                md.modificar_persona_direccion_txt.getText(),
+                Integer.parseInt(md.modificar_persona_integrantes_txt.getText()),
+                md.modificar_persona_txt.getText(),
+                md.modificar_persona_cbm.getSelectedItem().toString())) {
+            JOptionPane.showMessageDialog(null, "Se modifico correctamente");
+        }
     }
 
     public void agregarPsicologo() {
