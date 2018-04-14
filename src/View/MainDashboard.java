@@ -263,8 +263,10 @@ public class MainDashboard {
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
 //////////// BUSQUEDA ///////////////
-    public iButtonFake busqueda_sincitas= new iButtonFake("Personas sin cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
-    public iButtonFake busqueda_citasdia= new iButtonFake("Citas del dia", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
+    public iButtonFake busqueda_sincitas= new iButtonFake("Personas sin cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DO_NOT_DISTURB_ALT);
+    public iButtonFake busqueda_citasdia= new iButtonFake("Citas del dia", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.NOTIFICATIONS_ACTIVE);
+    public iButtonFake busqueda_modificar= new iButtonFake("Modificar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.FIBER_NEW);
+    public iButtonFake busqueda_agregar_cita= new iButtonFake("Agregar Cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DEVELOPER_BOARD);
     public iButtonFake btn_busqueda = new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
     public MainDashboard() {
@@ -370,12 +372,17 @@ public class MainDashboard {
         JLabel tipo_lbl = new JLabel();   
  
 
-        search_panel.AddObject(busqueda_citasdia, 120, 32, LEFT);
-  
-        search_panel.AddObject(busqueda_sincitas, 120, 32, LEFT);
+        search_panel.AddObject(busqueda_citasdia, 120, 60, 2);
+        busqueda_citasdia.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        search_panel.AddObject(busqueda_sincitas, 120, 60, LEFT);
+        busqueda_sincitas.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        search_panel.AddObject(busqueda_modificar, 120, 60, LEFT);
+        busqueda_modificar.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        search_panel.AddObject(busqueda_agregar_cita, 120, 60, LEFT);
+        busqueda_agregar_cita.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
 
-        search_panel.AddObject(btn_busqueda, 120, 30, 1);
-        btn_busqueda.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
+        //search_panel.AddObject(btn_busqueda, 120, 30, 1);
+        //btn_busqueda.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         search_panel.newLine();
 
         info_panel.add(fondo_label);
