@@ -568,7 +568,7 @@ public class MainDashboard {
         fondo_label.setBounds(110, 30, 400, 400);
         search_panel.AddObject(btn_justi, 140, 60, CENTER);
 
-        search_panel.AddObject(btn_ayuda_justificacion, 140, 60, RIGHT);
+        search_panel.AddObject(btn_ayuda_justificacion, 140, 60, 1);
 //        btn_ayuda_justificacion.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
         /*        search_panel.AddObject(btn_justi_print, 130, 60, -1);
         btn_justi_print.setBorder(0, 0, 0, 1, new Color(162, 202, 202));*/
