@@ -167,14 +167,14 @@ public class MainDashboard {
     public iButtonFake btn_agregar_adulto = new iButtonFake("Agregar", " Tipo Paciente", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
     ///PAREJA///
-    public iTextField pareja_id_txt = new iTextField("", 6); 
+    public iTextField pareja_id_txt = new iTextField("", 6);
     public iTextField pareja_apellido_txt = new iTextField("", 6);
     public iTextField pareja_nombre_txt = new iTextField("", 6);
-    public iTextField pareja_edad_txt = new iTextField("", 6); 
+    public iTextField pareja_edad_txt = new iTextField("", 6);
     public iTextField pareja_referencia_txt = new iTextField("", 6);
     public iTextField pareja_ocupacion_txt = new iTextField("", 6);
     public iTextField pareja_direccion_txt = new iTextField("", 6);
-    public iTextField pareja_telefono_txt = new iTextField("", 6);  
+    public iTextField pareja_telefono_txt = new iTextField("", 6);
     public iTextField pareja_email_txt = new iTextField("", 6);
     public iTextField pareja_motivo_txt = new iTextField("", 6);
     public iTextField pareja_horario_txt = new iTextField("", 6);
@@ -263,10 +263,10 @@ public class MainDashboard {
     public iButtonFake btn_generar_justi = new iButtonFake("Generar Justificación", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
 
 //////////// BUSQUEDA ///////////////
-    public iButtonFake busqueda_sincitas= new iButtonFake("Personas sin cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DO_NOT_DISTURB_ALT);
-    public iButtonFake busqueda_citasdia= new iButtonFake("Citas del dia", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.NOTIFICATIONS_ACTIVE);
-    public iButtonFake busqueda_modificar= new iButtonFake("Modificar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.FIBER_NEW);
-    public iButtonFake busqueda_agregar_cita= new iButtonFake("Agregar Cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DEVELOPER_BOARD);
+    public iButtonFake busqueda_sincitas = new iButtonFake("Personas sin cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DO_NOT_DISTURB_ALT);
+    public iButtonFake busqueda_citasdia = new iButtonFake("Citas del dia", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.NOTIFICATIONS_ACTIVE);
+    public iButtonFake busqueda_modificar = new iButtonFake("Modificar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.FIBER_NEW);
+    public iButtonFake busqueda_agregar_cita = new iButtonFake("Agregar Cita", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.DEVELOPER_BOARD);
     public iButtonFake btn_busqueda = new iButtonFake("Buscar", "", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.SEARCH);
 
     public MainDashboard() {
@@ -369,8 +369,7 @@ public class MainDashboard {
         id2_lbl.setText("Texto: ");
         id2_lbl.setForeground(new Color(255, 255, 255));
 
-        JLabel tipo_lbl = new JLabel();   
- 
+        JLabel tipo_lbl = new JLabel();
 
         search_panel.AddObject(busqueda_citasdia, 120, 60, 2);
         busqueda_citasdia.setBorder(0, 1, 0, 0, new Color(162, 202, 202));
@@ -1759,6 +1758,28 @@ public class MainDashboard {
         info_panel.add(fondo_label);
     }
 ////////////////////PSICOLOGOS/////////////////////////////// 
+    public iTextField txt_ideliminarPsicologos = new iTextField("", 6);
+    public iTextField txt_passwordPsicologo = new iTextField("", 6);
+    public iButtonFake btn_eliminarbueyes = new iButtonFake("Eliminar", "Todos", new Color(255, 255, 255), new Color(137, 185, 185), new Color(247, 247, 247), new Color(106, 203, 214).darker(), GoogleMaterialDesignIcons.INPUT);
+
+    public void eliminarPsicologos() {
+        info_panel.dispose();
+        info_panel.repaint();
+        JLabel lbl_NombrePsicologo = new JLabel();
+        lbl_NombrePsicologo.setText("Id:");
+        lbl_NombrePsicologo.setForeground(new Color(156, 156, 156));
+        JLabel lbl_Contraseña = new JLabel();
+        lbl_Contraseña.setText("Contraseña");
+        lbl_Contraseña.setForeground(new Color(156, 156, 156));
+        info_panel.AddObject(lbl_NombrePsicologo, 80, 20, LEFT);
+        info_panel.AddObject(txt_ideliminarPsicologos, 160, 20, LEFT);
+        info_panel.newLine();
+        info_panel.AddObject(lbl_Contraseña, 80, 20, LEFT);
+        info_panel.AddObject(txt_passwordPsicologo, 160, 20, LEFT);
+        info_panel.newLine();
+        info_panel.AddObject(btn_eliminarbueyes, 160, 20, LEFT);
+        info_panel.newLine();
+    }
 
     public void Mostrar_Cursos() {
         info_panel.dispose();
@@ -2065,17 +2086,17 @@ public class MainDashboard {
 
         ///PAREJA///
         pareja_id_txt.setText("");
-    
+
         pareja_apellido_txt.setText("");
         pareja_nombre_txt.setText("");
         pareja_edad_txt.setText("");
-  
+
         pareja_referencia_txt.setText("");
         pareja_ocupacion_txt.setText("");
-   
+
         pareja_direccion_txt.setText("");
         pareja_telefono_txt.setText("");
-    
+
         pareja_email_txt.setText("");
         pareja_motivo_txt.setText("");
         pareja_horario_txt.setText("");

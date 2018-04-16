@@ -67,10 +67,10 @@ public class ManagerMD implements MouseListener {
         //agregar psciologo
         this.md.btn_psico.addMouseListener(this);
         this.md.btn_eliTodos.addMouseListener(this);
-
         this.md.btn_agrePsico.addMouseListener(this);
         this.md.btn_agregar_psicologo.addMouseListener(this);
         this.md.btn_mosPsico.addMouseListener(this);
+        this.md.btn_eliminarbueyes.addMouseListener(this);
         //cursos
         this.md.btn_curso.addMouseListener(this);
         this.md.btn_mosCurso.addMouseListener(this);
@@ -177,15 +177,23 @@ public class ManagerMD implements MouseListener {
         //piscologo
         if (md.btn_psico == me.getSource()) {
             md.BtnPsicologos();
-              md.Mostrar_Psicologos();
+            md.Mostrar_Psicologos();
         }
         if (md.btn_mosPsico == me.getSource()) {
             md.Mostrar_Psicologos();
         }
         if (md.btn_eliTodos == me.getSource()) {
+            md.eliminarPsicologos();
 //eliminartodos();ya esta no tocar !!!!
         }
-
+        if (md.btn_eliminarbueyes == me.getSource()) {
+            if (this.bl.confirmacion(this.md.txt_ideliminarPsicologos.getText(), this.md.txt_passwordPsicologo.getText())) {
+                JOptionPane.showMessageDialog(null, "Se borraron los psicologos");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se  borraron los psicologos");
+            };
+//eliminartodos();ya esta no tocar !!!!
+        }
         if (md.btn_agrePsico == me.getSource()) {
             md.Agregar_Psicologo();
         }
@@ -199,7 +207,7 @@ public class ManagerMD implements MouseListener {
         if (md.btn_curso == me.getSource()) {
             md.BtnCurso();
             md.Mostrar_Cursos();
-            
+
         }
         if (md.btn_mosCurso == me.getSource()) {
             md.Mostrar_Cursos();
@@ -449,7 +457,7 @@ public class ManagerMD implements MouseListener {
                 md.modificar_persona_direccion_txt.getText(),
                 Integer.parseInt(md.modificar_persona_integrantes_txt.getText()),
                 md.modificar_persona_txt.getText(),
-                md.modificar_persona_cbm.getSelectedItem().toString())) {         
+                md.modificar_persona_cbm.getSelectedItem().toString())) {
         }
     }
 
@@ -458,13 +466,13 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Te faltan campos por llenar");
             return;
         }
-      
+
         this.bl.modificarcitas(md.modificar_cita_curso_cbm.getSelectedItem().toString(), md.modificar_cita_psicologo_cbm.getSelectedItem().toString(), md.modificar_cita_cita_txt.getText().toString(), md.cita_txt.getText(), md.cita_cbm.getSelectedItem().toString());
     }
 
     public void agregarPsicologo() {
         if (bl.addPsicologo("hola", this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), Integer.parseInt(this.md.celular_psicologo_txt.getText()), this.md.email_psicologo_txt.getText())) {
-            JOptionPane.showMessageDialog(null,"Se agrego el psicologo correctamente");
+            JOptionPane.showMessageDialog(null, "Se agrego el psicologo correctamente");
         } else {
             System.out.println("upps hubo un problema");
         };
@@ -480,7 +488,7 @@ public class ManagerMD implements MouseListener {
     }
 
     public void llenarCbModificar() {
-        ArrayList a = this.bl.SearchTipo();
+           ArrayList a = this.bl.SearchTipo();
         for (int i = 0; i < a.size(); i++) {
             this.md.modificar_persona_tipo_cbm.addItem(a.get(i));
         }

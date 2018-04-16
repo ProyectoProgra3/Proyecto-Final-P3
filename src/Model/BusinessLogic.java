@@ -89,7 +89,7 @@ public class BusinessLogic extends InitModel {
                     + "FROM `Persona`\n"
                     + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
                     + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
-                    + "where Cita = \"0000-00-00\" \n"
+                    + "where Cita = \"0000-00-01\" \n"
                     + "order by Persona.Fecha_Solicitud\n"
                     + "limit 10", new ArrayList<>());
 
@@ -526,9 +526,21 @@ public class BusinessLogic extends InitModel {
     public boolean DeletePsicologos() {
         ArrayList<Object> objs1 = new ArrayList<>();
         objs1.addAll(Arrays.asList());
-        boolean result1 = sql.exec("Update `Persona` SET Psicologo_IdPsicologo =(NULL)", objs1);
-        boolean result = sql.exec("Delete  From `Psicologo`", objs1);
+        boolean result1 = sql.exec("Update `Persona` SET Psicologo_IdPsicologo = 0", objs1);
+        boolean result = sql.exec("Delete  From `Psicologo` where `idPsicologo`!=0  ", objs1);
         return result;
+    }
+
+    public boolean confirmacion(String Id, String password) {
+        ArrayList<Object> objs1 = new ArrayList<>();
+        objs1.addAll(Arrays.asList(Id, password));
+        ResultSet rs = sql.SELECT("Select * from `Login` where `Username`= ? and `Password`=? and `Username` != 1 ", objs1);
+        if (sql.Exists(rs)) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     /**
@@ -555,7 +567,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '1',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
-                             JOptionPane.showMessageDialog(null, "Se añadio correctamente");
+                JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -590,7 +602,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '2',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
-                              JOptionPane.showMessageDialog(null, "Se añadio correctamente");
+                JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -625,7 +637,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '3',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
-                                JOptionPane.showMessageDialog(null, "Se añadio correctamente");
+                JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -660,7 +672,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '4',?,?,?,?,?,?,?,?,?,?,?,?,?,2);", objs);
             if (result) {
-                            JOptionPane.showMessageDialog(null, "Se añadio correctamente");
+                JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -774,7 +786,7 @@ public class BusinessLogic extends InitModel {
             String Psicologo, String Cita, String cedula, String estado
     ) {
         ArrayList<Object> objs = new ArrayList<>();
-        objs.addAll(Arrays.asList( Curso, Psicologo, Cita,cedula,  estado
+        objs.addAll(Arrays.asList(Curso, Psicologo, Cita, cedula, estado
         ));
         boolean result = sql.exec("UPDATE Persona\n"
                 + "                  SET "
@@ -782,7 +794,7 @@ public class BusinessLogic extends InitModel {
                 + "                 `Psicologo_idPsicologo`  =(SELECT `idPsicologo` FROM Psicologo where `Nombre`= ?), \n"
                 + "                   `Cita`  = ? "
                 + " WHERE `ID`=? "
-                + " AND `Estado_idEstado`=(SELECT `idEstado` FROM Estado where `Estado`= ?)",objs);
+                + " AND `Estado_idEstado`=(SELECT `idEstado` FROM Estado where `Estado`= ?)", objs);
         if (result) {
             JOptionPane.showMessageDialog(null, "Se modifico correctamente");
         } else {
