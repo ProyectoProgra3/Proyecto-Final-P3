@@ -555,7 +555,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '1',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
-                System.out.println("Se añadio correctamente");
+                             JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -590,7 +590,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '2',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
-                System.out.println("Se añadio correctamente");
+                              JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -625,7 +625,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '3',?,?,?,?,?,?,?,?,?,?,?,?,?,1);", objs);
             if (result) {
-                System.out.println("Se añadio correctamente");
+                                JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -660,7 +660,7 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '4',?,?,?,?,?,?,?,?,?,?,?,?,?,2);", objs);
             if (result) {
-                System.out.println("Se añadio correctamente");
+                            JOptionPane.showMessageDialog(null, "Se añadio correctamente");
             }
             return result;
 
@@ -695,7 +695,8 @@ public class BusinessLogic extends InitModel {
                     + " (`ID`, `Estado_idEstado`, `Tipo_de_solicitud_idSolicitud`, `Nombre`, `Apellido`, `Edad`, `Telefono`, `Ocupacion`, `Motivo`, `Referencia`, `Detalle_Horario`, `Email`, `Detalle`, `Fecha_Solicitud`, `NombreSolicitante`, `Dir`,`Integrantes`) "
                     + "VALUES (?, (SELECT `idEstado` FROM Estado where `Estado`= ?), '5',?,?,?,?,?,?,?,?,?,?,?,?,?,?);", objs);
             if (result) {
-                System.out.println("Se añadio correctamente");
+                JOptionPane.showMessageDialog(null, "Se añadio correctamente");
+                System.out.println();
             }
             return result;
 
@@ -775,12 +776,13 @@ public class BusinessLogic extends InitModel {
         ArrayList<Object> objs = new ArrayList<>();
         objs.addAll(Arrays.asList( Curso, Psicologo, Cita,cedula,  estado
         ));
-        boolean result = sql.exec("UPDATE Persona \n"
+        boolean result = sql.exec("UPDATE Persona\n"
                 + "                  SET "
                 + "                  `Curso_idCurso`  =(SELECT `idCurso` FROM Curso where `Nombre`= ?), \n"
                 + "                 `Psicologo_idPsicologo`  =(SELECT `idPsicologo` FROM Psicologo where `Nombre`= ?), \n"
                 + "                   `Cita`  = ? "
-                + " WHERE `ID`=? "+ " AND `Estado_idEstado`=(SELECT `idEstado` FROM Estado where `Estado`= ?)", objs);
+                + " WHERE `ID`=? "
+                + " AND `Estado_idEstado`=(SELECT `idEstado` FROM Estado where `Estado`= ?)",objs);
         if (result) {
             JOptionPane.showMessageDialog(null, "Se modifico correctamente");
         } else {

@@ -177,6 +177,7 @@ public class ManagerMD implements MouseListener {
         //piscologo
         if (md.btn_psico == me.getSource()) {
             md.BtnPsicologos();
+              md.Mostrar_Psicologos();
         }
         if (md.btn_mosPsico == me.getSource()) {
             md.Mostrar_Psicologos();
@@ -197,6 +198,8 @@ public class ManagerMD implements MouseListener {
         //curso
         if (md.btn_curso == me.getSource()) {
             md.BtnCurso();
+            md.Mostrar_Cursos();
+            
         }
         if (md.btn_mosCurso == me.getSource()) {
             md.Mostrar_Cursos();
@@ -446,8 +449,7 @@ public class ManagerMD implements MouseListener {
                 md.modificar_persona_direccion_txt.getText(),
                 Integer.parseInt(md.modificar_persona_integrantes_txt.getText()),
                 md.modificar_persona_txt.getText(),
-                md.modificar_persona_cbm.getSelectedItem().toString())) {
-            JOptionPane.showMessageDialog(null, "Se modifico correctamente");
+                md.modificar_persona_cbm.getSelectedItem().toString())) {         
         }
     }
 
@@ -457,12 +459,12 @@ public class ManagerMD implements MouseListener {
             return;
         }
       
-        this.bl.modificarcitas(md.modificar_cita_curso_cbm.getSelectedItem().toString(), md.modificar_cita_psicologo_cbm.getSelectedItem().toString(), md.modificar_cita_cita_txt.getText(), md.cita_txt.getText(), md.cita_cbm.getSelectedItem().toString());
+        this.bl.modificarcitas(md.modificar_cita_curso_cbm.getSelectedItem().toString(), md.modificar_cita_psicologo_cbm.getSelectedItem().toString(), md.modificar_cita_cita_txt.getText().toString(), md.cita_txt.getText(), md.cita_cbm.getSelectedItem().toString());
     }
 
     public void agregarPsicologo() {
-        if (bl.addPsicologo("hola", this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), 0, "@")) {
-
+        if (bl.addPsicologo("hola", this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), Integer.parseInt(this.md.celular_psicologo_txt.getText()), this.md.email_psicologo_txt.getText())) {
+            JOptionPane.showMessageDialog(null,"Se agrego el psicologo correctamente");
         } else {
             System.out.println("upps hubo un problema");
         };
