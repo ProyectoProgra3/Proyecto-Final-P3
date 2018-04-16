@@ -471,7 +471,7 @@ public class ManagerMD implements MouseListener {
     }
 
     public void agregarPsicologo() {
-        if (bl.addPsicologo("hola", this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), Integer.parseInt(this.md.celular_psicologo_txt.getText()), this.md.email_psicologo_txt.getText())) {
+        if (bl.addPsicologo(this.md.id_psicologo_txt.getText(), this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), Integer.parseInt(this.md.celular_psicologo_txt.getText()), this.md.email_psicologo_txt.getText())) {
             JOptionPane.showMessageDialog(null, "Se agrego el psicologo correctamente");
         } else {
             System.out.println("upps hubo un problema");
