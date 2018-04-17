@@ -190,10 +190,11 @@ public class ManagerMD implements MouseListener {
         if (md.btn_eliminarbueyes == me.getSource()) {
             if (this.bl.confirmacion(this.md.txt_ideliminarPsicologos.getText(), this.md.txt_passwordPsicologo.getText())) {
                 JOptionPane.showMessageDialog(null, "Se borraron los psicologos");
+                eliminartodos();
             } else {
                 JOptionPane.showMessageDialog(null, "No se  borraron los psicologos");
             };
-eliminartodos();
+        
         }
         if (md.btn_agrePsico == me.getSource()) {
             md.Agregar_Psicologo();

@@ -526,8 +526,8 @@ public class BusinessLogic extends InitModel {
     public boolean DeletePsicologos() {
         ArrayList<Object> objs1 = new ArrayList<>();
         objs1.addAll(Arrays.asList());
-        boolean result1 = sql.exec("Update `Persona` SET Psicologo_IdPsicologo = 0", objs1);
-        boolean result = sql.exec("Delete  From `Psicologo` where `idPsicologo`!=0  ", objs1);
+        boolean result1 = sql.exec("Update `Persona` SET Psicologo_IdPsicologo = 0 ", objs1);
+        boolean result = sql.exec("Delete  From `Psicologo` where `idPsicologo` not like 0 ", objs1);
         return result;
     }
 
