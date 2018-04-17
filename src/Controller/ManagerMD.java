@@ -29,6 +29,8 @@ public class ManagerMD implements MouseListener {
     public ManagerMD(MainDashboard md, BusinessLogic bl) {
         this.md = md;
         this.bl = bl;
+        llenar1Modificar();
+        llenarCbModificar();
         //busqueda
         this.md.btn_busqueda_rapida.addMouseListener(this);
         this.md.btn_busqueda.addMouseListener(this);
@@ -147,8 +149,7 @@ public class ManagerMD implements MouseListener {
         }
         //modificar
         if (md.btn_modif == me.getSource()) {
-            llenar1Modificar();
-            llenarCbModificar();
+
             md.BtnModificarPersona();
         }
         if (md.btn_buscar_modificar_persona == me.getSource()) {
@@ -192,7 +193,7 @@ public class ManagerMD implements MouseListener {
             } else {
                 JOptionPane.showMessageDialog(null, "No se  borraron los psicologos");
             };
-//eliminartodos();ya esta no tocar !!!!
+eliminartodos();
         }
         if (md.btn_agrePsico == me.getSource()) {
             md.Agregar_Psicologo();
@@ -484,11 +485,12 @@ public class ManagerMD implements MouseListener {
     }
 
     public void agregarCurso() {
-        bl.addCurso(this.md.siglas_curso_txt.getText(), this.md.nombre_curso_txt.getText());
+        bl.addCurso(this.md.siglas_curso_txt.getText(),
+                this.md.nombre_curso_txt.getText());
     }
 
     public void llenarCbModificar() {
-           ArrayList a = this.bl.SearchTipo();
+        ArrayList a = this.bl.SearchTipo();
         for (int i = 0; i < a.size(); i++) {
             this.md.modificar_persona_tipo_cbm.addItem(a.get(i));
         }

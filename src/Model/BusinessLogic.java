@@ -89,7 +89,7 @@ public class BusinessLogic extends InitModel {
                     + "FROM `Persona`\n"
                     + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
                     + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"
-                    + "where Cita = \"0000-00-01\" \n"
+                    + "where Cita = \"0000-00-00\" \n"
                     + "order by Persona.Fecha_Solicitud\n"
                     + "limit 10", new ArrayList<>());
 
