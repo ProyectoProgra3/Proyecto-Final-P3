@@ -473,6 +473,7 @@ public class BusinessLogic extends InitModel {
      * @return True si se inserta correctamente false si existe algun problema
      */
     public boolean addPsicologo(String id, String Nombre, String Apellido, String Carnet, int celular, String email) {
+        
         ArrayList<Object> objs = new ArrayList<>();
         objs.addAll(Arrays.asList(id, Nombre));
         try {

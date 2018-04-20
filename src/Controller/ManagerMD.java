@@ -472,16 +472,26 @@ public class ManagerMD implements MouseListener {
             JOptionPane.showMessageDialog(null, "Te faltan campos por llenar");
             return;
         }
-
-        this.bl.modificarcitas(md.modificar_cita_curso_cbm.getSelectedItem().toString(), md.modificar_cita_psicologo_cbm.getSelectedItem().toString(), md.modificar_cita_cita_txt.getText().toString(), md.cita_txt.getText(), md.cita_cbm.getSelectedItem().toString());
-    }
+        try {
+              this.bl.modificarcitas(md.modificar_cita_curso_cbm.getSelectedItem().toString(), md.modificar_cita_psicologo_cbm.getSelectedItem().toString(), md.modificar_cita_cita_txt.getText().toString(), md.cita_txt.getText(), md.cita_cbm.getSelectedItem().toString());
+              JOptionPane.showMessageDialog(null,"Se modifico correctamente");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Hubi un error");
+        }
+        }
 
     public void agregarPsicologo() {
-        if (bl.addPsicologo(this.md.id_psicologo_txt.getText(), this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), Integer.parseInt(this.md.celular_psicologo_txt.getText()), this.md.email_psicologo_txt.getText())) {
+        try {
+              if (bl.addPsicologo(this.md.id_psicologo_txt.getText(), this.md.nombre_psicologo_txt.getText(), this.md.apellidos_psicologo_txt.getText(), this.md.carnet_psicologo_txt.getText(), Integer.parseInt(this.md.celular_psicologo_txt.getText()), this.md.email_psicologo_txt.getText())) {
             JOptionPane.showMessageDialog(null, "Se agrego el psicologo correctamente");
         } else {
             System.out.println("upps hubo un problema");
         };
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Tienes un error en tus datos");
+        }
+      
 
     }
 
@@ -490,8 +500,14 @@ public class ManagerMD implements MouseListener {
     }
 
     public void agregarCurso() {
-        bl.addCurso(this.md.siglas_curso_txt.getText(),
+        try {
+             bl.addCurso(this.md.siglas_curso_txt.getText(),
                 this.md.nombre_curso_txt.getText());
+              JOptionPane.showMessageDialog(null,"Se añadio correctamente");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Tienes un error en tus datos");
+        }
+       
     }
 
     public void llenarCbModificar() {
