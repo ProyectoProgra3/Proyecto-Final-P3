@@ -833,6 +833,7 @@ public class BusinessLogic extends InitModel {
                     + " Psicologo.Nombre,"
                     + "Persona.Expediente,"
                     + "Persona.Dir,"
+                        + "Persona.Dir,"
                     + "Persona.Integrantes from Persona \n"
                     + "inner join Estado on Persona.Estado_idEstado=Estado.idEstado\n"
                     + "inner join Tipo_de_solicitud on Persona.Tipo_de_solicitud_idSolicitud=Tipo_de_solicitud.idSolicitud\n"

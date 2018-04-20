@@ -399,7 +399,7 @@ public class MainDashboard {
             tab.addrow(row.get(i));
         }
         JScrollPane scrollPane = new JScrollPane(tab);
-        scrollPane.setBounds(0, 0, 600, 460);
+        scrollPane.setBounds(0, 0, 620, 493);
         info_panel.add(scrollPane);
     }
     //YA SE PASO 
@@ -1757,6 +1757,17 @@ public class MainDashboard {
 
         info_panel.add(fondo_label);
     }
+    
+    public void Ayuda_citas(){
+        
+        try {
+            String url = System.getProperty("user.dir") + ("//src//Img//citas.mp4");
+            ProcessBuilder p = new ProcessBuilder();
+            p.command("cmd.exe", "/c", url);
+            p.start();
+        } catch (IOException exe) {
+        };
+    }
 ////////////////////PSICOLOGOS/////////////////////////////// 
     public iTextField txt_ideliminarPsicologos = new iTextField("", 6);
     public iTextField txt_passwordPsicologo = new iTextField("", 6);
@@ -1777,7 +1788,7 @@ public class MainDashboard {
         info_panel.AddObject(lbl_Contraseña, 80, 20, LEFT);
         info_panel.AddObject(txt_passwordPsicologo, 160, 20, LEFT);
         info_panel.newLine();
-        info_panel.AddObject(btn_eliminarbueyes, 160, 20, LEFT);
+        info_panel.AddObject(btn_eliminarbueyes, 130, 40, CENTER);
         info_panel.newLine();
     }
 
