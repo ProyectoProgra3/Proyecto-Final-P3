@@ -80,6 +80,7 @@ public class ProyectoClinica extends JPanel {
 //        JOptionPane.showMessageDialog(null,"su base de datos esta"+ sQL.toString());
            InitController ic = new InitController();
         ic.Starprogram();
+        
     }
 
 }

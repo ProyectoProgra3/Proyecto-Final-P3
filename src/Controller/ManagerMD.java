@@ -63,6 +63,7 @@ public class ManagerMD implements MouseListener {
         this.md.btn_citas.addMouseListener(this);
         this.md.btn_buscar_cita.addMouseListener(this);
         md.btn_guardar_modificar_cita.addMouseListener(this);
+        this.md.btn_ayuda_cita.addMouseListener(this);
         //this.md.btn_type.addMouseListener(this);
 //        this.md.btn_ced.addMouseListener(this);
 
@@ -173,6 +174,9 @@ public class ManagerMD implements MouseListener {
         }
         if (md.btn_guardar_modificar_cita == me.getSource()) {
             modificarcitas();
+        }
+           if (this.md.btn_ayuda_cita== me.getSource()) {
+         this.md.Ayuda_citas();
         }
 
         //piscologo
